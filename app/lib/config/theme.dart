@@ -131,7 +131,7 @@ extension InputDecorationThemeExt on InputDecorationTheme {
 
 ColorScheme _determineColorScheme(ColorMode mode, Brightness brightness, DynamicColors? dynamicColors) {
   final defaultColorScheme = ColorScheme.fromSeed(
-    seedColor: Colors.teal,
+    seedColor: Colors.blue,
     brightness: brightness,
   );
 

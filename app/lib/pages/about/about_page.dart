@@ -32,7 +32,7 @@ class AboutPage extends StatelessWidget {
           const SizedBox(height: 20),
           const LocalSendLogo(withText: true),
           Text(
-            '© ${DateTime.now().year} Tien Do Nam',
+            'Copyright ${DateTime.now().year} lingyicute',
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
@@ -49,7 +49,7 @@ class AboutPage extends StatelessWidget {
           const SizedBox(height: 20),
           Text(t.aboutPage.author, style: const TextStyle(fontWeight: FontWeight.bold)),
           Text.rich(_buildContributor(
-            label: 'Tien Do Nam (@Tienisto)',
+            label: 'lingyicute',
             primaryColor: primaryColor,
           )),
           const SizedBox(height: 20),
