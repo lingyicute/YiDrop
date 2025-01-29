@@ -1,6 +1,6 @@
 import 'package:flutter/scheduler.dart';
-import 'package:localsend_app/provider/settings_provider.dart';
-import 'package:localsend_app/util/native/platform_check.dart';
+import 'package:yidrop_app/provider/settings_provider.dart';
+import 'package:yidrop_app/util/native/platform_check.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 

@@ -3,9 +3,9 @@ import 'dart:typed_data';
 
 import 'package:gal/gal.dart';
 import 'package:legalize/legalize.dart';
-import 'package:localsend_app/util/file_path_helper.dart';
-import 'package:localsend_app/util/native/channel/android_channel.dart' as android_channel;
-import 'package:localsend_app/util/native/content_uri_helper.dart';
+import 'package:yidrop_app/util/file_path_helper.dart';
+import 'package:yidrop_app/util/native/channel/android_channel.dart' as android_channel;
+import 'package:yidrop_app/util/native/content_uri_helper.dart';
 import 'package:logging/logging.dart';
 import 'package:mime/mime.dart';
 import 'package:path/path.dart' as p;

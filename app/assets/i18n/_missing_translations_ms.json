@@ -19,7 +19,7 @@
     "tooManyAttempts": "@:web.tooManyAttempts"
   },
   "webSharePage": {
-    "encryptionHint": "LocalSend uses a self-signed certificate. You need to accept it in your browser."
+    "encryptionHint": "YiDrop uses a self-signed certificate. You need to accept it in your browser."
   },
   "aboutPage": {
     "packagers": "Packagers"

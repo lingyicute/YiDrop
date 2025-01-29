@@ -1,6 +1,6 @@
 {
   "locale": "한국어",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "수락",
     "accepted": "수락됨",
@@ -108,7 +108,7 @@
       "minimizeToTray": "종료 시 시스템 트레이로 최소화",
       "launchAtStartup": "로그인 시 자동으로 시작",
       "launchMinimized": "최소화된 상태로 시작",
-      "showInContextMenu": "컨텍스트 메뉴에 LocalSend 표시",
+      "showInContextMenu": "컨텍스트 메뉴에 YiDrop 표시",
       "animations": "애니메이션"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "기타",
-      "support": "LocalSend 후원하기",
+      "support": "YiDrop 후원하기",
       "donate": "기부",
       "privacyPolicy": "개인정보 처리 방침",
       "termsOfUse": "이용 약관"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "설정",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend 폴더)",
+    "appDirectory": "(YiDrop 폴더)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "폴더가 있어 자동으로 비활성화되었습니다."
   },
@@ -244,13 +244,13 @@
     "autoAccept": "요청 자동 수락",
     "requirePin": "PIN 번호 사용",
     "pinHint": "PIN 번호는 \"{pin}\" 입니다",
-    "encryptionHint": "LocalSend는 자체 서명된 인증서를 사용합니다. 브라우저에서 이를 허용해야 합니다.",
+    "encryptionHint": "YiDrop는 자체 서명된 인증서를 사용합니다. 브라우저에서 이를 허용해야 합니다.",
     "pendingRequests": "대기 중인 요청: {n}"
   },
   "aboutPage": {
-    "title": "LocalSend 정보",
+    "title": "YiDrop 정보",
     "description": [
-      "LocalSend는 인터넷에 연결하지 않고도 로컬 네트워크를 통해 주변 기기들과 파일 및 메시지를 안전하게 공유할 수 있는 무료 오픈소스 앱입니다.",
+      "YiDrop는 인터넷에 연결하지 않고도 로컬 네트워크를 통해 주변 기기들과 파일 및 메시지를 안전하게 공유할 수 있는 무료 오픈소스 앱입니다.",
       "이 앱은 Android, iOS, macOS, Windows 및 Linux에서 사용할 수 있습니다. 모든 다운로드 옵션은 공식 홈페이지에서 확인할 수 있습니다."
     ],
     "author": "작성자",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "기부",
-    "info": "LocalSend는 광고없이 무료로 제공되는 오픈소스 프로젝트입니다. 앱이 마음에 드신다면 후원을 통해 프로젝트 개발을 지원해주세요.",
+    "info": "YiDrop는 광고없이 무료로 제공되는 오픈소스 프로젝트입니다. 앱이 마음에 드신다면 후원을 통해 프로젝트 개발을 지원해주세요.",
     "donate": "{amount} 기부하기",
     "thanks": "진심으로 감사드립니다!",
     "restore": "구매 복원"
@@ -336,7 +336,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend가 다른 기기를 감지하려면 로컬 네트워크 탐색을 위한 권한이 필요합니다. 설정에서 권한을 허용해주세요.",
+      "description": "YiDrop가 다른 기기를 감지하려면 로컬 네트워크 탐색을 위한 권한이 필요합니다. 설정에서 권한을 허용해주세요.",
       "gotoSettings": "설정"
     },
     "messageInput": {
@@ -385,7 +385,7 @@
       "title": "전송 모드",
       "single": "파일을 하나의 기기에 보냅니다. 파일 전송이 완료된 후 선택 항목이 초기화됩니다.",
       "multiple": "파일을 여러 기기에 보냅니다. 파일 전송이 완료된 뒤에도 선택 항목이 유지됩니다.",
-      "link": "LocalSend가 설치되지 않은 기기에서도 브라우저를 통해 링크에 접속하여 파일을 다운로드 받을 수 있습니다."
+      "link": "YiDrop가 설치되지 않은 기기에서도 브라우저를 통해 링크에 접속하여 파일을 다운로드 받을 수 있습니다."
     },
     "zoom": {
       "title": "URL"
@@ -398,7 +398,7 @@
   "tray": {
     "@info": "Apple Guidelines are very strict about the 'close' wording.",
     "open": "@:general.open",
-    "close": "LocalSend 종료하기",
+    "close": "YiDrop 종료하기",
     "closeWindows": "나가기"
   },
   "web": {

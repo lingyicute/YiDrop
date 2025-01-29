@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:common/util/sleep.dart';
-import 'package:localsend_app/pages/home_page.dart';
-import 'package:localsend_app/pages/home_page_controller.dart';
-import 'package:localsend_app/provider/favorites_provider.dart';
-import 'package:localsend_app/provider/local_ip_provider.dart';
-import 'package:localsend_app/provider/network/nearby_devices_provider.dart';
-import 'package:localsend_app/provider/settings_provider.dart';
+import 'package:yidrop_app/pages/home_page.dart';
+import 'package:yidrop_app/pages/home_page_controller.dart';
+import 'package:yidrop_app/provider/favorites_provider.dart';
+import 'package:yidrop_app/provider/local_ip_provider.dart';
+import 'package:yidrop_app/provider/network/nearby_devices_provider.dart';
+import 'package:yidrop_app/provider/settings_provider.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 
 /// Scans the network via multicast first,

@@ -1,6 +1,6 @@
 import 'package:dart_mappable/dart_mappable.dart';
-import 'package:localsend_app/model/state/send/web/web_send_file.dart';
-import 'package:localsend_app/model/state/send/web/web_send_session.dart';
+import 'package:yidrop_app/model/state/send/web/web_send_file.dart';
+import 'package:yidrop_app/model/state/send/web/web_send_session.dart';
 
 part 'web_send_state.mapper.dart';
 

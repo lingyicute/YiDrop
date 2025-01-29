@@ -1,6 +1,6 @@
 {
   "locale": "Română",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Acceptă",
     "accepted": "Acceptat",
@@ -108,7 +108,7 @@
       "minimizeToTray": "Închidere: Minimizează în Bara de Meniuri/Tray",
       "launchAtStartup": "Autopornire după logare",
       "launchMinimized": "Autopornire: Pornire ascunsă",
-      "showInContextMenu": "Afișează LocalSend în meniul contextual",
+      "showInContextMenu": "Afișează YiDrop în meniul contextual",
       "animations": "Animații"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "Altele",
-      "support": "Susțineți LocalSend",
+      "support": "Susțineți YiDrop",
       "donate": "Donează",
       "privacyPolicy": "Politică de confidențialitate",
       "termsOfUse": "Termeni de utilizare"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "Opțiuni",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(Dosarul LocalSend)",
+    "appDirectory": "(Dosarul YiDrop)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Dezactivat automat deoarece există foldere."
   },
@@ -244,13 +244,13 @@
     "autoAccept": "Acceptă automat cererile",
     "requirePin": "Solicită PIN",
     "pinHint": "PIN-ul este \"{pin}\"",
-    "encryptionHint": "LocalSend folosește un certificat auto-semnat. Trebuie să-l accepți în browserul tău.",
+    "encryptionHint": "YiDrop folosește un certificat auto-semnat. Trebuie să-l accepți în browserul tău.",
     "pendingRequests": "Cererile în așteptare: {n}"
   },
   "aboutPage": {
-    "title": "Despre LocalSend",
+    "title": "Despre YiDrop",
     "description": [
-      "LocalSend este o aplicație gratuită și open-source care îți permite să partajezi în siguranță fișiere și mesaje cu dispozitivele din apropiere prin rețeaua ta locală, fără a avea nevoie de o conexiune la internet.",
+      "YiDrop este o aplicație gratuită și open-source care îți permite să partajezi în siguranță fișiere și mesaje cu dispozitivele din apropiere prin rețeaua ta locală, fără a avea nevoie de o conexiune la internet.",
       "Această aplicație este disponibilă pe Android, iOS, macOS, Windows și Linux. Poți găsi toate opțiunile de descărcare pe pagina oficială."
     ],
     "author": "Autor",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "Donează",
-    "info": "LocalSend este gratuit, open-source și fără reclame. Dacă îți place aplicația, poți susține dezvoltarea cu o donație.",
+    "info": "YiDrop este gratuit, open-source și fără reclame. Dacă îți place aplicația, poți susține dezvoltarea cu o donație.",
     "donate": "Donează {amount}",
     "thanks": "Îți mulțumim foarte mult!",
     "restore": "Restabilește achiziția"
@@ -404,7 +404,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend nu poate găsi alte dispozitive fără permisiunea de a scana rețeaua locală. Să acorzi această permisiune în setări.",
+      "description": "YiDrop nu poate găsi alte dispozitive fără permisiunea de a scana rețeaua locală. Să acorzi această permisiune în setări.",
       "gotoSettings": "Setări"
     },
     "messageInput": {
@@ -453,7 +453,7 @@
       "title": "Moduri de trimitere",
       "single": "Trimite fișiere unui singur recipient. Selecția va fi golită după ce transferul este finalizat.",
       "multiple": "Trimite fișiere la mai mulți recipienți. Selecția nu va fi golită.",
-      "link": "Recipienții care nu au LocalSend instalat pot descărca fișierele selectate accesând linkul în browser."
+      "link": "Recipienții care nu au YiDrop instalat pot descărca fișierele selectate accesând linkul în browser."
     },
     "zoom": {
       "title": "URL"
@@ -466,7 +466,7 @@
   "tray": {
     "@info": "Apple Guidelines are very strict about the 'close' wording.",
     "open": "@:general.open",
-    "close": "Închide LocalSend",
+    "close": "Închide YiDrop",
     "closeWindows": "Închide"
   },
   "web": {

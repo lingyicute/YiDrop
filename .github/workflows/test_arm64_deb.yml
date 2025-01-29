@@ -46,7 +46,7 @@ jobs:
         id: find_deb
         run: |
           VERSION=${{ needs.build.outputs.version }}
-          DEB_PATH=$(find app/dist -name "localsend_app-$VERSION*-linux.deb")
+          DEB_PATH=$(find app/dist -name "yidrop_app-$VERSION*-linux.deb")
           echo "deb_path=$DEB_PATH" >> $GITHUB_OUTPUT
 
       - name: Check if deb file exists

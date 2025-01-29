@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "lingyicute" "\0"
-            VALUE "FileDescription", "LocalSend" "\0"
+            VALUE "FileDescription", "YiDrop" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "localsend_app" "\0"
+            VALUE "InternalName", "yidrop_app" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022-2024 lingyicute. All rights reserved." "\0"
-            VALUE "OriginalFilename", "localsend_app.exe" "\0"
-            VALUE "ProductName", "LocalSend" "\0"
+            VALUE "OriginalFilename", "yidrop_app.exe" "\0"
+            VALUE "ProductName", "YiDrop" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

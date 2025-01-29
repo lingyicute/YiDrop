@@ -1,4 +1,4 @@
-import 'package:localsend_app/model/log_entry.dart';
+import 'package:yidrop_app/model/log_entry.dart';
 import 'package:logging/logging.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 

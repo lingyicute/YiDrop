@@ -1,6 +1,6 @@
 {
   "locale": "Español",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Aceptar",
     "accepted": "Aceptado",
@@ -108,7 +108,7 @@
       "minimizeToTray": "Cerrar: Minimizar ventana",
       "launchAtStartup": "Inicio automático",
       "launchMinimized": "Inicio automático: Iniciar minimizado",
-      "showInContextMenu": "Mostrar LocalSend en el menú contextual",
+      "showInContextMenu": "Mostrar YiDrop en el menú contextual",
       "animations": "Animaciones"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "Otros",
-      "support": "Apoya a LocalSend",
+      "support": "Apoya a YiDrop",
       "donate": "Donar",
       "privacyPolicy": "Política de privacidad",
       "termsOfUse": "Condiciones de uso"
@@ -244,13 +244,13 @@
     "autoAccept": "Aceptar solicitudes automáticamente",
     "requirePin": "Requerir PIN",
     "pinHint": "El PIN es \"{pin}\"",
-    "encryptionHint": "LocalSend utiliza un certificado autofirmado. Necesitas aceptarlo en el navegador.",
+    "encryptionHint": "YiDrop utiliza un certificado autofirmado. Necesitas aceptarlo en el navegador.",
     "pendingRequests": "Solicitudes pendientes: {n}"
   },
   "aboutPage": {
-    "title": "Sobre LocalSend",
+    "title": "Sobre YiDrop",
     "description": [
-      "LocalSend es una aplicación libre, de código abierto, que te permite compartir archivos y mensajes de forma segura con dispositivos cercanos a través de tu red local sin necesidad de conexión a Internet.",
+      "YiDrop es una aplicación libre, de código abierto, que te permite compartir archivos y mensajes de forma segura con dispositivos cercanos a través de tu red local sin necesidad de conexión a Internet.",
       "Está disponible para Android, iOS, macOS, Windows y Linux. Puedes encontrar todas las opciones de descarga en la página web oficial."
     ],
     "author": "Autor",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "Donar",
-    "info": "LocalSend es libre, open source y no contiene anuncios. Si te gusta la aplicación puedes ayudar al desarrollo con una donación.",
+    "info": "YiDrop es libre, open source y no contiene anuncios. Si te gusta la aplicación puedes ayudar al desarrollo con una donación.",
     "donate": "Donar {amount}",
     "thanks": "¡Muchas gracias!",
     "restore": "Restablecer compra"
@@ -336,7 +336,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend no puede encontrar otros dispositivos sin tener permiso para escanear la red local. Por favor, concede este permiso en los ajustes.",
+      "description": "YiDrop no puede encontrar otros dispositivos sin tener permiso para escanear la red local. Por favor, concede este permiso en los ajustes.",
       "gotoSettings": "Ajustes"
     },
     "messageInput": {
@@ -385,7 +385,7 @@
       "title": "Modos de envío",
       "single": "Enviar archivos a un solo destino. La selección se borrará una vez finalizada la transferencia.",
       "multiple": "Enviar archivos a múltiples destinos. La selección no se borrará.",
-      "link": "Los destinatarios que no tengan LocalSend instalado pueden descargar los archivos seleccionados abriendo el enlace en su navegador."
+      "link": "Los destinatarios que no tengan YiDrop instalado pueden descargar los archivos seleccionados abriendo el enlace en su navegador."
     },
     "zoom": {
       "title": "URL"
@@ -398,7 +398,7 @@
   "tray": {
     "@info": "Las directrices de Apple son muy estrictas en cuanto a la expresión 'cerrar'.",
     "open": "@:general.open",
-    "close": "Cerrar LocalSend",
+    "close": "Cerrar YiDrop",
     "closeWindows": "Cerrar"
   },
   "web": {

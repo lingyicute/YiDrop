@@ -1,6 +1,6 @@
 {
   "locale": "Dansk",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Accepter",
     "accepted": "Accepteret",
@@ -103,7 +103,7 @@
       "minimizeToTray": "Afslut: minimer til dock/menubjælke",
       "launchAtStartup": "Autostart ved login",
       "launchMinimized": "Autostart: Skjult ved opstart",
-      "showInContextMenu": "Vis LocalSend i kontekstmenu",
+      "showInContextMenu": "Vis YiDrop i kontekstmenu",
       "animations": "Animationer"
     },
     "receive": {
@@ -137,7 +137,7 @@
     },
     "other": {
       "title": "Andet",
-      "support": "Støt LocalSend",
+      "support": "Støt YiDrop",
       "donate": "Donér",
       "privacyPolicy": "Privatlivspolitik",
       "termsOfUse": "Brugsbetingelser"
@@ -196,7 +196,7 @@
   "receiveOptionsPage": {
     "title": "Muligheder",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend mappe)",
+    "appDirectory": "(YiDrop mappe)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Slået fra automatisk, fordi der er mapper."
   },
@@ -237,13 +237,13 @@
     "autoAccept": "Accepter automatisk anmodninger",
     "requirePin": "Kræv PIN-kode",
     "pinHint": "PIN-koden er \"{pin}\"",
-    "encryptionHint": "LocalSend benytter et selvsigneret certifikat. Det skal accepteres i browseren.",
+    "encryptionHint": "YiDrop benytter et selvsigneret certifikat. Det skal accepteres i browseren.",
     "pendingRequests": "Ventende forespørgsler: {n}"
   },
   "aboutPage": {
-    "title": "Om LocalSend",
+    "title": "Om YiDrop",
     "description": [
-      "LocalSend er en gratis open-source app, som du kan bruge til sikkert at dele filer og beskeder med andre enheder i nærheden på dit lokale netværk, uden en internet forbindelse.",
+      "YiDrop er en gratis open-source app, som du kan bruge til sikkert at dele filer og beskeder med andre enheder i nærheden på dit lokale netværk, uden en internet forbindelse.",
       "Appen findes til Android, iOS, macOS, Windows og Linux. Alle downloadmuligheder finder du på den officielle hjemmeside."
     ],
     "author": "Skaber",
@@ -253,7 +253,7 @@
   },
   "donationPage": {
     "title": "Donér",
-    "info": "LocalSend er gratis, open-source og reklamefri. Hvis du kan lide denne app, kan du støtte dens udvikling med en donation.",
+    "info": "YiDrop er gratis, open-source og reklamefri. Hvis du kan lide denne app, kan du støtte dens udvikling med en donation.",
     "donate": "Donér {amount}",
     "thanks": "Tusind tak for din støtte!",
     "restore": "Genskab køb"
@@ -325,7 +325,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend kan ikke finde andre enheder uden tilladelse til at scanne det lokale netværk. Giv venligst tilladelse i systemindstillingerne.",
+      "description": "YiDrop kan ikke finde andre enheder uden tilladelse til at scanne det lokale netværk. Giv venligst tilladelse i systemindstillingerne.",
       "gotoSettings": "Indstillinger"
     },
     "messageInput": {
@@ -369,7 +369,7 @@
       "title": "Sendemåde",
       "single": "Send filer til en modtager. Filvalget vil blive ryddet når filoverførslen er slut.",
       "multiple": "Send filer til flere modtagere. Filvalget vil ikke blive ryddet.",
-      "link": "Modtagere, der ikke har LocalSend installeret, kan downloade de valgte filer i en browser."
+      "link": "Modtagere, der ikke har YiDrop installeret, kan downloade de valgte filer i en browser."
     },
     "zoom": {
       "title": "URL"
@@ -382,7 +382,7 @@
   "tray": {
     "@info": "Apple Guidelines are very strict about the 'close' wording.",
     "open": "@:general.open",
-    "close": "Luk LocalSend",
+    "close": "Luk YiDrop",
     "closeWindows": "Afslut"
   },
   "web": {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/model/persistence/color_mode.dart';
-import 'package:localsend_app/provider/device_info_provider.dart';
-import 'package:localsend_app/util/native/platform_check.dart';
-import 'package:localsend_app/util/ui/dynamic_colors.dart';
+import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/model/persistence/color_mode.dart';
+import 'package:yidrop_app/provider/device_info_provider.dart';
+import 'package:yidrop_app/util/native/platform_check.dart';
+import 'package:yidrop_app/util/ui/dynamic_colors.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
@@ -30,7 +30,7 @@ ThemeData getTheme(ColorMode colorMode, Brightness brightness, DynamicColors? dy
     borderRadius: _borderRadius,
   );
 
-  // https://github.com/localsend/localsend/issues/52
+  // https://github.com/lingyicute/yidrop/issues/52
   final String? fontFamily;
   if (checkPlatform([TargetPlatform.windows])) {
     fontFamily = switch (LocaleSettings.currentLocale) {
@@ -137,7 +137,7 @@ ColorScheme _determineColorScheme(ColorMode mode, Brightness brightness, Dynamic
 
   final colorScheme = switch (mode) {
     ColorMode.system => brightness == Brightness.light ? dynamicColors?.light : dynamicColors?.dark,
-    ColorMode.localsend => null,
+    ColorMode.yidrop => null,
     ColorMode.oled => (dynamicColors?.dark ?? defaultColorScheme).copyWith(
         surface: Colors.black,
       ),

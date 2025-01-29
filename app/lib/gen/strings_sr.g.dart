@@ -33,7 +33,7 @@ class TranslationsSr extends Translations {
   @override
   String get locale => 'Srpski (latinica)';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'YiDrop';
   @override
   late final _TranslationsGeneralSr general = _TranslationsGeneralSr._(_root);
   @override
@@ -361,7 +361,7 @@ class _TranslationsReceiveOptionsPageSr extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSend folder)';
+  String get appDirectory => '(YiDrop folder)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageSr extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'PIN je „${pin}“';
   @override
-  String get encryptionHint => 'LocalSend koristi samopotpisani sertifikat. Morate ga prihvatiti u svom pregledaču.';
+  String get encryptionHint => 'YiDrop koristi samopotpisani sertifikat. Morate ga prihvatiti u svom pregledaču.';
   @override
   String pendingRequests({required Object n}) => 'Zahtevi na čekanju: ${n}';
 }
@@ -457,10 +457,10 @@ class _TranslationsAboutPageSr extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'O LocalSend-u';
+  String get title => 'O YiDrop-u';
   @override
   List<String> get description => [
-        'LocalSend je besplatna aplikacija otvorenog koda koja vam omogućava da bezbedno delite fajlove i poruke sa uređajima u blizini preko vaše lokalne mreže, bez potrebe za internet vezom.',
+        'YiDrop je besplatna aplikacija otvorenog koda koja vam omogućava da bezbedno delite fajlove i poruke sa uređajima u blizini preko vaše lokalne mreže, bez potrebe za internet vezom.',
         'Ova aplikacije je dostupna za Android, iOS, macOS, Windows i Linux. Možete pronaći sve opcije za preuzimanje na zvaničnoj početnoj stranici.',
       ];
   @override
@@ -485,7 +485,7 @@ class _TranslationsDonationPageSr extends TranslationsDonationPageEn {
   @override
   String get title => 'Donacija';
   @override
-  String get info => 'LocalSend je besplatan, otvorenog koda i bez ikakvih oglasa. Ako vam se sviđa aplikacija, možete podržati razvoj donacijom.';
+  String get info => 'YiDrop je besplatan, otvorenog koda i bez ikakvih oglasa. Ako vam se sviđa aplikacija, možete podržati razvoj donacijom.';
   @override
   String donate({required Object amount}) => 'Doniraj ${amount}';
   @override
@@ -681,7 +681,7 @@ class _TranslationsTraySr extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'Napusti LocalSend';
+  String get close => 'Napusti YiDrop';
   @override
   String get closeWindows => 'Izađi';
 }
@@ -906,7 +906,7 @@ class _TranslationsSettingsTabGeneralSr extends TranslationsSettingsTabGeneralEn
   @override
   String get launchMinimized => 'Automatsko pokretanje: Pokretanje skriveno';
   @override
-  String get showInContextMenu => 'Prikaži LocalSend u kontekstualnom meniju';
+  String get showInContextMenu => 'Prikaži YiDrop u kontekstualnom meniju';
   @override
   String get animations => 'Animacije';
 }
@@ -1008,7 +1008,7 @@ class _TranslationsSettingsTabOtherSr extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'Ostalo';
   @override
-  String get support => 'Podržite LocalSend';
+  String get support => 'Podržite YiDrop';
   @override
   String get donate => 'Doniraj';
   @override
@@ -1333,7 +1333,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedSr extends TranslationsDialogs
   @override
   String get title => _root.dialogs.noPermission.title;
   @override
-  String get description => 'LocalSend ne može da pronađe druge uređaje bez dozvole za skeniranje lokalne mreže. Dajte ovu dozvolu u podešavanjima.';
+  String get description => 'YiDrop ne može da pronađe druge uređaje bez dozvole za skeniranje lokalne mreže. Dajte ovu dozvolu u podešavanjima.';
   @override
   String get gotoSettings => 'Podešavanja';
 }
@@ -1497,7 +1497,7 @@ class _TranslationsDialogsSendModeHelpSr extends TranslationsDialogsSendModeHelp
   @override
   String get multiple => 'Slanje fajlova više primalaca. Izbor neće biti očišćen nakon završenog prenosa fajlova.';
   @override
-  String get link => 'Primaoci koji nemaju instaliran LocalSend mogu preuzeti izabrane fajlove otvaranjem linka u svom pregledaču.';
+  String get link => 'Primaoci koji nemaju instaliran YiDrop mogu preuzeti izabrane fajlove otvaranjem linka u svom pregledaču.';
 }
 
 // Path: dialogs.zoom

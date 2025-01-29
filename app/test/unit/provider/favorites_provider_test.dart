@@ -1,5 +1,5 @@
-import 'package:localsend_app/model/persistence/favorite_device.dart';
-import 'package:localsend_app/provider/favorites_provider.dart';
+import 'package:yidrop_app/model/persistence/favorite_device.dart';
+import 'package:yidrop_app/provider/favorites_provider.dart';
 import 'package:mockito/mockito.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:test/test.dart';

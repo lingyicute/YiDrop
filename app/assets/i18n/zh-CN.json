@@ -1,6 +1,6 @@
 {
   "locale": "简体中文",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "接受",
     "accepted": "已接受",
@@ -108,7 +108,7 @@
       "minimizeToTray": "关闭时最小化到系统托盘",
       "launchAtStartup": "登录系统后自动启动程序",
       "launchMinimized": "启动时最小化到任务栏",
-      "showInContextMenu": "在“发送到...”文件菜单中显示 LocalSend",
+      "showInContextMenu": "在“发送到...”文件菜单中显示 YiDrop",
       "animations": "动画效果"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "其他",
-      "support": "支持 LocalSend",
+      "support": "支持 YiDrop",
       "donate": "捐赠",
       "privacyPolicy": "隐私政策",
       "termsOfUse": "使用条款"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "设置",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend 文件夹)",
+    "appDirectory": "(YiDrop 文件夹)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "由于存在目录，已自动关闭。"
   },
@@ -244,13 +244,13 @@
     "autoAccept": "自动接受请求",
     "requirePin": "需要一个 PIN",
     "pinHint": "PIN 为 “{pin}”",
-    "encryptionHint": "LocalSend 使用自签名证书。您需要在浏览器中允许它。",
+    "encryptionHint": "YiDrop 使用自签名证书。您需要在浏览器中允许它。",
     "pendingRequests": "待处理请求：{n}"
   },
   "aboutPage": {
-    "title": "关于 LocalSend",
+    "title": "关于 YiDrop",
     "description": [
-      "LocalSend 是一款免费的开源应用程序，可让您通过本地网络与附近的设备安全地分享文件和信息，而无需互联网连接。",
+      "YiDrop 是一款免费的开源应用程序，可让您通过本地网络与附近的设备安全地分享文件和信息，而无需互联网连接。",
       "本程序可在 Android、iOS、macOS、Windows 和 Linux 上使用。您可以在官方主页找到所有下载选项。"
     ],
     "author": "作者",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "捐赠",
-    "info": "LocalSend 免费、开源、无广告。如果您喜欢这款应用程序，可以捐款支持开发。",
+    "info": "YiDrop 免费、开源、无广告。如果您喜欢这款应用程序，可以捐款支持开发。",
     "donate": "捐款 {amount}",
     "thanks": "非常感谢您的支持！",
     "restore": "恢复购买"
@@ -405,7 +405,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend 在没有扫描本地网络的权限的情况下无法找到其他设备。请在设置中授予此权限。",
+      "description": "YiDrop 在没有扫描本地网络的权限的情况下无法找到其他设备。请在设置中授予此权限。",
       "gotoSettings": "设置"
     },
     "messageInput": {
@@ -454,7 +454,7 @@
       "title": "发送模式",
       "single": "发送文件给一个接收者。已选择的文件在发送后会取消选择。",
       "multiple": "发送文件给多个接收者。已选择的文件在发送后不会取消选择。",
-      "link": "未安装 LocalSend 的接收者可以在浏览器中打开链接以下载选中的文件。"
+      "link": "未安装 YiDrop 的接收者可以在浏览器中打开链接以下载选中的文件。"
     },
     "zoom": {
       "title": "URL"
@@ -467,7 +467,7 @@
   "tray": {
     "@info": "Apple Guidelines are very strict about the \"close\" wording.",
     "open": "@:general.open",
-    "close": "退出 LocalSend",
+    "close": "退出 YiDrop",
     "closeWindows": "离开"
   },
   "web": {

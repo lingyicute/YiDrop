@@ -33,7 +33,7 @@ class TranslationsHi extends Translations {
   @override
   String get locale => 'Hindi';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'YiDrop';
   @override
   late final _TranslationsGeneralHi general = _TranslationsGeneralHi._(_root);
   @override
@@ -361,7 +361,7 @@ class _TranslationsReceiveOptionsPageHi extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSend फ़ोल्डर)';
+  String get appDirectory => '(YiDrop फ़ोल्डर)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageHi extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'पिन "${pin}" है';
   @override
-  String get encryptionHint => 'LocalSend एक स्व-हस्ताक्षरित प्रमाणपत्र का उपयोग करता है। आपको इसे अपने ब्राउज़र में स्वीकार करना होगा।';
+  String get encryptionHint => 'YiDrop एक स्व-हस्ताक्षरित प्रमाणपत्र का उपयोग करता है। आपको इसे अपने ब्राउज़र में स्वीकार करना होगा।';
   @override
   String pendingRequests({required Object n}) => 'लंबित अनुरोध: ${n}';
 }
@@ -457,10 +457,10 @@ class _TranslationsAboutPageHi extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'LocalSend के बारे में';
+  String get title => 'YiDrop के बारे में';
   @override
   List<String> get description => [
-        'LocalSend एक मुफ्त, ओपन-सोर्स ऐप है जो आपको अपने स्थानीय नेटवर्क पर पास के डिवाइसों के साथ इंटरनेट कनेक्शन की आवश्यकता के बिना सुरक्षित रूप से फाइलें और संदेश साझा करने की अनुमति देता है।',
+        'YiDrop एक मुफ्त, ओपन-सोर्स ऐप है जो आपको अपने स्थानीय नेटवर्क पर पास के डिवाइसों के साथ इंटरनेट कनेक्शन की आवश्यकता के बिना सुरक्षित रूप से फाइलें और संदेश साझा करने की अनुमति देता है।',
         'यह ऐप Android, iOS, macOS, Windows और Linux पर उपलब्ध है। आप सभी डाउनलोड विकल्पों को आधिकारिक होमपेज पर पा सकते हैं।',
       ];
   @override
@@ -485,7 +485,7 @@ class _TranslationsDonationPageHi extends TranslationsDonationPageEn {
   @override
   String get title => 'दान करें';
   @override
-  String get info => 'LocalSend मुफ्त, ओपन-सोर्स और बिना किसी विज्ञापन के है। यदि आपको ऐप पसंद है, तो आप विकास का समर्थन दान करके कर सकते हैं।';
+  String get info => 'YiDrop मुफ्त, ओपन-सोर्स और बिना किसी विज्ञापन के है। यदि आपको ऐप पसंद है, तो आप विकास का समर्थन दान करके कर सकते हैं।';
   @override
   String donate({required Object amount}) => 'दान करें ${amount}';
   @override
@@ -681,7 +681,7 @@ class _TranslationsTrayHi extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'LocalSend बंद करें';
+  String get close => 'YiDrop बंद करें';
   @override
   String get closeWindows => 'बाहर जाएं।';
 }
@@ -906,7 +906,7 @@ class _TranslationsSettingsTabGeneralHi extends TranslationsSettingsTabGeneralEn
   @override
   String get launchMinimized => 'ऑटोस्टार्ट: छुपा हुआ प्रारंभ करें';
   @override
-  String get showInContextMenu => 'कॉन्टेक्स्ट मेनू में LocalSend दिखाएं';
+  String get showInContextMenu => 'कॉन्टेक्स्ट मेनू में YiDrop दिखाएं';
   @override
   String get animations => 'एनिमेशन';
 }
@@ -1008,7 +1008,7 @@ class _TranslationsSettingsTabOtherHi extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'अन्य';
   @override
-  String get support => 'LocalSend का समर्थन करें';
+  String get support => 'YiDrop का समर्थन करें';
   @override
   String get donate => 'दान करें';
   @override
@@ -1334,7 +1334,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedHi extends TranslationsDialogs
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'LocalSend स्थानीय नेटवर्क को स्कैन करने की अनुमति के बिना अन्य डिवाइसों को नहीं ढूंढ सकता। कृपया सेटिंग्स में यह अनुमति दें।';
+      'YiDrop स्थानीय नेटवर्क को स्कैन करने की अनुमति के बिना अन्य डिवाइसों को नहीं ढूंढ सकता। कृपया सेटिंग्स में यह अनुमति दें।';
   @override
   String get gotoSettings => 'सेटिंग्स';
 }
@@ -1498,7 +1498,7 @@ class _TranslationsDialogsSendModeHelpHi extends TranslationsDialogsSendModeHelp
   @override
   String get multiple => 'कई प्राप्तकर्ताओं को फ़ाइलें भेजता है। चयन हटाया नहीं जाएगा।';
   @override
-  String get link => 'जिन प्राप्तकर्ताओं के पास LocalSend इंस्टॉल नहीं है, वे अपने ब्राउज़र में लिंक खोलकर चयनित फ़ाइलें डाउनलोड कर सकते हैं।';
+  String get link => 'जिन प्राप्तकर्ताओं के पास YiDrop इंस्टॉल नहीं है, वे अपने ब्राउज़र में लिंक खोलकर चयनित फ़ाइलें डाउनलोड कर सकते हैं।';
 }
 
 // Path: dialogs.zoom

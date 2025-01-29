@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:localsend_app/provider/security_provider.dart';
-import 'package:localsend_app/widget/debug_entry.dart';
-import 'package:localsend_app/widget/responsive_list_view.dart';
+import 'package:yidrop_app/provider/security_provider.dart';
+import 'package:yidrop_app/widget/debug_entry.dart';
+import 'package:yidrop_app/widget/responsive_list_view.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 
 class SecurityDebugPage extends StatelessWidget {

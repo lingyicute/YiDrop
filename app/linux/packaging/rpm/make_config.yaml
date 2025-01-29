@@ -1,7 +1,7 @@
-display_name: LocalSend
+display_name: YiDrop
 packager: Tienisto
 packagerEmail: dev.tien.donam@gmail.com
-url: https://localsend.org
+url: https://yidrop.org
 buildArch: x86_64
 license: MIT
 
@@ -17,7 +17,7 @@ keywords:
   - Files
 
 generic_name: An open source cross-platform alternative to AirDrop
-summary: Share files easily with LocalSend
+summary: Share files easily with YiDrop
 group: Applications/Utilities
 
 categories:

@@ -1,6 +1,6 @@
 {
   "locale": "Nederlands",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Accepteren",
     "accepted": "Geaccepteerd",
@@ -108,7 +108,7 @@
       "minimizeToTray": "Sluiten: minimaliseren naar systeemvak/menubalk",
       "launchAtStartup": "Automatisch starten na aanmelden",
       "launchMinimized": "Automatisch starten: verborgen",
-      "showInContextMenu": "LocalSend weergeven in contextmenu",
+      "showInContextMenu": "YiDrop weergeven in contextmenu",
       "animations": "Animaties"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "Overig",
-      "support": "LocalSend steunen",
+      "support": "YiDrop steunen",
       "donate": "Doneren",
       "privacyPolicy": "Privacybeleid",
       "termsOfUse": "Gebruiksvoorwaarden"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "Opties",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend-map)",
+    "appDirectory": "(YiDrop-map)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Automatisch uitgezet omdat er mappen bij zitten."
   },
@@ -244,13 +244,13 @@
     "autoAccept": "Verzoeken automatisch accepteren",
     "requirePin": "Code vereisen",
     "pinHint": "De code is '{pin}'.",
-    "encryptionHint": "LocalSend maakt gebruik van een zelfondertekend certificaat. Je moet dit accepteren in je browser.",
+    "encryptionHint": "YiDrop maakt gebruik van een zelfondertekend certificaat. Je moet dit accepteren in je browser.",
     "pendingRequests": "Openstaande verzoeken: {n}"
   },
   "aboutPage": {
-    "title": "Over LocalSend",
+    "title": "Over YiDrop",
     "description": [
-      "LocalSend is een gratis en opensource app waarmee je veilig bestanden en berichten met apparaten op je lokale netwerk kunt delen, zonder internetverbinding.",
+      "YiDrop is een gratis en opensource app waarmee je veilig bestanden en berichten met apparaten op je lokale netwerk kunt delen, zonder internetverbinding.",
       "De app is beschikbaar voor Android, iOS, macOS, Windows en Linux. Je vindt alle downloadopties op de officiële website."
     ],
     "author": "Auteur",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "Doneren",
-    "info": "LocalSend is gratis, opensource en advertentievrij. Als je de app graag gebruikt, kun je de ontwikkeling steunen middels een donatie.",
+    "info": "YiDrop is gratis, opensource en advertentievrij. Als je de app graag gebruikt, kun je de ontwikkeling steunen middels een donatie.",
     "donate": "{amount} doneren",
     "thanks": "Ontzettend bedankt!",
     "restore": "Aankoop herstellen"
@@ -336,7 +336,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend heeft rechten nodig om op het lokale netwerk naar andere apparaten te kunnen zoeken. Verleen deze rechten in de instellingen.",
+      "description": "YiDrop heeft rechten nodig om op het lokale netwerk naar andere apparaten te kunnen zoeken. Verleen deze rechten in de instellingen.",
       "gotoSettings": "Instellingen"
     },
     "messageInput": {
@@ -385,7 +385,7 @@
       "title": "Verzendmodi",
       "single": "Bestanden naar één ontvanger verzenden. De selectie wordt na de bestandsoverdracht gewist.",
       "multiple": "Bestanden naar meerdere ontvangers verzenden. De selectie blijft na de bestandsoverdracht behouden.",
-      "link": "Ontvangers die LocalSend niet hebben geïnstalleerd kunnen de bestanden downloaden door de link in hun browser te openen."
+      "link": "Ontvangers die YiDrop niet hebben geïnstalleerd kunnen de bestanden downloaden door de link in hun browser te openen."
     },
     "zoom": {
       "title": "URL"
@@ -398,7 +398,7 @@
   "tray": {
     "@info": "Apple Guidelines are very strict about the \"close\" wording.",
     "open": "@:general.open",
-    "close": "LocalSend afsluiten",
+    "close": "YiDrop afsluiten",
     "closeWindows": "Sluiten"
   },
   "web": {

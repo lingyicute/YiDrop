@@ -12,28 +12,28 @@ echo
 echo "Signing the app..."
 echo
 SIGN_ID="Developer ID Application: Tien Do Nam (3W7H4PYMCV)"
-codesign --deep --force --verbose --options runtime --entitlements macos/Runner/Release.entitlements --sign "$SIGN_ID" build/macos/Build/Products/Release/LocalSend.app
+codesign --deep --force --verbose --options runtime --entitlements macos/Runner/Release.entitlements --sign "$SIGN_ID" build/macos/Build/Products/Release/YiDrop.app
 
 # create dmg
 # brew install create-dmg
 echo
 echo "Creating dmg..."
 echo
-rm -f LocalSend.dmg
+rm -f YiDrop.dmg
 create-dmg \
-  --volname "LocalSend" \
+  --volname "YiDrop" \
   --window-size 500 300 \
   --background "../scripts/dmg/background.png" \
-  --icon LocalSend.app 130 110 \
+  --icon YiDrop.app 130 110 \
   --app-drop-link 360 110 \
-  LocalSend.dmg \
-  build/macos/Build/Products/Release/LocalSend.app
+  YiDrop.dmg \
+  build/macos/Build/Products/Release/YiDrop.app
 
 # sign the dmg
 echo
 echo "Signing the dmg..."
 echo
-codesign --force --verbose --sign "$SIGN_ID" LocalSend.dmg
+codesign --force --verbose --sign "$SIGN_ID" YiDrop.dmg
 
 # send to apple for notarization
 DEV_EMAIL=example@example.com
@@ -43,11 +43,11 @@ TEAM_ID=3W7H4PYMCV
 echo
 echo "Sending to apple for notarization..."
 echo
-xcrun notarytool submit LocalSend.dmg --wait --apple-id $DEV_EMAIL --password "$APP_PASSWORD" --team-id "$TEAM_ID"
+xcrun notarytool submit YiDrop.dmg --wait --apple-id $DEV_EMAIL --password "$APP_PASSWORD" --team-id "$TEAM_ID"
 
 # download notarization result and apply to the dmg
 echo
 echo "Run stapler..."
 echo
-xcrun stapler staple LocalSend.dmg
+xcrun stapler staple YiDrop.dmg
 cd ..

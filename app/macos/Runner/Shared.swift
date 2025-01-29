@@ -2,7 +2,7 @@ import Foundation
 import Defaults
 
 let teamIdentifierPrefix = Bundle.main.infoDictionary!["AppIdentifierPrefix"] as! String
-let sharedDefaults = UserDefaults(suiteName: "\(teamIdentifierPrefix)localsend.shared_group")!
+let sharedDefaults = UserDefaults(suiteName: "\(teamIdentifierPrefix)yidrop.shared_group")!
 
 typealias FileBookmarkData = Data
 extension Defaults.Keys {

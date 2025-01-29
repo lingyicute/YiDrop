@@ -1,7 +1,7 @@
-import 'package:localsend_app/provider/logging/http_logs_provider.dart';
-import 'package:localsend_app/provider/security_provider.dart';
-import 'package:localsend_app/provider/settings_provider.dart';
-import 'package:localsend_app/util/rhttp.dart';
+import 'package:yidrop_app/provider/logging/http_logs_provider.dart';
+import 'package:yidrop_app/provider/security_provider.dart';
+import 'package:yidrop_app/provider/settings_provider.dart';
+import 'package:yidrop_app/util/rhttp.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:rhttp/rhttp.dart';
 

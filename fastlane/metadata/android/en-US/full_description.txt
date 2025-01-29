@@ -1,4 +1,4 @@
-LocalSend is an open source app to share files and messages between nearby devices using the local wifi network.
+YiDrop is an open source app to share files and messages between nearby devices using the local wifi network.
 The communication between devices is entirely end-to-end encrypted via HTTPS.
 No Internet required. No tracking*. No ads.
 

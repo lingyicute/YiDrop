@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:localsend_app/gen/assets.gen.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/provider/animation_provider.dart';
-import 'package:localsend_app/util/native/platform_check.dart';
+import 'package:yidrop_app/gen/assets.gen.dart';
+import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/provider/animation_provider.dart';
+import 'package:yidrop_app/util/native/platform_check.dart';
 import 'package:logging/logging.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:tray_manager/tray_manager.dart' as tm;
@@ -31,7 +31,7 @@ Future<void> initTray() async {
       String icon;
       if (await File('/.flatpak-info').exists()) {
         // Icon for Flatpak, which must exist in /app/share/icons/hicolor/*x*/apps.
-        icon = 'org.localsend.localsend_app-tray';
+        icon = 'org.yidrop.yidrop_app-tray';
       } else {
         icon = Assets.img.logo32White.path;
       }
@@ -66,7 +66,7 @@ Future<void> hideToTray() async {
   await windowManager.hide();
   if (checkPlatform([TargetPlatform.macOS])) {
     // This will crash on Windows
-    // https://github.com/localsend/localsend/issues/32
+    // https://github.com/lingyicute/yidrop/issues/32
     await windowManager.setSkipTaskbar(true);
   }
 
@@ -79,7 +79,7 @@ Future<void> showFromTray() async {
   await windowManager.focus();
   if (checkPlatform([TargetPlatform.macOS])) {
     // This will crash on Windows
-    // https://github.com/localsend/localsend/issues/32
+    // https://github.com/lingyicute/yidrop/issues/32
     await windowManager.setSkipTaskbar(false);
   }
 

@@ -30,7 +30,7 @@ Future<void> main(List<String> arguments) async {
 }
 
 void _printUsage(ArgParser parser) {
-  print('The LocalSend CLI to send and receive files locally.');
+  print('The YiDrop CLI to send and receive files locally.');
   print('');
   print('Usage: ${path.basename(Platform.executable)} [options]');
   print('');

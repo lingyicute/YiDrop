@@ -2,16 +2,16 @@ import 'dart:io';
 
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:flutter/material.dart';
-import 'package:localsend_app/config/init.dart';
-import 'package:localsend_app/config/theme.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/pages/home_page_controller.dart';
-import 'package:localsend_app/pages/tabs/receive_tab.dart';
-import 'package:localsend_app/pages/tabs/send_tab.dart';
-import 'package:localsend_app/pages/tabs/settings_tab.dart';
-import 'package:localsend_app/provider/selection/selected_sending_files_provider.dart';
-import 'package:localsend_app/util/native/cross_file_converters.dart';
-import 'package:localsend_app/widget/responsive_builder.dart';
+import 'package:yidrop_app/config/init.dart';
+import 'package:yidrop_app/config/theme.dart';
+import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/pages/home_page_controller.dart';
+import 'package:yidrop_app/pages/tabs/receive_tab.dart';
+import 'package:yidrop_app/pages/tabs/send_tab.dart';
+import 'package:yidrop_app/pages/tabs/settings_tab.dart';
+import 'package:yidrop_app/provider/selection/selected_sending_files_provider.dart';
+import 'package:yidrop_app/util/native/cross_file_converters.dart';
+import 'package:yidrop_app/widget/responsive_builder.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 
 enum HomeTab {
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> with Refena {
                             children: [
                               SizedBox(height: 20),
                               Text(
-                                'LocalSend',
+                                'YiDrop',
                                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),

@@ -1,6 +1,6 @@
 {
-  "name": "localsend_app",
-  "short_name": "localsend_app",
+  "name": "yidrop_app",
+  "short_name": "yidrop_app",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",

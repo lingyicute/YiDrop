@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:localsend_app/gen/assets.gen.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/util/ui/nav_bar_padding.dart';
+import 'package:yidrop_app/gen/assets.gen.dart';
+import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/util/ui/nav_bar_padding.dart';
 
 class ChangelogPage extends StatelessWidget {
   const ChangelogPage();

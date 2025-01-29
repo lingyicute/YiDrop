@@ -33,7 +33,7 @@ class TranslationsZhTw extends Translations {
   @override
   String get locale => '繁體中文 – 台灣';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'YiDrop';
   @override
   late final _TranslationsGeneralZhTw general = _TranslationsGeneralZhTw._(_root);
   @override
@@ -361,7 +361,7 @@ class _TranslationsReceiveOptionsPageZhTw extends TranslationsReceiveOptionsPage
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSend 資料夾)';
+  String get appDirectory => '(YiDrop 資料夾)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageZhTw extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'PIN 碼是「${pin}」';
   @override
-  String get encryptionHint => 'LocalSend 使用自簽名憑證。您需要在瀏覽器中接受它。';
+  String get encryptionHint => 'YiDrop 使用自簽名憑證。您需要在瀏覽器中接受它。';
   @override
   String pendingRequests({required Object n}) => '待處理的要求：${n}';
 }
@@ -457,10 +457,10 @@ class _TranslationsAboutPageZhTw extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => '關於 LocalSend';
+  String get title => '關於 YiDrop';
   @override
   List<String> get description => [
-        'LocalSend 是一款免費的開源應用程式，可讓您透過區域網路與鄰近的裝置安全的分享檔案和訊息，無需網際網路連線。',
+        'YiDrop 是一款免費的開源應用程式，可讓您透過區域網路與鄰近的裝置安全的分享檔案和訊息，無需網際網路連線。',
         '此應用程式可在 Android、iOS、macOS、Windows 和 Linux 上使用。 您可以在官網首頁上找到所有下載選項。',
       ];
   @override
@@ -485,7 +485,7 @@ class _TranslationsDonationPageZhTw extends TranslationsDonationPageEn {
   @override
   String get title => '贊助';
   @override
-  String get info => 'LocalSend 是免費、開源且沒有任何廣告的。如果您喜歡此應用程式，您可以透過捐贈來支持開發。';
+  String get info => 'YiDrop 是免費、開源且沒有任何廣告的。如果您喜歡此應用程式，您可以透過捐贈來支持開發。';
   @override
   String donate({required Object amount}) => '贊助 ${amount}';
   @override
@@ -607,7 +607,7 @@ class _TranslationsTrayZhTw extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => '退出 LocalSend';
+  String get close => '退出 YiDrop';
   @override
   String get closeWindows => '離開';
 }
@@ -831,7 +831,7 @@ class _TranslationsSettingsTabGeneralZhTw extends TranslationsSettingsTabGeneral
   @override
   String get launchMinimized => '自動啟動至系統匣';
   @override
-  String get showInContextMenu => '在檔案功能表「傳送到」項目中顯示 LocalSend';
+  String get showInContextMenu => '在檔案功能表「傳送到」項目中顯示 YiDrop';
   @override
   String get animations => '動畫效果';
 }
@@ -931,7 +931,7 @@ class _TranslationsSettingsTabOtherZhTw extends TranslationsSettingsTabOtherEn {
   @override
   String get title => '其它';
   @override
-  String get support => '支持LocalSend';
+  String get support => '支持YiDrop';
   @override
   String get donate => '贊助';
   @override
@@ -1252,7 +1252,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedZhTw extends TranslationsDialo
   @override
   String get title => _root.dialogs.noPermission.title;
   @override
-  String get description => '在未取得掃描區域網路權限的狀況下 LocalSend 無法找到其他裝置，請在設定中授予此權限。';
+  String get description => '在未取得掃描區域網路權限的狀況下 YiDrop 無法找到其他裝置，請在設定中授予此權限。';
   @override
   String get gotoSettings => '設定';
 }
@@ -1416,7 +1416,7 @@ class _TranslationsDialogsSendModeHelpZhTw extends TranslationsDialogsSendModeHe
   @override
   String get multiple => '傳送檔案至多重接收者，選取項目將不會被清除。';
   @override
-  String get link => '未安裝 LocalSend 的接收者可以透過在瀏覽器開啟連結以下載選取的檔案.';
+  String get link => '未安裝 YiDrop 的接收者可以透過在瀏覽器開啟連結以下載選取的檔案.';
 }
 
 // Path: dialogs.zoom

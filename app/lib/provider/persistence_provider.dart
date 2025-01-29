@@ -7,19 +7,19 @@ import 'package:common/model/device.dart';
 import 'package:common/model/stored_security_context.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/model/persistence/color_mode.dart';
-import 'package:localsend_app/model/persistence/favorite_device.dart';
-import 'package:localsend_app/model/persistence/receive_history_entry.dart';
-import 'package:localsend_app/model/send_mode.dart';
-import 'package:localsend_app/provider/window_dimensions_provider.dart';
-import 'package:localsend_app/util/alias_generator.dart';
-import 'package:localsend_app/util/native/autostart_helper.dart';
-import 'package:localsend_app/util/native/context_menu_helper.dart';
-import 'package:localsend_app/util/native/platform_check.dart';
-import 'package:localsend_app/util/security_helper.dart';
-import 'package:localsend_app/util/shared_preferences/shared_preferences_file.dart';
-import 'package:localsend_app/util/shared_preferences/shared_preferences_portable.dart';
+import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/model/persistence/color_mode.dart';
+import 'package:yidrop_app/model/persistence/favorite_device.dart';
+import 'package:yidrop_app/model/persistence/receive_history_entry.dart';
+import 'package:yidrop_app/model/send_mode.dart';
+import 'package:yidrop_app/provider/window_dimensions_provider.dart';
+import 'package:yidrop_app/util/alias_generator.dart';
+import 'package:yidrop_app/util/native/autostart_helper.dart';
+import 'package:yidrop_app/util/native/context_menu_helper.dart';
+import 'package:yidrop_app/util/native/platform_check.dart';
+import 'package:yidrop_app/util/security_helper.dart';
+import 'package:yidrop_app/util/shared_preferences/shared_preferences_file.dart';
+import 'package:yidrop_app/util/shared_preferences/shared_preferences_portable.dart';
 import 'package:logging/logging.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -32,12 +32,12 @@ final _logger = Logger('PersistenceService');
 
 String get _windowsFile {
   final appData = Platform.environment['APPDATA'];
-  return '$appData\\LocalSend\\settings.json';
+  return '$appData\\YiDrop\\settings.json';
 }
 
 String get _windowsLegacyFile {
   final appData = Platform.environment['APPDATA'];
-  return '$appData\\org.localsend\\localsend_app\\shared_preferences.json';
+  return '$appData\\org.yidrop\\yidrop_app\\shared_preferences.json';
 }
 
 // Version of the storage
@@ -191,7 +191,7 @@ class PersistenceService {
   static Future<void> _initColorSetting(SharedPreferences prefs, bool supportsDynamicColors) async {
     await prefs.setString(
       _colorKey,
-      ColorMode.localsend.name,
+      ColorMode.yidrop.name,
     );
   }
 

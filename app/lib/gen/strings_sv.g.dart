@@ -33,7 +33,7 @@ class TranslationsSv extends Translations {
   @override
   String get locale => 'Svenska';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'YiDrop';
   @override
   late final _TranslationsGeneralSv general = _TranslationsGeneralSv._(_root);
   @override
@@ -361,7 +361,7 @@ class _TranslationsReceiveOptionsPageSv extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSend-mappen)';
+  String get appDirectory => '(YiDrop-mappen)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageSv extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'PIN-koden är "${pin}"';
   @override
-  String get encryptionHint => 'LocalSend använder ett självsignerat certifikat. Du behöver acceptera det i webbläsaren.';
+  String get encryptionHint => 'YiDrop använder ett självsignerat certifikat. Du behöver acceptera det i webbläsaren.';
   @override
   String pendingRequests({required Object n}) => 'Väntande förfrågningar: ${n}';
 }
@@ -457,10 +457,10 @@ class _TranslationsAboutPageSv extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'Om LocalSend';
+  String get title => 'Om YiDrop';
   @override
   List<String> get description => [
-        'LocalSend är fri programvara med öppen källkod som låter dig säkert dela filer och meddelanden med enheter i närheten över ditt lokala nätverk utan att behöva en internetanslutning.',
+        'YiDrop är fri programvara med öppen källkod som låter dig säkert dela filer och meddelanden med enheter i närheten över ditt lokala nätverk utan att behöva en internetanslutning.',
         'Denna app är tillgänglig på Android, iOS, macOS, Windows och Linux. Du kan hitta alla nedladdningsalternativ på den officiella hemsidan.',
       ];
   @override
@@ -486,7 +486,7 @@ class _TranslationsDonationPageSv extends TranslationsDonationPageEn {
   String get title => 'Donera';
   @override
   String get info =>
-      'LocalSend är fri programvara med öppen källkod och utan några annonser. Om du gillar appen kan du stödja utvecklingen med en donation.';
+      'YiDrop är fri programvara med öppen källkod och utan några annonser. Om du gillar appen kan du stödja utvecklingen med en donation.';
   @override
   String donate({required Object amount}) => 'Donera ${amount}';
   @override
@@ -682,7 +682,7 @@ class _TranslationsTraySv extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'Avsluta LocalSend';
+  String get close => 'Avsluta YiDrop';
   @override
   String get closeWindows => 'Avsluta';
 }
@@ -907,7 +907,7 @@ class _TranslationsSettingsTabGeneralSv extends TranslationsSettingsTabGeneralEn
   @override
   String get launchMinimized => 'Starta automatiskt: starta gömd';
   @override
-  String get showInContextMenu => 'Visa LocalSend i snabbmenyn';
+  String get showInContextMenu => 'Visa YiDrop i snabbmenyn';
   @override
   String get animations => 'Animationer';
 }
@@ -1009,7 +1009,7 @@ class _TranslationsSettingsTabOtherSv extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'Annat';
   @override
-  String get support => 'Stöd LocalSend';
+  String get support => 'Stöd YiDrop';
   @override
   String get donate => 'Donera';
   @override
@@ -1334,7 +1334,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedSv extends TranslationsDialogs
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'LocalSend kan inte hitta andra enheter utan att ha behörighet att skanna det lokala nätverket. Bevilja denna behörighet i inställningarna.';
+      'YiDrop kan inte hitta andra enheter utan att ha behörighet att skanna det lokala nätverket. Bevilja denna behörighet i inställningarna.';
   @override
   String get gotoSettings => 'Inställningar';
 }
@@ -1498,7 +1498,7 @@ class _TranslationsDialogsSendModeHelpSv extends TranslationsDialogsSendModeHelp
   @override
   String get multiple => 'Skickar filer till flera mottagare. Valet rensas inte.';
   @override
-  String get link => 'Mottagare som inte har LocalSend installerat kan ladda ner de valda filerna genom att öppna länken i deras webbläsare.';
+  String get link => 'Mottagare som inte har YiDrop installerat kan ladda ner de valda filerna genom att öppna länken i deras webbläsare.';
 }
 
 // Path: dialogs.zoom

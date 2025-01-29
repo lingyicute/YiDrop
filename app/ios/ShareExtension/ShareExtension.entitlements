@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.org.localsend.localsendApp</string>
+		<string>group.org.yidrop.yidropApp</string>
 	</array>
 </dict>
 </plist>

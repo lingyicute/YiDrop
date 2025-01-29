@@ -1,10 +1,10 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/pages/debug/debug_page.dart';
-import 'package:localsend_app/widget/local_send_logo.dart';
-import 'package:localsend_app/widget/responsive_list_view.dart';
+import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/pages/debug/debug_page.dart';
+import 'package:yidrop_app/widget/local_send_logo.dart';
+import 'package:yidrop_app/widget/responsive_list_view.dart';
 import 'package:routerino/routerino.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -30,7 +30,7 @@ class AboutPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         children: [
           const SizedBox(height: 20),
-          const LocalSendLogo(withText: true),
+          const YiDropLogo(withText: true),
           Text(
             'Copyright ${DateTime.now().year} lingyicute',
             textAlign: TextAlign.center,
@@ -39,9 +39,9 @@ class AboutPage extends StatelessWidget {
           Center(
             child: TextButton(
               onPressed: () async {
-                await launchUrl(Uri.parse('https://localsend.org'));
+                await launchUrl(Uri.parse('https://yidrop.org'));
               },
-              child: const Text('localsend.org'),
+              child: const Text('yidrop.org'),
             ),
           ),
           const SizedBox(height: 10),
@@ -132,19 +132,19 @@ class AboutPage extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () async {
-                  await launchUrl(Uri.parse('https://localsend.org'));
+                  await launchUrl(Uri.parse('https://yidrop.org'));
                 },
                 child: const Text('Homepage'),
               ),
               TextButton(
                 onPressed: () async {
-                  await launchUrl(Uri.parse('https://github.com/localsend/localsend'), mode: LaunchMode.externalApplication);
+                  await launchUrl(Uri.parse('https://github.com/lingyicute/yidrop'), mode: LaunchMode.externalApplication);
                 },
                 child: const Text('Source Code (Github)'),
               ),
               TextButton(
                 onPressed: () async {
-                  await launchUrl(Uri.parse('https://codeberg.org/localsend/localsend'), mode: LaunchMode.externalApplication);
+                  await launchUrl(Uri.parse('https://codeberg.org/lingyicute/yidrop'), mode: LaunchMode.externalApplication);
                 },
                 child: const Text('Source Code (Codeberg)'),
               ),

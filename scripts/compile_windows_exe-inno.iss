@@ -3,11 +3,11 @@
 ; Copy the contents of the zip to D:\inno, then run this Inno script
 ; Copy app/assets/packaging/logo-256.ico to D:\inno\logo-256.ico
 
-#define MyAppName "LocalSend"
+#define MyAppName "YiDrop"
 #define MyAppVersion "1.16.2"
 #define MyAppPublisher "Tien Do Nam"
-#define MyAppURL "https://localsend.org"
-#define MyAppExeName "localsend_app.exe"
+#define MyAppURL "https://yidrop.org"
+#define MyAppExeName "yidrop_app.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -26,7 +26,7 @@ DisableProgramGroupPage=yes
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=D:\inno-result
-OutputBaseFilename=localsend
+OutputBaseFilename=yidrop
 SetupIconFile=D:\inno\logo.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 Compression=lzma

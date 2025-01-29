@@ -1,7 +1,7 @@
 import 'package:common/isolate.dart';
 import 'package:common/model/stored_security_context.dart';
-import 'package:localsend_app/provider/persistence_provider.dart';
-import 'package:localsend_app/util/security_helper.dart';
+import 'package:yidrop_app/provider/persistence_provider.dart';
+import 'package:yidrop_app/util/security_helper.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 
 /// This provider manages the [StoredSecurityContext].

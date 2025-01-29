@@ -1,6 +1,6 @@
 {
   "locale": "Česky",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Přijmout",
     "accepted": "Přijato",
@@ -108,7 +108,7 @@
       "minimizeToTray": "Při ukončení minimalizovat do lišty",
       "launchAtStartup": "Automatické spuštění po přihlášení",
       "launchMinimized": "Automatické spuštění: skrytý start",
-      "showInContextMenu": "Zobrazit LocalSend v kontextové nabídce",
+      "showInContextMenu": "Zobrazit YiDrop v kontextové nabídce",
       "animations": "Animace"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "Ostatní",
-      "support": "Podpora LocalSend",
+      "support": "Podpora YiDrop",
       "donate": "Darovat",
       "privacyPolicy": "Zásady ochrany osobních údajů",
       "termsOfUse": "Podmínky použití"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "Možnosti",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend folder)",
+    "appDirectory": "(YiDrop folder)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Automaticky vypnuto, protože existují adresáře."
   },
@@ -244,13 +244,13 @@
     "autoAccept": "Automaticky přijímat žádosti",
     "requirePin": "Vyžadovat PIN",
     "pinHint": "PIN je \"{pin}\"",
-    "encryptionHint": "LocalSend používá self-signed certifikát. Musíte ho přijmout ve vašem prohlížeči.",
+    "encryptionHint": "YiDrop používá self-signed certifikát. Musíte ho přijmout ve vašem prohlížeči.",
     "pendingRequests": "Čekající žádosti: {n}"
   },
   "aboutPage": {
-    "title": "O aplikaci LocalSend",
+    "title": "O aplikaci YiDrop",
     "description": [
-      "LocalSend je bezplatná aplikace s otevřeným zdrojovým kódem, která vám umožňuje bezpečně sdílet soubory a zprávy s okolními zařízeními přes vaši místní síť, aniž byste potřebovali připojení k internetu.",
+      "YiDrop je bezplatná aplikace s otevřeným zdrojovým kódem, která vám umožňuje bezpečně sdílet soubory a zprávy s okolními zařízeními přes vaši místní síť, aniž byste potřebovali připojení k internetu.",
       "Tato aplikace je dostupná pro Android, iOS, macOS, Windows a Linux. Všechny možnosti stahování najdete na oficiální domovské stránce."
     ],
     "author": "Autor",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "Darovat",
-    "info": "LocalSend je zdarma, open source a bez reklam. Pokud se vám aplikace líbí, můžete její vývoj podpořit darem.",
+    "info": "YiDrop je zdarma, open source a bez reklam. Pokud se vám aplikace líbí, můžete její vývoj podpořit darem.",
     "donate": "Darovat {amount}",
     "thanks": "Děkuji mnohokrát!",
     "restore": "Obnovit"
@@ -336,7 +336,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend nemůže najít jiná zařízení, aniž by měl oprávnění skenovat místní síť. Udělte prosím toto oprávnění v nastavení.",
+      "description": "YiDrop nemůže najít jiná zařízení, aniž by měl oprávnění skenovat místní síť. Udělte prosím toto oprávnění v nastavení.",
       "gotoSettings": "Nastavení"
     },
     "messageInput": {
@@ -385,7 +385,7 @@
       "title": "Režimy odesílání",
       "single": "Odešle soubory jednomu příjemci. Po dokončení přenosu souboru bude výběr vymazán.",
       "multiple": "Odešle soubory více příjemcům. Výběr nebude vymazán.",
-      "link": "Příjemci, kteří nemají nainstalovaný LocalSend, si mohou vybrané soubory stáhnout otevřením odkazu ve svém prohlížeči."
+      "link": "Příjemci, kteří nemají nainstalovaný YiDrop, si mohou vybrané soubory stáhnout otevřením odkazu ve svém prohlížeči."
     },
     "zoom": {
       "title": "URL"
@@ -398,7 +398,7 @@
   "tray": {
     "@info": "Apple Guidelines are very strict about the 'close' wording.",
     "open": "@:general.open",
-    "close": "Ukončit LocalSend",
+    "close": "Ukončit YiDrop",
     "closeWindows": "Konec"
   },
   "web": {

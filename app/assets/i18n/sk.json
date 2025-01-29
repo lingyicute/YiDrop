@@ -1,6 +1,6 @@
 {
   "locale": "Slovenčina",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Prijať",
     "accepted": "Prijaté",
@@ -108,7 +108,7 @@
       "minimizeToTray": "Minimalizovať na systémový panel/panel ponuky pri zatvorení",
       "launchAtStartup": "Autoštart po prihlásení",
       "launchMinimized": "Autoštart: Spustiť skryté",
-      "showInContextMenu": "Zobraziť LocalSend v kontextovej ponuke",
+      "showInContextMenu": "Zobraziť YiDrop v kontextovej ponuke",
       "animations": "Animácie"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "Iné",
-      "support": "Podporte LocalSend",
+      "support": "Podporte YiDrop",
       "donate": "Darovať",
       "privacyPolicy": "Zásady ochrany osobných údajov",
       "termsOfUse": "Podmienky používania"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "Možnosti",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(Priečinok LocalSend)",
+    "appDirectory": "(Priečinok YiDrop)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Automaticky vypnuté, pretože existujú priečinky."
   },
@@ -244,13 +244,13 @@
     "autoAccept": "Automaticky prijímať žiadosti",
     "requirePin": "Vyžadovať PIN",
     "pinHint": "PIN je \"{pin}\"",
-    "encryptionHint": "LocalSend používa certifikát s vlastným podpisom. Musíte ho prijať vo svojom prehliadači.",
+    "encryptionHint": "YiDrop používa certifikát s vlastným podpisom. Musíte ho prijať vo svojom prehliadači.",
     "pendingRequests": "Nespracované žiadosti: {n}"
   },
   "aboutPage": {
-    "title": "O aplikácii LocalSend",
+    "title": "O aplikácii YiDrop",
     "description": [
-      "LocalSend je bezplatná aplikácia s otvoreným zdrojovým kódom, ktorá vám umožňuje bezpečne zdieľať súbory a správy so zariadeniami v okolí cez vašu lokálnu sieť bez potreby pripojenia k internetu.",
+      "YiDrop je bezplatná aplikácia s otvoreným zdrojovým kódom, ktorá vám umožňuje bezpečne zdieľať súbory a správy so zariadeniami v okolí cez vašu lokálnu sieť bez potreby pripojenia k internetu.",
       "Táto aplikácia je dostupná pre Android, iOS, macOS, Windows a Linux. Všetky možnosti stiahnutia nájdete na oficiálnej domovskej stránke."
     ],
     "author": "Autor",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "Darovať",
-    "info": "LocalSend je bezplatný, s otvoreným kódom a bez reklám. Ak sa vám aplikácia páči, môžete jej vývoj podporiť darom.",
+    "info": "YiDrop je bezplatný, s otvoreným kódom a bez reklám. Ak sa vám aplikácia páči, môžete jej vývoj podporiť darom.",
     "donate": "Darovať {amount}",
     "thanks": "Ďakujeme veľmi pekne!",
     "restore": "Obnoviť nákup"
@@ -406,7 +406,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend nemôže nájsť iné zariadenia bez povolenia na prehľadanie lokálnej siete. Povoľte prosím toto povolenie v nastaveniach.",
+      "description": "YiDrop nemôže nájsť iné zariadenia bez povolenia na prehľadanie lokálnej siete. Povoľte prosím toto povolenie v nastaveniach.",
       "gotoSettings": "Nastavenia"
     },
     "messageInput": {
@@ -455,7 +455,7 @@
       "title": "Režimy odosielania",
       "single": "Odošle súbory jednému príjemcovi. Výber sa vymaže po dokončení prenosu súborov.",
       "multiple": "Posiela súbory viacerým príjemcom. Výber sa vymaže po dokončení prenosu súborov.",
-      "link": "Príjemcovia, ktorí nemajú nainštalovaný LocalSend, si môžu stiahnuť vybrané súbory otvorením odkazu vo svojom prehliadači."
+      "link": "Príjemcovia, ktorí nemajú nainštalovaný YiDrop, si môžu stiahnuť vybrané súbory otvorením odkazu vo svojom prehliadači."
     },
     "zoom": {
       "title": "URL"
@@ -468,7 +468,7 @@
   "tray": {
     "@info": "Pokyny spoločnosti Apple sú veľmi prísne, pokiaľ ide o výraz \"blízke\".",
     "open": "@:general.open",
-    "close": "Ukončiť LocalSend",
+    "close": "Ukončiť YiDrop",
     "closeWindows": "Ukončiť"
   },
   "web": {

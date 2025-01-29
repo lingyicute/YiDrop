@@ -19,7 +19,7 @@
   "settingsTab": {
     "general": {
       "saveWindowPlacementWindows": "Save window position after exit",
-      "showInContextMenu": "Show LocalSend in context menu"
+      "showInContextMenu": "Show YiDrop in context menu"
     },
     "receive": {
       "quickSaveFromFavorites": "@:general.quickSaveFromFavorites",

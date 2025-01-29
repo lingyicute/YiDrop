@@ -1,8 +1,8 @@
-import 'package:localsend_app/model/state/purchase_state.dart';
+import 'package:yidrop_app/model/state/purchase_state.dart';
 // [FOSS_REMOVE_START]
-import 'package:localsend_app/provider/purchase_provider.dart';
+import 'package:yidrop_app/provider/purchase_provider.dart';
 // [FOSS_REMOVE_END]
-import 'package:localsend_app/util/native/platform_check.dart';
+import 'package:yidrop_app/util/native/platform_check.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 
 class DonationPageVm {
