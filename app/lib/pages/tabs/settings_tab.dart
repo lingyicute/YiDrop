@@ -8,7 +8,6 @@ import 'package:yidrop_app/gen/strings.g.dart';
 import 'package:yidrop_app/model/persistence/color_mode.dart';
 import 'package:yidrop_app/pages/about/about_page.dart';
 import 'package:yidrop_app/pages/changelog_page.dart';
-import 'package:yidrop_app/pages/donation/donation_page.dart';
 import 'package:yidrop_app/pages/language_page.dart';
 import 'package:yidrop_app/pages/settings/network_interfaces_page.dart';
 import 'package:yidrop_app/pages/tabs/settings_tab_controller.dart';
@@ -487,13 +486,6 @@ class SettingsTab extends StatelessWidget {
                   buttonLabel: t.general.open,
                   onTap: () async {
                     await context.push(() => const AboutPage());
-                  },
-                ),
-                _ButtonEntry(
-                  label: t.settingsTab.other.support,
-                  buttonLabel: t.settingsTab.other.donate,
-                  onTap: () async {
-                    await context.push(() => const DonationPage());
                   },
                 ),
                 _ButtonEntry(
