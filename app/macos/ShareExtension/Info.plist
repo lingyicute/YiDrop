@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>icon</string>
 	<key>CFBundleDisplayName</key>
-	<string>LocalSend</string>
+	<string>YiDrop</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>

@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/services.dart';
-import 'package:localsend_app/util/user_agent_analyzer.dart';
+import 'package:yidrop_app/util/user_agent_analyzer.dart';
 
 /// A very light layer on top of the HttpServer class.
 class SimpleServer {

@@ -33,7 +33,7 @@ class TranslationsHu extends Translations {
   @override
   String get locale => 'Magyar';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'YiDrop';
   @override
   late final _TranslationsGeneralHu general = _TranslationsGeneralHu._(_root);
   @override
@@ -361,7 +361,7 @@ class _TranslationsReceiveOptionsPageHu extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSend mappa)';
+  String get appDirectory => '(YiDrop mappa)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageHu extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'A PIN kód "${pin}"';
   @override
-  String get encryptionHint => 'A LocalSend a saját aláírt tanúsítványt használja. A böngészőben kell elfogadnod.';
+  String get encryptionHint => 'A YiDrop a saját aláírt tanúsítványt használja. A böngészőben kell elfogadnod.';
   @override
   String pendingRequests({required Object n}) => 'Függőben lévő kérések: ${n}';
 }
@@ -457,10 +457,10 @@ class _TranslationsAboutPageHu extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'A LocalSend';
+  String get title => 'A YiDrop';
   @override
   List<String> get description => [
-        'A LocalSend egy ingyenes, nyílt forráskódú alkalmazás, amely lehetővé teszi a fájlok és üzenetek biztonságos megosztását a közeli eszközökkel a helyi hálózaton keresztül, internet kapcsolat nélkül.',
+        'A YiDrop egy ingyenes, nyílt forráskódú alkalmazás, amely lehetővé teszi a fájlok és üzenetek biztonságos megosztását a közeli eszközökkel a helyi hálózaton keresztül, internet kapcsolat nélkül.',
         'Ez az alkalmazás Android, iOS, macOS, Windows és Linux rendszereken érhető el. Az összes letöltési lehetőséget megtalálja a hivatalos honlapon.',
       ];
   @override
@@ -486,7 +486,7 @@ class _TranslationsDonationPageHu extends TranslationsDonationPageEn {
   String get title => 'Adomány';
   @override
   String get info =>
-      'A LocalSend ingyenes, nyílt forráskódú és hirdetések nélküli. Ha megtetszett az alkalmazás, adományával támogathatja a fejlesztést.';
+      'A YiDrop ingyenes, nyílt forráskódú és hirdetések nélküli. Ha megtetszett az alkalmazás, adományával támogathatja a fejlesztést.';
   @override
   String donate({required Object amount}) => 'Adomány ${amount}';
   @override
@@ -833,7 +833,7 @@ class _TranslationsSettingsTabGeneralHu extends TranslationsSettingsTabGeneralEn
   @override
   String get launchMinimized => 'Auto. indítás: Kis méretben';
   @override
-  String get showInContextMenu => 'A LocalSend megjelenítése a helyi menüben';
+  String get showInContextMenu => 'A YiDrop megjelenítése a helyi menüben';
   @override
   String get animations => 'Animációk';
 }
@@ -935,7 +935,7 @@ class _TranslationsSettingsTabOtherHu extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'Egyéb';
   @override
-  String get support => 'LocalSend támogatás';
+  String get support => 'YiDrop támogatás';
   @override
   String get donate => 'Adomány';
   @override
@@ -1261,7 +1261,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedHu extends TranslationsDialogs
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'A LocalSend nem találhat más eszközöket a helyi hálózat vizsgálatára vonatkozó engedély nélkül. Adja meg ezt az engedélyt a beállításokban.';
+      'A YiDrop nem találhat más eszközöket a helyi hálózat vizsgálatára vonatkozó engedély nélkül. Adja meg ezt az engedélyt a beállításokban.';
   @override
   String get gotoSettings => 'Beállítások';
 }
@@ -1426,7 +1426,7 @@ class _TranslationsDialogsSendModeHelpHu extends TranslationsDialogsSendModeHelp
   String get multiple => 'Fájlokat küld több címzettnek. A kijelölés nem törlődik.';
   @override
   String get link =>
-      'Azok a címzettek, akiknél nincs telepítve a LocalSend, letölthetik a kiválasztott fájlokat a hivatkozás megnyitásával a böngészőjükben.';
+      'Azok a címzettek, akiknél nincs telepítve a YiDrop, letölthetik a kiválasztott fájlokat a hivatkozás megnyitásával a böngészőjükben.';
 }
 
 // Path: dialogs.zoom

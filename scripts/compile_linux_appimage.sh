@@ -12,7 +12,7 @@
 
 cd ..
 rm -rf /tmp/build
-cp localsend /tmp/build -r
+cp yidrop /tmp/build -r
 pushd /tmp/build
 
 git submodule update --init
@@ -29,11 +29,11 @@ rm -rf appimage-build
 mkdir AppDir
 cp -r build/linux/x64/release/bundle/* AppDir
 appimage-builder
-sudo chmod +x LocalSend-latest-x86_64.AppImage
+sudo chmod +x YiDrop-latest-x86_64.AppImage
 
 rm -rf AppDir
 rm -rf appimage-build
 
 popd
-cd localsend
-cp /tmp/build/LocalSend-latest-x86_64.AppImage .
+cd yidrop
+cp /tmp/build/YiDrop-latest-x86_64.AppImage .

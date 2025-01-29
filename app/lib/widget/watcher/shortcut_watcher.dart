@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:localsend_app/pages/home_page.dart';
-import 'package:localsend_app/pages/home_page_controller.dart';
-import 'package:localsend_app/util/native/file_picker.dart';
-import 'package:localsend_app/util/native/platform_check.dart';
-import 'package:localsend_app/widget/watcher/window_watcher.dart';
+import 'package:yidrop_app/pages/home_page.dart';
+import 'package:yidrop_app/pages/home_page_controller.dart';
+import 'package:yidrop_app/util/native/file_picker.dart';
+import 'package:yidrop_app/util/native/platform_check.dart';
+import 'package:yidrop_app/widget/watcher/window_watcher.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 
@@ -23,7 +23,7 @@ class ShortcutWatcher extends StatelessWidget {
         LogicalKeySet(LogicalKeyboardKey.select): const ActivateIntent(),
 
         // Add Control+Q binding for Linux
-        // https://github.com/localsend/localsend/issues/194
+        // https://github.com/lingyicute/yidrop/issues/194
         if (checkPlatform([TargetPlatform.linux])) LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyQ): _ExitAppIntent(),
         // Add Command+W to close the window for macOS
         if (checkPlatform([TargetPlatform.macOS])) LogicalKeySet(LogicalKeyboardKey.meta, LogicalKeyboardKey.keyW): _CloseWindowIntent(),
@@ -72,7 +72,7 @@ class _CloseWindowIntent extends Intent {}
 
 bool _ignoreMetaLast = false;
 bool _isFakeMetaKey() {
-  // https://github.com/localsend/localsend/issues/2037
+  // https://github.com/lingyicute/yidrop/issues/2037
   // We can detect the "fake" meta key by checking if the last key was a meta key
   // because the real meta key should be the first key pressed.
   if (_ignoreMetaLast) {

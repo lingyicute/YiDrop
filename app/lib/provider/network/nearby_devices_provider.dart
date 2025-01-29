@@ -3,14 +3,14 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 import 'package:common/isolate.dart';
 import 'package:common/model/device.dart';
-import 'package:localsend_app/model/persistence/favorite_device.dart';
-import 'package:localsend_app/model/state/nearby_devices_state.dart';
-import 'package:localsend_app/provider/favorites_provider.dart';
-import 'package:localsend_app/provider/logging/discovery_logs_provider.dart';
+import 'package:yidrop_app/model/persistence/favorite_device.dart';
+import 'package:yidrop_app/model/state/nearby_devices_state.dart';
+import 'package:yidrop_app/provider/favorites_provider.dart';
+import 'package:yidrop_app/provider/logging/discovery_logs_provider.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 
 /// This provider is responsible for:
-/// - Scanning the network for other LocalSend instances
+/// - Scanning the network for other YiDrop instances
 /// - Keeping track of all found devices (they are only stored in RAM)
 ///
 /// Use [scanProvider] to have a high-level API to perform discovery operations.
@@ -92,7 +92,7 @@ class RegisterDeviceAction extends AsyncReduxAction<NearbyDevicesService, Nearby
 }
 
 /// It does not really "scan".
-/// It just sends an announcement which will cause a response on every other LocalSend member of the network.
+/// It just sends an announcement which will cause a response on every other YiDrop member of the network.
 class StartMulticastScan extends ReduxAction<NearbyDevicesService, NearbyDevicesState> {
   @override
   NearbyDevicesState reduce() {

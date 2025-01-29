@@ -1,6 +1,6 @@
 {
   "locale": "Ελληνικά",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Αποδοχή",
     "accepted": "Αποδεκτό",
@@ -108,7 +108,7 @@
       "minimizeToTray": "Έξοδος: Ελαχιστοποίηση στη γραμμή εργασιών/μενού",
       "launchAtStartup": "Αυτόματη εκκίνηση μετά τη σύνδεση",
       "launchMinimized": "Αυτόματη εκκίνηση: Έναρξη ελαχιστοποιημένο",
-      "showInContextMenu": "Προβολή του LocalSend στο μενού του περιβάλλοντος εργασίας",
+      "showInContextMenu": "Προβολή του YiDrop στο μενού του περιβάλλοντος εργασίας",
       "animations": "Οπτικά εφέ"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "Άλλα",
-      "support": "Υποστηρίξτε το LocalSend",
+      "support": "Υποστηρίξτε το YiDrop",
       "donate": "Δωρεά",
       "privacyPolicy": "Πολιτική Απορρήτου",
       "termsOfUse": "Όροι Χρήσης"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "Επιλογές",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(Φάκελος LocalSend)",
+    "appDirectory": "(Φάκελος YiDrop)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Απενεργοποιήθηκε αυτόματα επειδή υπάρχουν κατάλογοι."
   },
@@ -244,13 +244,13 @@
     "autoAccept": "Αυτόματη αποδοχή αιτημάτων",
     "requirePin": "Απαίτηση PIN",
     "pinHint": "Το PIN είναι \"{pin}\"",
-    "encryptionHint": "Το LocalSend χρησιμοποιεί αυτο-υπογεγραμμένο πιστοποιητικό. Χρειάζεται να το αποθεχτείτε στον φυλλομετρητή.",
+    "encryptionHint": "Το YiDrop χρησιμοποιεί αυτο-υπογεγραμμένο πιστοποιητικό. Χρειάζεται να το αποθεχτείτε στον φυλλομετρητή.",
     "pendingRequests": "Αναμονή αιτημάτων: {n}"
   },
   "aboutPage": {
-    "title": "Σχετικά με το LocalSend",
+    "title": "Σχετικά με το YiDrop",
     "description": [
-      "Το LocalSend είναι μια δωρεάν εφαρμογή ανοιχτού κώδικα που σας επιτρέπει να μοιράζεστε με ασφάλεια αρχεία και μηνύματα με κοντινές συσκευές μέσω του τοπικού σας δικτύου χωρίς να χρειάζεστε σύνδεση στο διαδίκτυο.",
+      "Το YiDrop είναι μια δωρεάν εφαρμογή ανοιχτού κώδικα που σας επιτρέπει να μοιράζεστε με ασφάλεια αρχεία και μηνύματα με κοντινές συσκευές μέσω του τοπικού σας δικτύου χωρίς να χρειάζεστε σύνδεση στο διαδίκτυο.",
       "Αυτή η εφαρμογή είναι διαθέσιμη σε Android, iOS, macOS, Windows και Linux. Μπορείτε να βρείτε όλες τις επιλογές λήψης στην επίσημη αρχική σελίδα."
     ],
     "author": "Δημιουργός",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "Δωρεά",
-    "info": "Το LocalSend είναι δωρεάν, ανοιχτού κώδικα και χωρίς διαφημίσεις. Εάν σας αρέσει η εφαρμογή, μπορείτε να υποστηρίξετε την ανάπτυξή της με μια δωρεά.",
+    "info": "Το YiDrop είναι δωρεάν, ανοιχτού κώδικα και χωρίς διαφημίσεις. Εάν σας αρέσει η εφαρμογή, μπορείτε να υποστηρίξετε την ανάπτυξή της με μια δωρεά.",
     "donate": "Δωρεά {amount}",
     "thanks": "Ευχαριστούμε πολύ!",
     "restore": "Επαναφορά αγοράς"
@@ -406,7 +406,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend can't find other devices without having the permission to scan the local network. Please grant this permission in the settings.",
+      "description": "YiDrop can't find other devices without having the permission to scan the local network. Please grant this permission in the settings.",
       "gotoSettings": "Ρυθμίσεις"
     },
     "messageInput": {
@@ -455,7 +455,7 @@
       "title": "Λειτουργίες αποστολής",
       "single": "Στέλνει αρχεία σε έναν παραλήπτη. Η επιλογή θα διαγραφεί μετά την ολοκλήρωση της μεταφοράς του αρχείου.",
       "multiple": "Στέλνει αρχεία σε πολλούς παραλήπτες. Η επιλογή δεν θα διαγραφεί.",
-      "link": "Οι παραλήπτες που δεν έχουν εγκαταστήσει το LocalSend μπορούν να πραγματοποιήσουν λήψη των επιλεγμένων αρχείων ανοίγοντας τον σύνδεσμο στον φυλλομετρητή τους."
+      "link": "Οι παραλήπτες που δεν έχουν εγκαταστήσει το YiDrop μπορούν να πραγματοποιήσουν λήψη των επιλεγμένων αρχείων ανοίγοντας τον σύνδεσμο στον φυλλομετρητή τους."
     },
     "zoom": {
       "title": "URL"
@@ -468,7 +468,7 @@
   "tray": {
     "@info": "Apple Guidelines are very strict about the 'close' wording.",
     "open": "@:general.open",
-    "close": "Έξοδος από το LocalSend",
+    "close": "Έξοδος από το YiDrop",
     "closeWindows": "Έξοδος"
   },
   "web": {

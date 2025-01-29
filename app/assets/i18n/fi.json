@@ -1,6 +1,6 @@
 {
   "locale": "Finnish",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Hyväksy",
     "accepted": "Hyväksytty",
@@ -106,7 +106,7 @@
       "minimizeToTray": "Poistu: Minimoi ilmoitusalueelle",
       "launchAtStartup": "Automaattinen käynnistys",
       "launchMinimized": "Automaattinen käynnistys: Käynnistä piiilotettuna",
-      "showInContextMenu": "Näytä LocalSend kontekstivalikossa",
+      "showInContextMenu": "Näytä YiDrop kontekstivalikossa",
       "animations": "Animaatiot"
     },
     "receive": {
@@ -140,7 +140,7 @@
     },
     "other": {
       "title": "Muut",
-      "support": "Tue LocalSendia",
+      "support": "Tue YiDropia",
       "donate": "Lahjoita",
       "privacyPolicy": "Tietosuojakäytäntö",
       "termsOfUse": "Käyttöehdot"
@@ -199,7 +199,7 @@
   "receiveOptionsPage": {
     "title": "Asetukset",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend-kansio)",
+    "appDirectory": "(YiDrop-kansio)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Poistettu käytöstä automaattisesti, koska hakemistoja on olemassa."
   },
@@ -239,13 +239,13 @@
     "autoAccept": "Hyväksy pyynnöt automaattisesti",
     "requirePin": "Vaadi PIN",
     "pinHint": "PIN-koodi on \"{pin}\"",
-    "encryptionHint": "LocalSend käyttää itse allekirjoitettua sertifikaattia. Sinun on hyväksyttävä se selaimessasi.",
+    "encryptionHint": "YiDrop käyttää itse allekirjoitettua sertifikaattia. Sinun on hyväksyttävä se selaimessasi.",
     "pendingRequests": "Odottavat pyynnöt: {n}"
   },
   "aboutPage": {
-    "title": "Tietoja LocalSendista",
+    "title": "Tietoja YiDropista",
     "description": [
-      "LocalSend on ilmainen, avoimen lähdekoodin sovellus, jonka avulla voit turvallisesti jakaa tiedostoja ja viestejä läheisten laitteiden kanssa paikallisverkossasi ilman internet-yhteyttä.",
+      "YiDrop on ilmainen, avoimen lähdekoodin sovellus, jonka avulla voit turvallisesti jakaa tiedostoja ja viestejä läheisten laitteiden kanssa paikallisverkossasi ilman internet-yhteyttä.",
       "Tämä sovellus on saatavilla Androidille, iOS:lle, macOS:lle, Windowsille ja Linuxille. Kaikki latausvaihtoehdot löytyvät virallisilta kotisivuilta."
     ],
     "author": "Tekijä",
@@ -255,7 +255,7 @@
   },
   "donationPage": {
     "title": "Lahjoita",
-    "info": "LocalSend on ilmainen, avoimen lähdekoodin sovellus ilman mainoksia. Jos pidät sovelluksesta, voit tukea kehitystä lahjoituksella.",
+    "info": "YiDrop on ilmainen, avoimen lähdekoodin sovellus ilman mainoksia. Jos pidät sovelluksesta, voit tukea kehitystä lahjoituksella.",
     "donate": "Lahjoita {amount}",
     "thanks": "Suurkiitokset!",
     "restore": "Palauta ostos"
@@ -408,7 +408,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend ei löydä muita laitteita ilman lupaa skannata paikallisverkkoa. Anna tämä lupa asetuksissa.",
+      "description": "YiDrop ei löydä muita laitteita ilman lupaa skannata paikallisverkkoa. Anna tämä lupa asetuksissa.",
       "gotoSettings": "Asetukset"
     },
     "messageInput": {
@@ -456,7 +456,7 @@
       "title": "Lähetystilat",
       "single": "Lähettää tiedostoja yhdelle vastaanottajalle. Valinta tyhjennetään tiedostonsiirron päätyttyä.",
       "multiple": "Lähettää tiedostoja useille vastaanottajille. Valinta ei tyhjene.",
-      "link": "Vastaanottajat, joilla ei ole LocalSendia asennettuna, voivat ladata valitut tiedostot avaamalla linkin selaimessaan."
+      "link": "Vastaanottajat, joilla ei ole YiDropia asennettuna, voivat ladata valitut tiedostot avaamalla linkin selaimessaan."
     },
     "zoom": {
       "title": "URL"
@@ -469,7 +469,7 @@
   "tray": {
     "@info": "Applen ohjeistukset ovat hyvin tiukat 'sulje'-sanan käytöstä.",
     "open": "Avaa",
-    "close": "Lopeta LocalSend",
+    "close": "Lopeta YiDrop",
     "closeWindows": "Poistu"
   },
   "web": {

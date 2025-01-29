@@ -93,7 +93,7 @@
 		2F8CCFF0FAB783405F067709 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		333000ED22D3DE5D00554162 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		335BBD1A22A9A15E00E9071D /* GeneratedPluginRegistrant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedPluginRegistrant.swift; sourceTree = "<group>"; };
-		33CC10ED2044A3C60003C045 /* LocalSend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalSend.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33CC10ED2044A3C60003C045 /* YiDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33CC10F02044A3C60003C045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33CC10F22044A3C60003C045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Runner/Assets.xcassets; sourceTree = "<group>"; };
 		33CC10F52044A3C60003C045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		33CC10EE2044A3C60003C045 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33CC10ED2044A3C60003C045 /* LocalSend.app */,
+				33CC10ED2044A3C60003C045 /* YiDrop.app */,
 				053DADDA2C8945EF00C3B4DE /* ShareExtension.appex */,
 			);
 			name = Products;
@@ -281,7 +281,7 @@
 				05F86B362C9B80BD000EB4BA /* LaunchAtLogin */,
 			);
 			productName = Runner;
-			productReference = 33CC10ED2044A3C60003C045 /* LocalSend.app */;
+			productReference = 33CC10ED2044A3C60003C045 /* YiDrop.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -536,7 +536,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LocalSend;
+				INFOPLIST_KEY_CFBundleDisplayName = YiDrop;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -548,7 +548,7 @@
 				MARKETING_VERSION = "$(FLUTTER_BUILD_NAME)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.localsend.localsendApp.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.yidrop.yidropApp.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -586,7 +586,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LocalSend;
+				INFOPLIST_KEY_CFBundleDisplayName = YiDrop;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -597,7 +597,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = "$(FLUTTER_BUILD_NAME)";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.localsend.localsendApp.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.yidrop.yidropApp.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -633,7 +633,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LocalSend;
+				INFOPLIST_KEY_CFBundleDisplayName = YiDrop;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -644,7 +644,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = "$(FLUTTER_BUILD_NAME)";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.localsend.localsendApp.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.yidrop.yidropApp.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

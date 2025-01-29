@@ -83,11 +83,11 @@ jobs:
         working-directory: app
         run: |
           mkdir -p AppDir/usr/share/icons/hicolor/32x32/apps
-          cp assets/img/logo-32.png AppDir/usr/share/icons/hicolor/32x32/apps/localsend.png
+          cp assets/img/logo-32.png AppDir/usr/share/icons/hicolor/32x32/apps/yidrop.png
           mkdir -p AppDir/usr/share/icons/hicolor/128x128/apps
-          cp assets/img/logo-128.png AppDir/usr/share/icons/hicolor/128x128/apps/localsend.png
+          cp assets/img/logo-128.png AppDir/usr/share/icons/hicolor/128x128/apps/yidrop.png
           mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
-          cp assets/img/logo-256.png AppDir/usr/share/icons/hicolor/256x256/apps/localsend.png
+          cp assets/img/logo-256.png AppDir/usr/share/icons/hicolor/256x256/apps/yidrop.png
 
       - name: Build AppImage
         uses: AppImageCrafters/build-appimage@57c3bc6963f870ce3be103117de5b5e33ffbaeb6

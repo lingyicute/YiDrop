@@ -1,6 +1,6 @@
 import 'package:common/model/device.dart';
 
-const _basePath = '/api/localsend';
+const _basePath = '/api/yidrop';
 
 /// Type-safe API paths
 enum ApiRoute {

@@ -1,6 +1,6 @@
 {
   "locale": "සිංහල",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "පිළිගන්න",
     "accepted": "පිළිගත්",
@@ -108,7 +108,7 @@
       "minimizeToTray": "වසා දැමීමේදී System Tray/Menu Bar වෙත අවම කරන්න",
       "launchAtStartup": "පුරනය වීමෙන් පසු ස්වයංක්‍රීයව ආරම්භ කරන්න",
       "launchMinimized": "ස්වයංක්‍රීය ආරම්භය: සඟවා ආරම්භ කරන්න",
-      "showInContextMenu": "Context මෙනුව තුළ LocalSend පෙන්වන්න",
+      "showInContextMenu": "Context මෙනුව තුළ YiDrop පෙන්වන්න",
       "animations": "ඇනිමේශන්"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "වෙනත්",
-      "support": "LocalSend සඳහා සහය දක්වන්න",
+      "support": "YiDrop සඳහා සහය දක්වන්න",
       "donate": "ආධාර කරන්න",
       "privacyPolicy": "පුද්ගලික තොරතුරු ප්‍රතිපත්තිය",
       "termsOfUse": "භාවිතා කිරීමේ කොන්දේසි"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "විකල්ප",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend ෆෝල්ඩරය)",
+    "appDirectory": "(YiDrop ෆෝල්ඩරය)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "ෆෝල්ඩර් නොමැති බැවින් ස්වයංක්‍රීයව ක්‍රියා විරහිත කරන ලදි."
   },
@@ -244,13 +244,13 @@
     "autoAccept": "ඉල්ලීම් ස්වයංක්‍රීයව පිළිගන්න",
     "requirePin": "PIN අවශ්‍යයි",
     "pinHint": "PIN එක \"{pin}\"",
-    "encryptionHint": "LocalSend self-signed certificate එකක් භාවිතා කරයි. ඔබ විසින් එය බ්‍රවුසරය (browser) තුළ දි පිළිගැනීම (accept) අවශ්‍ය වේ.",
+    "encryptionHint": "YiDrop self-signed certificate එකක් භාවිතා කරයි. ඔබ විසින් එය බ්‍රවුසරය (browser) තුළ දි පිළිගැනීම (accept) අවශ්‍ය වේ.",
     "pendingRequests": "Pending වන ඉල්ලීම්: {n}"
   },
   "aboutPage": {
-    "title": "LocalSend පිළිබඳව",
+    "title": "YiDrop පිළිබඳව",
     "description": [
-      "LocalSend යනු ඔබට අන්තර්ජාල සම්බන්ධතාවයක අවශ්‍යතාවයකින් තොරව, local ජාලයක් තුළ, සමීප උපාංග සමඟ ගොනු සහ පණිවිඩ ආරක්ෂිතව බෙදා ගත හැකි නිදහස්, විවෘත-මූලාශ්‍රය (Free and open-source) ඇප් එකකි.",
+      "YiDrop යනු ඔබට අන්තර්ජාල සම්බන්ධතාවයක අවශ්‍යතාවයකින් තොරව, local ජාලයක් තුළ, සමීප උපාංග සමඟ ගොනු සහ පණිවිඩ ආරක්ෂිතව බෙදා ගත හැකි නිදහස්, විවෘත-මූලාශ්‍රය (Free and open-source) ඇප් එකකි.",
       "මෙම ඇප් එක Android, iOS, macOS, Windows සහ Linux සඳහා පවතියි. එය ඩවුන්ලෝඩ් (Download) කරගත හැකි ආකාර අපේ අඩවියේ මුල් පිටුවෙන් සොයාගත හැක."
     ],
     "author": "කතෲ",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "ආධාර කරන්න",
-    "info": "LocalSend නිදහස්, විවෘත-මූලාශ්‍ර වන අතර කිසිදු වෙළඳ දැන්වීමකින් තොර වේ. ඔබ මෙම ඇප් එකට කැමැති නම්, මෙහි සංවර්ධනය සඳහා මූල්‍යමය දායකත්වයක් ලබා දී සහය ලබා දීමට හැක.",
+    "info": "YiDrop නිදහස්, විවෘත-මූලාශ්‍ර වන අතර කිසිදු වෙළඳ දැන්වීමකින් තොර වේ. ඔබ මෙම ඇප් එකට කැමැති නම්, මෙහි සංවර්ධනය සඳහා මූල්‍යමය දායකත්වයක් ලබා දී සහය ලබා දීමට හැක.",
     "donate": "දායකත්වය {amount}",
     "thanks": "ඔබට බොහොම ස්තූතියි!",
     "restore": "මිලදී ගැනීම ප්‍රතිස්ථාපනය (Restore) කරන්න"
@@ -336,7 +336,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "ජාලය ස්කෑන් (Scan) කිරීමට අවසරයක් නොමැතිව, LocalSend හට අනෙකුත් උපාංග සොයාගත නොහැක. කාරුණිකව මෙම අවසරය සැකසුම් (Settings) තුළ ලබා දෙන්න.",
+      "description": "ජාලය ස්කෑන් (Scan) කිරීමට අවසරයක් නොමැතිව, YiDrop හට අනෙකුත් උපාංග සොයාගත නොහැක. කාරුණිකව මෙම අවසරය සැකසුම් (Settings) තුළ ලබා දෙන්න.",
       "gotoSettings": "සැකසුම්"
     },
     "messageInput": {
@@ -385,7 +385,7 @@
       "title": "යැවීමේ ක්‍රම",
       "single": "එක් ලබන්නෙකුට පමණක් ගොනු යැවීම කරයි. ගොනු හුවමාරු කිරීමෙන් පසුව, තේරීම මකා දමනු ලැබේ.",
       "multiple": "ලබන්නන් කිහිපදෙනෙකු වෙත ගොනු යැවීම කරයි. ගොනු හුවමාරු කිරීමෙන් පසුව ද තේරීම මකා දමන්නේ නැත.",
-      "link": "ලබන්නන් LocalSend ස්ථාපනය කර නොමැති නම්, ඔව්න්ගේ බ්‍රවුසර් (Browser) තුළ අදාල ලින්ක් (Link) එක විවෘත කර, ගොනු බාගත (Download) කළ හැක."
+      "link": "ලබන්නන් YiDrop ස්ථාපනය කර නොමැති නම්, ඔව්න්ගේ බ්‍රවුසර් (Browser) තුළ අදාල ලින්ක් (Link) එක විවෘත කර, ගොනු බාගත (Download) කළ හැක."
     },
     "zoom": {
       "title": "URL"
@@ -398,7 +398,7 @@
   "tray": {
     "@info": "\"close\" වචනය සම්බන්ධයෙන් Apple මාර්ගෝපදේශ ඉතා දැඩි ය.",
     "open": "@:general.open",
-    "close": "LocalSend වෙතින් ඉවත් වෙන්න",
+    "close": "YiDrop වෙතින් ඉවත් වෙන්න",
     "closeWindows": "පිටවීම"
   },
   "web": {

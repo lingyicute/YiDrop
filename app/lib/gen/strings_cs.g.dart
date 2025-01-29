@@ -33,7 +33,7 @@ class TranslationsCs extends Translations {
   @override
   String get locale => 'Česky';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'YiDrop';
   @override
   late final _TranslationsGeneralCs general = _TranslationsGeneralCs._(_root);
   @override
@@ -361,7 +361,7 @@ class _TranslationsReceiveOptionsPageCs extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSend folder)';
+  String get appDirectory => '(YiDrop folder)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageCs extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'PIN je "${pin}"';
   @override
-  String get encryptionHint => 'LocalSend používá self-signed certifikát. Musíte ho přijmout ve vašem prohlížeči.';
+  String get encryptionHint => 'YiDrop používá self-signed certifikát. Musíte ho přijmout ve vašem prohlížeči.';
   @override
   String pendingRequests({required Object n}) => 'Čekající žádosti: ${n}';
 }
@@ -457,10 +457,10 @@ class _TranslationsAboutPageCs extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'O aplikaci LocalSend';
+  String get title => 'O aplikaci YiDrop';
   @override
   List<String> get description => [
-        'LocalSend je bezplatná aplikace s otevřeným zdrojovým kódem, která vám umožňuje bezpečně sdílet soubory a zprávy s okolními zařízeními přes vaši místní síť, aniž byste potřebovali připojení k internetu.',
+        'YiDrop je bezplatná aplikace s otevřeným zdrojovým kódem, která vám umožňuje bezpečně sdílet soubory a zprávy s okolními zařízeními přes vaši místní síť, aniž byste potřebovali připojení k internetu.',
         'Tato aplikace je dostupná pro Android, iOS, macOS, Windows a Linux. Všechny možnosti stahování najdete na oficiální domovské stránce.',
       ];
   @override
@@ -485,7 +485,7 @@ class _TranslationsDonationPageCs extends TranslationsDonationPageEn {
   @override
   String get title => 'Darovat';
   @override
-  String get info => 'LocalSend je zdarma, open source a bez reklam. Pokud se vám aplikace líbí, můžete její vývoj podpořit darem.';
+  String get info => 'YiDrop je zdarma, open source a bez reklam. Pokud se vám aplikace líbí, můžete její vývoj podpořit darem.';
   @override
   String donate({required Object amount}) => 'Darovat ${amount}';
   @override
@@ -607,7 +607,7 @@ class _TranslationsTrayCs extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'Ukončit LocalSend';
+  String get close => 'Ukončit YiDrop';
   @override
   String get closeWindows => 'Konec';
 }
@@ -832,7 +832,7 @@ class _TranslationsSettingsTabGeneralCs extends TranslationsSettingsTabGeneralEn
   @override
   String get launchMinimized => 'Automatické spuštění: skrytý start';
   @override
-  String get showInContextMenu => 'Zobrazit LocalSend v kontextové nabídce';
+  String get showInContextMenu => 'Zobrazit YiDrop v kontextové nabídce';
   @override
   String get animations => 'Animace';
 }
@@ -934,7 +934,7 @@ class _TranslationsSettingsTabOtherCs extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'Ostatní';
   @override
-  String get support => 'Podpora LocalSend';
+  String get support => 'Podpora YiDrop';
   @override
   String get donate => 'Darovat';
   @override
@@ -1259,7 +1259,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedCs extends TranslationsDialogs
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'LocalSend nemůže najít jiná zařízení, aniž by měl oprávnění skenovat místní síť. Udělte prosím toto oprávnění v nastavení.';
+      'YiDrop nemůže najít jiná zařízení, aniž by měl oprávnění skenovat místní síť. Udělte prosím toto oprávnění v nastavení.';
   @override
   String get gotoSettings => 'Nastavení';
 }
@@ -1423,7 +1423,7 @@ class _TranslationsDialogsSendModeHelpCs extends TranslationsDialogsSendModeHelp
   @override
   String get multiple => 'Odešle soubory více příjemcům. Výběr nebude vymazán.';
   @override
-  String get link => 'Příjemci, kteří nemají nainstalovaný LocalSend, si mohou vybrané soubory stáhnout otevřením odkazu ve svém prohlížeči.';
+  String get link => 'Příjemci, kteří nemají nainstalovaný YiDrop, si mohou vybrané soubory stáhnout otevřením odkazu ve svém prohlížeči.';
 }
 
 // Path: dialogs.zoom

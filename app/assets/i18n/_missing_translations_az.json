@@ -33,7 +33,7 @@
     },
     "other": {
       "title": "Other",
-      "support": "Support LocalSend",
+      "support": "Support YiDrop",
       "donate": "Donate",
       "privacyPolicy": "Privacy Policy",
       "termsOfUse": "Terms of Use"
@@ -92,7 +92,7 @@
   "receiveOptionsPage": {
     "title": "Options",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend folder)",
+    "appDirectory": "(YiDrop folder)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Turned off automatically because there are folders."
   },
@@ -133,13 +133,13 @@
     "autoAccept": "Automatically accept requests",
     "requirePin": "Require PIN",
     "pinHint": "The PIN is \"{pin}\"",
-    "encryptionHint": "LocalSend uses a self-signed certificate. You need to accept it in your browser.",
+    "encryptionHint": "YiDrop uses a self-signed certificate. You need to accept it in your browser.",
     "pendingRequests": "Pending requests: {n}"
   },
   "aboutPage": {
-    "title": "About LocalSend",
+    "title": "About YiDrop",
     "description": [
-      "LocalSend is a free, open-source app that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.",
+      "YiDrop is a free, open-source app that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.",
       "This app is available on Android, iOS, macOS, Windows and Linux. You can find all download options on the official homepage."
     ],
     "author": "Author",
@@ -149,7 +149,7 @@
   },
   "donationPage": {
     "title": "Donate",
-    "info": "LocalSend is free, open-source and without any ads. If you like the app, you can support the development with a donation.",
+    "info": "YiDrop is free, open-source and without any ads. If you like the app, you can support the development with a donation.",
     "donate": "Donate {amount}",
     "thanks": "Thank you very much!",
     "restore": "Restore purchase"
@@ -222,7 +222,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend can't find other devices without having the permission to scan the local network. Please grant this permission in the settings.",
+      "description": "YiDrop can't find other devices without having the permission to scan the local network. Please grant this permission in the settings.",
       "gotoSettings": "Settings"
     },
     "messageInput": {
@@ -271,7 +271,7 @@
       "title": "Send modes",
       "single": "Sends files to one recipient. Selection will be cleared after finished files transfer.",
       "multiple": "Sends files to multiple recipients. Selection will not be cleared after finished files transfer.",
-      "link": "Recipients who do not have LocalSend installed can download the selected files by opening the link in their browser."
+      "link": "Recipients who do not have YiDrop installed can download the selected files by opening the link in their browser."
     },
     "zoom": {
       "title": "URL"
@@ -283,7 +283,7 @@
   },
   "tray": {
     "open": "@:general.open",
-    "close": "Quit LocalSend",
+    "close": "Quit YiDrop",
     "closeWindows": "Exit"
   },
   "web": {

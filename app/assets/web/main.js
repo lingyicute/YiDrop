@@ -1,6 +1,6 @@
 // IMPORTANT: This script works in Internet Explorer 8!
 
-var BASE_URL = '/api/localsend/v2';
+var BASE_URL = '/api/yidrop/v2';
 
 var i18n = {};
 var sessionId = sessionStorage.getItem('sessionId');

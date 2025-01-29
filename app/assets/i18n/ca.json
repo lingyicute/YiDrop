@@ -1,6 +1,6 @@
 {
   "locale": "Català",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Acceptar",
     "accepted": "Acceptat",
@@ -103,7 +103,7 @@
       "minimizeToTray": "Surt: Minimitzar a la safata",
       "launchAtStartup": "Inici automàtic després d'iniciar sessió",
       "launchMinimized": "Inici automàtic: Inici minimitzat",
-      "showInContextMenu": "Mostrar LocalSend al menu contextual",
+      "showInContextMenu": "Mostrar YiDrop al menu contextual",
       "animations": "Animacions"
     },
     "receive": {
@@ -139,7 +139,7 @@
     },
     "other": {
       "title": "Altre",
-      "support": "Suport LocalSend",
+      "support": "Suport YiDrop",
       "donate": "Donació",
       "privacyPolicy": "Política Privacitat",
       "termsOfUse": "Condicions d'ús"
@@ -198,7 +198,7 @@
   "receiveOptionsPage": {
     "title": "Opcions",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(Carpeta LocalSend)",
+    "appDirectory": "(Carpeta YiDrop)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "S'ha desactivat automàticament perquè hi ha carpetes."
   },
@@ -239,13 +239,13 @@
     "autoAccept": "Acceptar peticions automàticament",
     "requirePin": "Requerir un PIN",
     "pinHint": "El PIN és \"{pin}\"",
-    "encryptionHint": "LocalSend utilitza un certificat auto-signat. Cal que l'accepteu al navegador.",
+    "encryptionHint": "YiDrop utilitza un certificat auto-signat. Cal que l'accepteu al navegador.",
     "pendingRequests": "Peticions pendents: {n}"
   },
   "aboutPage": {
-    "title": "Sobre LocalSend",
+    "title": "Sobre YiDrop",
     "description": [
-      "LocalSend és una aplicació gratuïta i de codi obert que us permet compartir fitxers i missatges de manera segura amb dispositius propers a la vostra xarxa local sense necessitat de connexió a Internet.",
+      "YiDrop és una aplicació gratuïta i de codi obert que us permet compartir fitxers i missatges de manera segura amb dispositius propers a la vostra xarxa local sense necessitat de connexió a Internet.",
       "Aquesta aplicació està disponible per a Android, iOS, macOS, Windows i Linux. Pot trobar totes les opcions de descàrrega a la pàgina d'inici oficial."
     ],
     "author": "Autor",
@@ -255,7 +255,7 @@
   },
   "donationPage": {
     "title": "Donació",
-    "info": "LocalSend és gratuït, de codi obert i sense cap anunci. Si t'agrada l'aplicació, pots donar suport al desenvolupament amb una donació.",
+    "info": "YiDrop és gratuït, de codi obert i sense cap anunci. Si t'agrada l'aplicació, pots donar suport al desenvolupament amb una donació.",
     "donate": "Donació {amount}",
     "thanks": "Moltes gràcies!",
     "restore": "Restaurar la compra"
@@ -397,7 +397,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend no pot trobar altres dispositius sense tenir el permís per escanejar la xarxa local. Concediu aquest permís a la configuració.",
+      "description": "YiDrop no pot trobar altres dispositius sense tenir el permís per escanejar la xarxa local. Concediu aquest permís a la configuració.",
       "gotoSettings": "Configuració"
     },
     "messageInput": {
@@ -441,7 +441,7 @@
       "title": "Modes d'enviament",
       "single": "Enviar fitxers a un destinatari. La selecció s'esborrarà un cop finalitzada la transferència de fitxers.",
       "multiple": "Enviar fitxers a diversos destinataris. La selecció no s'esborrarà.",
-      "link": "Els destinataris que no tinguin LocalSend instal·lat poden descarregar els fitxers seleccionats obrint l'enllaç al seu navegador."
+      "link": "Els destinataris que no tinguin YiDrop instal·lat poden descarregar els fitxers seleccionats obrint l'enllaç al seu navegador."
     },
     "zoom": {
       "title": "URL"
@@ -454,7 +454,7 @@
   "tray": {
     "@info": "Apple Guidelines are very strict about the 'close' wording.",
     "open": "@:general.open",
-    "close": "Sortir de LocalSend",
+    "close": "Sortir de YiDrop",
     "closeWindows": "Sortir"
   },
   "web": {

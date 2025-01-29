@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.localsend.localsend_app">
+    package="org.yidrop.yidrop_app">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -19,7 +19,7 @@
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
     <application
-        android:label="LocalSend"
+        android:label="YiDrop"
         android:name="${applicationName}"
         android:usesCleartextTraffic="true"
         android:banner="@drawable/banner"
@@ -27,7 +27,7 @@
         android:requestLegacyExternalStorage="true"
     >
 
-        <!-- localsend: prevent multiple instances by android:launchMode="singleTask" -->
+        <!-- yidrop: prevent multiple instances by android:launchMode="singleTask" -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -52,7 +52,7 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
             </intent-filter>
 
-            <!-- localsend: Receive share intent (share_handler) -->
+            <!-- yidrop: Receive share intent (share_handler) -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />

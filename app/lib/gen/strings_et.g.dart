@@ -33,7 +33,7 @@ class TranslationsEt extends Translations {
   @override
   String get locale => 'Eesti keel';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'YiDrop';
   @override
   late final _TranslationsGeneralEt general = _TranslationsGeneralEt._(_root);
   @override
@@ -361,7 +361,7 @@ class _TranslationsReceiveOptionsPageEt extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSendi kaust)';
+  String get appDirectory => '(YiDropi kaust)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageEt extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'PIN-kood on „${pin}“';
   @override
-  String get encryptionHint => 'LocalSend kasutab enda poolt allkirjastatud sertifikaate. Ühenduse toimimiseks palun nõustu nendega veebibrauseris.';
+  String get encryptionHint => 'YiDrop kasutab enda poolt allkirjastatud sertifikaate. Ühenduse toimimiseks palun nõustu nendega veebibrauseris.';
   @override
   String pendingRequests({required Object n}) => 'Ootel päringuid: ${n}';
 }
@@ -457,10 +457,10 @@ class _TranslationsAboutPageEt extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'Rakenduse teave: LocalSend';
+  String get title => 'Rakenduse teave: YiDrop';
   @override
   List<String> get description => [
-        'LocalSend põhineb avatud lähtekoodil, on kõikide jaoks vaba ning tasuta kasutatav. Rakenduse eesmärgiks on võimaldada failide ja tekstide jagamist kohtvõrgus asuvate arvutite vahel nii, et välist internetiühendust pole vaja kasutada.',
+        'YiDrop põhineb avatud lähtekoodil, on kõikide jaoks vaba ning tasuta kasutatav. Rakenduse eesmärgiks on võimaldada failide ja tekstide jagamist kohtvõrgus asuvate arvutite vahel nii, et välist internetiühendust pole vaja kasutada.',
         'See rakendus on saadaval Androidi, iOSi, macOSi, Windowsi ja Linuxi jaoks. Kõik allalaaditavad paigaldusfailid leiad meie ametlikust veebisaidist.',
       ];
   @override
@@ -486,7 +486,7 @@ class _TranslationsDonationPageEt extends TranslationsDonationPageEn {
   String get title => 'Toeta meid rahaliselt';
   @override
   String get info =>
-      'LocalSend põhineb avatud lähtekoodil, on kõikide jaoks vaba ning tasuta kasutatav, ega sisalda reklaame. Kui sulle see rakendus meeldib, siis palun toeta meie arendust.';
+      'YiDrop põhineb avatud lähtekoodil, on kõikide jaoks vaba ning tasuta kasutatav, ega sisalda reklaame. Kui sulle see rakendus meeldib, siis palun toeta meie arendust.';
   @override
   String donate({required Object amount}) => 'Anneta ${amount}';
   @override
@@ -608,7 +608,7 @@ class _TranslationsTrayEt extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'Sulge LocalSend';
+  String get close => 'Sulge YiDrop';
   @override
   String get closeWindows => 'Välju';
 }
@@ -833,7 +833,7 @@ class _TranslationsSettingsTabGeneralEt extends TranslationsSettingsTabGeneralEn
   @override
   String get launchMinimized => 'Automaatsel käivitamisel: käivita peidetuna';
   @override
-  String get showInContextMenu => 'Näita LocalSendi kontekstimenüüs';
+  String get showInContextMenu => 'Näita YiDropi kontekstimenüüs';
   @override
   String get animations => 'Animatsioonid';
 }
@@ -935,7 +935,7 @@ class _TranslationsSettingsTabOtherEt extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'Muu teave';
   @override
-  String get support => 'Toeta LocalSendi';
+  String get support => 'Toeta YiDropi';
   @override
   String get donate => 'Toeta rahaliselt';
   @override
@@ -1261,7 +1261,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedEt extends TranslationsDialogs
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'Ilma kohtvõrgu skaneerimise õiguseta ei suuda LocalSend leida teisi seadmeid. Palun luba süsteemi seadistustest vajalikud õigused.';
+      'Ilma kohtvõrgu skaneerimise õiguseta ei suuda YiDrop leida teisi seadmeid. Palun luba süsteemi seadistustest vajalikud õigused.';
   @override
   String get gotoSettings => 'Seadistused';
 }
@@ -1426,7 +1426,7 @@ class _TranslationsDialogsSendModeHelpEt extends TranslationsDialogsSendModeHelp
   String get multiple => 'Sellega saadame faile mitmele vastuvõtjale. Peale failide saatmise lõppu failid jäävad saatmisloendisse alles.';
   @override
   String get link =>
-      'Kui failide vastuvõtjatel pole arvutis või nutiseadmes rakendust LocalSend, siis avades etteantud lingi oma veebibrauseris, saavad nad failid alla laadida.';
+      'Kui failide vastuvõtjatel pole arvutis või nutiseadmes rakendust YiDrop, siis avades etteantud lingi oma veebibrauseris, saavad nad failid alla laadida.';
 }
 
 // Path: dialogs.zoom

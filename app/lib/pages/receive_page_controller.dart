@@ -1,11 +1,11 @@
 import 'package:common/model/device.dart';
 import 'package:common/model/session_status.dart';
 import 'package:dart_mappable/dart_mappable.dart';
-import 'package:localsend_app/model/persistence/receive_history_entry.dart';
-import 'package:localsend_app/pages/progress_page.dart';
-import 'package:localsend_app/pages/receive_page.dart';
-import 'package:localsend_app/provider/network/server/server_provider.dart';
-import 'package:localsend_app/provider/selection/selected_receiving_files_provider.dart';
+import 'package:yidrop_app/model/persistence/receive_history_entry.dart';
+import 'package:yidrop_app/pages/progress_page.dart';
+import 'package:yidrop_app/pages/receive_page.dart';
+import 'package:yidrop_app/provider/network/server/server_provider.dart';
+import 'package:yidrop_app/provider/selection/selected_receiving_files_provider.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 

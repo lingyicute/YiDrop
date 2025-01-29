@@ -1,6 +1,6 @@
 {
   "locale": "Svenska",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Acceptera",
     "accepted": "Accepterad",
@@ -108,7 +108,7 @@
       "minimizeToTray": "Lämna: minimera till tray",
       "launchAtStartup": "Starta automatiskt efter inloggning",
       "launchMinimized": "Starta automatiskt: starta gömd",
-      "showInContextMenu": "Visa LocalSend i snabbmenyn",
+      "showInContextMenu": "Visa YiDrop i snabbmenyn",
       "animations": "Animationer"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "Annat",
-      "support": "Stöd LocalSend",
+      "support": "Stöd YiDrop",
       "donate": "Donera",
       "privacyPolicy": "Sekretesspolicy",
       "termsOfUse": "Användarvillkor"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "Alternativ",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend-mappen)",
+    "appDirectory": "(YiDrop-mappen)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Avstängd automatiskt eftersom det finns kataloger."
   },
@@ -244,13 +244,13 @@
     "autoAccept": "Acceptera förfrågningar automatiskt",
     "requirePin": "Kräv PIN-kod",
     "pinHint": "PIN-koden är \"{pin}\"",
-    "encryptionHint": "LocalSend använder ett självsignerat certifikat. Du behöver acceptera det i webbläsaren.",
+    "encryptionHint": "YiDrop använder ett självsignerat certifikat. Du behöver acceptera det i webbläsaren.",
     "pendingRequests": "Väntande förfrågningar: {n}"
   },
   "aboutPage": {
-    "title": "Om LocalSend",
+    "title": "Om YiDrop",
     "description": [
-      "LocalSend är fri programvara med öppen källkod som låter dig säkert dela filer och meddelanden med enheter i närheten över ditt lokala nätverk utan att behöva en internetanslutning.",
+      "YiDrop är fri programvara med öppen källkod som låter dig säkert dela filer och meddelanden med enheter i närheten över ditt lokala nätverk utan att behöva en internetanslutning.",
       "Denna app är tillgänglig på Android, iOS, macOS, Windows och Linux. Du kan hitta alla nedladdningsalternativ på den officiella hemsidan."
     ],
     "author": "Upphovsman",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "Donera",
-    "info": "LocalSend är fri programvara med öppen källkod och utan några annonser. Om du gillar appen kan du stödja utvecklingen med en donation.",
+    "info": "YiDrop är fri programvara med öppen källkod och utan några annonser. Om du gillar appen kan du stödja utvecklingen med en donation.",
     "donate": "Donera {amount}",
     "thanks": "Tack så mycket!",
     "restore": "Återställ köp"
@@ -406,7 +406,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend kan inte hitta andra enheter utan att ha behörighet att skanna det lokala nätverket. Bevilja denna behörighet i inställningarna.",
+      "description": "YiDrop kan inte hitta andra enheter utan att ha behörighet att skanna det lokala nätverket. Bevilja denna behörighet i inställningarna.",
       "gotoSettings": "Inställningar"
     },
     "messageInput": {
@@ -455,7 +455,7 @@
       "title": "Sändningslägen",
       "single": "Skickar filer till en mottagare. Valet rensas efter avslutad filöverföring.",
       "multiple": "Skickar filer till flera mottagare. Valet rensas inte.",
-      "link": "Mottagare som inte har LocalSend installerat kan ladda ner de valda filerna genom att öppna länken i deras webbläsare."
+      "link": "Mottagare som inte har YiDrop installerat kan ladda ner de valda filerna genom att öppna länken i deras webbläsare."
     },
     "zoom": {
       "title": "URL"
@@ -468,7 +468,7 @@
   "tray": {
     "@info": "Apples Riktlinjer är väldigt strikta kring 'stäng' formuleringen.",
     "open": "@:general.open",
-    "close": "Avsluta LocalSend",
+    "close": "Avsluta YiDrop",
     "closeWindows": "Avsluta"
   },
   "web": {

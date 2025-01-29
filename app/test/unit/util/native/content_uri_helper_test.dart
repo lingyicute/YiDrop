@@ -1,4 +1,4 @@
-import 'package:localsend_app/util/native/content_uri_helper.dart';
+import 'package:yidrop_app/util/native/content_uri_helper.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -102,16 +102,16 @@ void main() {
   group('convertTreeUriToDocumentUri', () {
     test('should return the document uri from the tree uri', () {
       expect(
-        ContentUriHelper.convertTreeUriToDocumentUri(treeUri: 'content://com.android.externalstorage.documents/tree/primary%3ALocalSend'),
-        'content://com.android.externalstorage.documents/tree/primary%3ALocalSend/document/primary%3ALocalSend',
+        ContentUriHelper.convertTreeUriToDocumentUri(treeUri: 'content://com.android.externalstorage.documents/tree/primary%3AYiDrop'),
+        'content://com.android.externalstorage.documents/tree/primary%3AYiDrop/document/primary%3AYiDrop',
       );
     });
 
     test('should return the document uri from the tree uri with a folder', () {
       expect(
         ContentUriHelper.convertTreeUriToDocumentUri(
-            treeUri: 'content://com.android.externalstorage.documents/tree/primary%3ALocalSend', suffix: 'subFolder'),
-        'content://com.android.externalstorage.documents/tree/primary%3ALocalSend/document/primary%3ALocalSend%2FsubFolder',
+            treeUri: 'content://com.android.externalstorage.documents/tree/primary%3AYiDrop', suffix: 'subFolder'),
+        'content://com.android.externalstorage.documents/tree/primary%3AYiDrop/document/primary%3AYiDrop%2FsubFolder',
       );
     });
   });
@@ -119,15 +119,15 @@ void main() {
   group('encodeTreeUri', () {
     test('should return the encoded tree uri', () {
       expect(
-        ContentUriHelper.encodeTreeUri('content://com.android.externalstorage.documents/tree/primary%3ALocalSend/subFolder'),
-        'content://com.android.externalstorage.documents/tree/primary%3ALocalSend%2FsubFolder',
+        ContentUriHelper.encodeTreeUri('content://com.android.externalstorage.documents/tree/primary%3AYiDrop/subFolder'),
+        'content://com.android.externalstorage.documents/tree/primary%3AYiDrop%2FsubFolder',
       );
     });
 
     test('should return the encoded tree uri with a folder in SD card', () {
       expect(
-        ContentUriHelper.encodeTreeUri('content://com.android.externalstorage.documents/tree/1234-5678:LocalSend/subFolder'),
-        'content://com.android.externalstorage.documents/tree/1234-5678%3ALocalSend%2FsubFolder',
+        ContentUriHelper.encodeTreeUri('content://com.android.externalstorage.documents/tree/1234-5678:YiDrop/subFolder'),
+        'content://com.android.externalstorage.documents/tree/1234-5678%3AYiDrop%2FsubFolder',
       );
     });
   });

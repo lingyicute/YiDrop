@@ -63,7 +63,7 @@ jobs:
         id: find_rpm
         run: |
           VERSION=${{ needs.build.outputs.version }}
-          RPM_PATH=$(find app/dist -name "localsend_app-$VERSION*-linux.rpm")
+          RPM_PATH=$(find app/dist -name "yidrop_app-$VERSION*-linux.rpm")
           echo "rpm_path=$RPM_PATH" >> $GITHUB_OUTPUT
 
       - name: Check if rpm file exists

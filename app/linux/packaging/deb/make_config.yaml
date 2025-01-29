@@ -1,5 +1,5 @@
-display_name: LocalSend
-package_name: localsend
+display_name: YiDrop
+package_name: yidrop
 maintainer:
   name: Tienisto
   email: dev.tien.donam@gmail.com
@@ -22,7 +22,7 @@ dependencies:
   - xdg-user-dirs
 
 postinstall_scripts:
-  - echo "Installed Localsend successfully"
+  - echo "Installed Yidrop successfully"
 postuninstall_scripts:
   - echo "Sorry to see you go :("
 

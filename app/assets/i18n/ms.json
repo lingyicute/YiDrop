@@ -1,6 +1,6 @@
 {
   "locale": "Bahasa Melayu",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Terima",
     "accepted": "Diterima",
@@ -102,7 +102,7 @@
       "minimizeToTray": "Minimumkan ke dulang sistem/menu bar apabila menutup",
       "launchAtStartup": "Mula automatik selepas log masuk",
       "launchMinimized": "Mula automatik: Mula tersembunyi",
-      "showInContextMenu": "Tunjukkan LocalSend dalam menu konteks",
+      "showInContextMenu": "Tunjukkan YiDrop dalam menu konteks",
       "animations": "Animasi"
     },
     "receive": {
@@ -138,7 +138,7 @@
     },
     "other": {
       "title": "Lain-lain",
-      "support": "Sokong LocalSend",
+      "support": "Sokong YiDrop",
       "donate": "Derma",
       "privacyPolicy": "Dasar Privasi",
       "termsOfUse": "Syarat Penggunaan"
@@ -197,7 +197,7 @@
   "receiveOptionsPage": {
     "title": "Pilihan",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(folder LocalSend)",
+    "appDirectory": "(folder YiDrop)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Dimatikan secara automatik kerana terdapat folder."
   },
@@ -240,9 +240,9 @@
     "pendingRequests": "Permintaan menunggu: {n}"
   },
   "aboutPage": {
-    "title": "Mengenai LocalSend",
+    "title": "Mengenai YiDrop",
     "description": [
-      "LocalSend adalah aplikasi percuma dan sumber terbuka yang membolehkan anda berkongsi fail dan mesej dengan selamat dengan peranti berdekatan melalui rangkaian tempatan anda tanpa memerlukan sambungan internet.",
+      "YiDrop adalah aplikasi percuma dan sumber terbuka yang membolehkan anda berkongsi fail dan mesej dengan selamat dengan peranti berdekatan melalui rangkaian tempatan anda tanpa memerlukan sambungan internet.",
       "Aplikasi ini tersedia di Android, iOS, macOS, Windows dan Linux. Anda boleh mencari semua pilihan muat turun di laman web rasmi."
     ],
     "author": "Pengarang",
@@ -251,7 +251,7 @@
   },
   "donationPage": {
     "title": "Derma",
-    "info": "LocalSend adalah percuma, sumber terbuka dan tanpa iklan. Jika anda menyukai aplikasi ini, anda boleh menyokong pembangunannya dengan derma.",
+    "info": "YiDrop adalah percuma, sumber terbuka dan tanpa iklan. Jika anda menyukai aplikasi ini, anda boleh menyokong pembangunannya dengan derma.",
     "donate": "Derma {amount}",
     "thanks": "Terima kasih banyak!",
     "restore": "Pulihkan pembelian"
@@ -389,7 +389,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend tidak dapat mencari peranti lain tanpa mempunyai kebenaran untuk mengimbas rangkaian tempatan. Sila berikan kebenaran ini dalam tetapan.",
+      "description": "YiDrop tidak dapat mencari peranti lain tanpa mempunyai kebenaran untuk mengimbas rangkaian tempatan. Sila berikan kebenaran ini dalam tetapan.",
       "gotoSettings": "Tetapan"
     },
     "messageInput": {
@@ -433,7 +433,7 @@
       "title": "Mod penghantaran",
       "single": "Menghantar fail kepada satu penerima. Pilihan akan dibersihkan selepas pemindahan fail selesai.",
       "multiple": "Menghantar fail kepada beberapa penerima. Pilihan tidak akan dibersihkan.",
-      "link": "Penerima yang tidak mempunyai LocalSend dipasang boleh memuat turun fail yang dipilih dengan membuka pautan dalam pelayar mereka."
+      "link": "Penerima yang tidak mempunyai YiDrop dipasang boleh memuat turun fail yang dipilih dengan membuka pautan dalam pelayar mereka."
     },
     "zoom": {
       "title": "URL"
@@ -445,7 +445,7 @@
   },
   "tray": {
     "open": "@:general.open",
-    "close": "Keluar LocalSend",
+    "close": "Keluar YiDrop",
     "closeWindows": "Keluar"
   },
   "web": {

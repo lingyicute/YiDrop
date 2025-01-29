@@ -1,11 +1,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 import 'package:flutter/services.dart';
-import 'package:localsend_app/util/native/content_uri_helper.dart';
+import 'package:yidrop_app/util/native/content_uri_helper.dart';
 import 'package:logging/logging.dart';
 
 part 'android_channel.mapper.dart';
 
-const _methodChannel = MethodChannel('org.localsend.localsend_app/localsend');
+const _methodChannel = MethodChannel('org.yidrop.yidrop_app/yidrop');
 final _logger = Logger('AndroidSaf');
 
 /// From Android 10 and above, we need to use the Storage Access Framework (SAF) to access files due to the scoped storage.

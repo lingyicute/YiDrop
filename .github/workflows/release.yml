@@ -185,7 +185,7 @@ jobs:
         id: find_deb
         run: |
           VERSION=${{ needs.build.outputs.version }}
-          DEB_PATH=$(find app/dist -name "localsend_app-$VERSION*-linux.deb")
+          DEB_PATH=$(find app/dist -name "yidrop_app-$VERSION*-linux.deb")
           echo "deb_path=$DEB_PATH" >> $GITHUB_OUTPUT
 
       - name: Check if deb file exists
@@ -227,7 +227,7 @@ jobs:
         id: find_deb
         run: |
           VERSION=${{ needs.build.outputs.version }}
-          DEB_PATH=$(find app/dist -name "localsend_app-$VERSION*-linux.deb")
+          DEB_PATH=$(find app/dist -name "yidrop_app-$VERSION*-linux.deb")
           echo "deb_path=$DEB_PATH" >> $GITHUB_OUTPUT
 
       - name: Check if deb file exists
@@ -277,11 +277,11 @@ jobs:
       - name: Copy logo to AppDir
         run: |
           mkdir -p AppDir/usr/share/icons/hicolor/32x32/apps
-          cp app/assets/img/logo-32.png AppDir/usr/share/icons/hicolor/32x32/apps/localsend.png
+          cp app/assets/img/logo-32.png AppDir/usr/share/icons/hicolor/32x32/apps/yidrop.png
           mkdir -p AppDir/usr/share/icons/hicolor/128x128/apps
-          cp app/assets/img/logo-128.png AppDir/usr/share/icons/hicolor/128x128/apps/localsend.png
+          cp app/assets/img/logo-128.png AppDir/usr/share/icons/hicolor/128x128/apps/yidrop.png
           mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
-          cp app/assets/img/logo-256.png AppDir/usr/share/icons/hicolor/256x256/apps/localsend.png
+          cp app/assets/img/logo-256.png AppDir/usr/share/icons/hicolor/256x256/apps/yidrop.png
 
       - name: Copy Recipe to correct location
         run: cp scripts/appimage/AppImageBuilder_x86_64.yml AppImageBuilder.yml

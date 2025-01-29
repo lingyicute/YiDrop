@@ -33,7 +33,7 @@ class TranslationsFr extends Translations {
   @override
   String get locale => 'Français';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'YiDrop';
   @override
   late final _TranslationsGeneralFr general = _TranslationsGeneralFr._(_root);
   @override
@@ -362,7 +362,7 @@ class _TranslationsReceiveOptionsPageFr extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSend folder)';
+  String get appDirectory => '(YiDrop folder)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -443,7 +443,7 @@ class _TranslationsWebSharePageFr extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'Le code PIN est "${pin}"';
   @override
-  String get encryptionHint => 'LocalSend utilise un certificat auto-signé. Vous devez l\'accepter dans le navigateur.';
+  String get encryptionHint => 'YiDrop utilise un certificat auto-signé. Vous devez l\'accepter dans le navigateur.';
   @override
   String pendingRequests({required Object n}) => 'Requêtes en attente : ${n}';
 }
@@ -458,11 +458,11 @@ class _TranslationsAboutPageFr extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'À propos de LocalSend';
+  String get title => 'À propos de YiDrop';
   @override
   List<String> get description => [
-        'Localsend est un logiciel gratuit et open-source qui vous permet de partager de manière sécurisée des fichiers et des messages avec d\'autres appareils connectés à votre réseau local. Une connexion à internet n\'est pas requise.',
-        'Localsend est disponible sur Android, iOS, macOS, Windows et Linux. Vous pouvez accéder à ces téléchargements depuis la page officielle.',
+        'Yidrop est un logiciel gratuit et open-source qui vous permet de partager de manière sécurisée des fichiers et des messages avec d\'autres appareils connectés à votre réseau local. Une connexion à internet n\'est pas requise.',
+        'Yidrop est disponible sur Android, iOS, macOS, Windows et Linux. Vous pouvez accéder à ces téléchargements depuis la page officielle.',
       ];
   @override
   String get author => 'Auteur';
@@ -487,7 +487,7 @@ class _TranslationsDonationPageFr extends TranslationsDonationPageEn {
   String get title => 'Faire une donation';
   @override
   String get info =>
-      'LocalSend est gratuit, open-source et sans aucune pub. Si vous aimez ce logiciel, vous pouvez faire un don pour soutenir son développement.';
+      'YiDrop est gratuit, open-source et sans aucune pub. Si vous aimez ce logiciel, vous pouvez faire un don pour soutenir son développement.';
   @override
   String donate({required Object amount}) => 'Donner ${amount}';
   @override
@@ -609,7 +609,7 @@ class _TranslationsTrayFr extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'Quitter LocalSend';
+  String get close => 'Quitter YiDrop';
   @override
   String get closeWindows => 'Fermer';
 }
@@ -830,11 +830,11 @@ class _TranslationsSettingsTabGeneralFr extends TranslationsSettingsTabGeneralEn
   @override
   String get minimizeToTray => 'Réduire dans la barre des tâches à la fermeture';
   @override
-  String get launchAtStartup => 'Lancer LocalSend à la connexion de l\'utilisateur';
+  String get launchAtStartup => 'Lancer YiDrop à la connexion de l\'utilisateur';
   @override
-  String get launchMinimized => 'Minimiser LocalSend lors du lancement';
+  String get launchMinimized => 'Minimiser YiDrop lors du lancement';
   @override
-  String get showInContextMenu => 'Afficher LocalSend dans le menu contextuel';
+  String get showInContextMenu => 'Afficher YiDrop dans le menu contextuel';
   @override
   String get animations => 'Animations';
 }
@@ -936,7 +936,7 @@ class _TranslationsSettingsTabOtherFr extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'Autre';
   @override
-  String get support => 'Soutenir LocalSend';
+  String get support => 'Soutenir YiDrop';
   @override
   String get donate => 'Faire une donation';
   @override
@@ -1261,7 +1261,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedFr extends TranslationsDialogs
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'LocalSend ne peut pas trouver d\'autres appareils sans la permission de scanner votre réseau local. Veuillez donner cette permission à LocalSend dans les paramètres système.';
+      'YiDrop ne peut pas trouver d\'autres appareils sans la permission de scanner votre réseau local. Veuillez donner cette permission à YiDrop dans les paramètres système.';
   @override
   String get gotoSettings => 'Paramètres';
 }
@@ -1306,7 +1306,7 @@ class _TranslationsDialogsNoPermissionFr extends TranslationsDialogsNoPermission
 
   // Translations
   @override
-  String get title => 'LocalSend n\'a pas la permission';
+  String get title => 'YiDrop n\'a pas la permission';
   @override
   String get content => 'Vous n\'avez pas accordé les autorisations nécessaires. Veuillez les accorder dans les paramètres systèmes.';
 }
@@ -1427,7 +1427,7 @@ class _TranslationsDialogsSendModeHelpFr extends TranslationsDialogsSendModeHelp
   String get multiple => 'Envoyer des fichiers à plusieurs récipients. La sélection ne sera pas effacée.';
   @override
   String get link =>
-      'Les récipients n\'ayant pas LocalSend installé peuvent télécharger les fichiers sélectionnés en ouvrant le lien dans leur navigateur.';
+      'Les récipients n\'ayant pas YiDrop installé peuvent télécharger les fichiers sélectionnés en ouvrant le lien dans leur navigateur.';
 }
 
 // Path: dialogs.zoom

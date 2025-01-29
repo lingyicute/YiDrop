@@ -33,7 +33,7 @@ class AppDelegate: FlutterAppDelegate {
     private var isLaunchedAsLoginItem: Bool?
     
     override func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        // LocalSend handles the close event manually
+        // YiDrop handles the close event manually
         return false
     }
     
@@ -44,8 +44,8 @@ class AppDelegate: FlutterAppDelegate {
         
         self.setupDockIconTextDropEventListener()
         
-        let localsendBrandColor = NSColor(red: 0, green: 0.392, blue: 0.353, alpha: 0.8) // #00645a
-        DockProgress.style = .squircle(color: localsendBrandColor)
+        let yidropBrandColor = NSColor(red: 0, green: 0.392, blue: 0.353, alpha: 0.8) // #00645a
+        DockProgress.style = .squircle(color: yidropBrandColor)
         
         isLaunchedAsLoginItem = LaunchAtLogin.wasLaunchedAtLogin
         
@@ -53,7 +53,7 @@ class AppDelegate: FlutterAppDelegate {
     }
     
     override func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        showLocalSendFromMenuBar()
+        showYiDropFromMenuBar()
         return false
     }
     
@@ -102,7 +102,7 @@ class AppDelegate: FlutterAppDelegate {
             let menu = NSMenu()
             
             let openString = i18n["open"]!
-            let openItem = NSMenuItem(title: openString, action: #selector(showLocalSendFromMenuBar), keyEquivalent: "o")
+            let openItem = NSMenuItem(title: openString, action: #selector(showYiDropFromMenuBar), keyEquivalent: "o")
             menu.addItem(openItem)
             
             let quitString = i18n["quit"]!
@@ -124,8 +124,8 @@ class AppDelegate: FlutterAppDelegate {
         }
     }
     
-    @objc func showLocalSendFromMenuBar() {
-        channel?.invokeMethod("showLocalSendFromMenuBar", arguments: nil)
+    @objc func showYiDropFromMenuBar() {
+        channel?.invokeMethod("showYiDropFromMenuBar", arguments: nil)
     }
     
     @objc private func quitApp() {
@@ -153,7 +153,7 @@ class AppDelegate: FlutterAppDelegate {
         Defaults[.pendingFiles] = []
         Defaults[.pendingStrings] = []
         
-        self.showLocalSendFromMenuBar()
+        self.showYiDropFromMenuBar()
     }
     
     // START: handle opened files

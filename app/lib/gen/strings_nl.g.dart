@@ -33,7 +33,7 @@ class TranslationsNl extends Translations {
   @override
   String get locale => 'Nederlands';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'YiDrop';
   @override
   late final _TranslationsGeneralNl general = _TranslationsGeneralNl._(_root);
   @override
@@ -361,7 +361,7 @@ class _TranslationsReceiveOptionsPageNl extends TranslationsReceiveOptionsPageEn
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSend-map)';
+  String get appDirectory => '(YiDrop-map)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageNl extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'De code is \'${pin}\'.';
   @override
-  String get encryptionHint => 'LocalSend maakt gebruik van een zelfondertekend certificaat. Je moet dit accepteren in je browser.';
+  String get encryptionHint => 'YiDrop maakt gebruik van een zelfondertekend certificaat. Je moet dit accepteren in je browser.';
   @override
   String pendingRequests({required Object n}) => 'Openstaande verzoeken: ${n}';
 }
@@ -457,10 +457,10 @@ class _TranslationsAboutPageNl extends TranslationsAboutPageEn {
 
   // Translations
   @override
-  String get title => 'Over LocalSend';
+  String get title => 'Over YiDrop';
   @override
   List<String> get description => [
-        'LocalSend is een gratis en opensource app waarmee je veilig bestanden en berichten met apparaten op je lokale netwerk kunt delen, zonder internetverbinding.',
+        'YiDrop is een gratis en opensource app waarmee je veilig bestanden en berichten met apparaten op je lokale netwerk kunt delen, zonder internetverbinding.',
         'De app is beschikbaar voor Android, iOS, macOS, Windows en Linux. Je vindt alle downloadopties op de officiële website.',
       ];
   @override
@@ -486,7 +486,7 @@ class _TranslationsDonationPageNl extends TranslationsDonationPageEn {
   String get title => 'Doneren';
   @override
   String get info =>
-      'LocalSend is gratis, opensource en advertentievrij. Als je de app graag gebruikt, kun je de ontwikkeling steunen middels een donatie.';
+      'YiDrop is gratis, opensource en advertentievrij. Als je de app graag gebruikt, kun je de ontwikkeling steunen middels een donatie.';
   @override
   String donate({required Object amount}) => '${amount} doneren';
   @override
@@ -608,7 +608,7 @@ class _TranslationsTrayNl extends TranslationsTrayEn {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'LocalSend afsluiten';
+  String get close => 'YiDrop afsluiten';
   @override
   String get closeWindows => 'Sluiten';
 }
@@ -833,7 +833,7 @@ class _TranslationsSettingsTabGeneralNl extends TranslationsSettingsTabGeneralEn
   @override
   String get launchMinimized => 'Automatisch starten: verborgen';
   @override
-  String get showInContextMenu => 'LocalSend weergeven in contextmenu';
+  String get showInContextMenu => 'YiDrop weergeven in contextmenu';
   @override
   String get animations => 'Animaties';
 }
@@ -935,7 +935,7 @@ class _TranslationsSettingsTabOtherNl extends TranslationsSettingsTabOtherEn {
   @override
   String get title => 'Overig';
   @override
-  String get support => 'LocalSend steunen';
+  String get support => 'YiDrop steunen';
   @override
   String get donate => 'Doneren';
   @override
@@ -1262,7 +1262,7 @@ class _TranslationsDialogsLocalNetworkUnauthorizedNl extends TranslationsDialogs
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'LocalSend heeft rechten nodig om op het lokale netwerk naar andere apparaten te kunnen zoeken. Verleen deze rechten in de instellingen.';
+      'YiDrop heeft rechten nodig om op het lokale netwerk naar andere apparaten te kunnen zoeken. Verleen deze rechten in de instellingen.';
   @override
   String get gotoSettings => 'Instellingen';
 }
@@ -1427,7 +1427,7 @@ class _TranslationsDialogsSendModeHelpNl extends TranslationsDialogsSendModeHelp
   @override
   String get multiple => 'Bestanden naar meerdere ontvangers verzenden. De selectie blijft na de bestandsoverdracht behouden.';
   @override
-  String get link => 'Ontvangers die LocalSend niet hebben geïnstalleerd kunnen de bestanden downloaden door de link in hun browser te openen.';
+  String get link => 'Ontvangers die YiDrop niet hebben geïnstalleerd kunnen de bestanden downloaden door de link in hun browser te openen.';
 }
 
 // Path: dialogs.zoom

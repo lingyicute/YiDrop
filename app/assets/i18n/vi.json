@@ -1,6 +1,6 @@
 {
   "locale": "Tiếng Việt",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Đồng ý",
     "accepted": "Đã đồng ý",
@@ -108,7 +108,7 @@
       "minimizeToTray": "Thoát: Ẩn xuống thanh tác vụ",
       "launchAtStartup": "Tự khởi động sau khi đăng nhập",
       "launchMinimized": "Tự khởi động: Khởi động ẩn",
-      "showInContextMenu": "Hiển thị LocalSend ở danh mục",
+      "showInContextMenu": "Hiển thị YiDrop ở danh mục",
       "animations": "Hoạt ảnh"
     },
     "receive": {
@@ -144,7 +144,7 @@
     },
     "other": {
       "title": "Khác",
-      "support": "Hỗ trợ LocalSend",
+      "support": "Hỗ trợ YiDrop",
       "donate": "Ủng hộ",
       "privacyPolicy": "Chính sách bảo mật",
       "termsOfUse": "Điều khoản sử dụng"
@@ -203,7 +203,7 @@
   "receiveOptionsPage": {
     "title": "Tuỳ chọn",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(Thư mục LocalSend)",
+    "appDirectory": "(Thư mục YiDrop)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
     "saveToGalleryOff": "Đã tự động tắt vì là thư mục."
   },
@@ -244,13 +244,13 @@
     "autoAccept": "Tự động chấp nhận yêu cầu",
     "requirePin": "Cần cung cấp mã PIN",
     "pinHint": "Mã PIN là \"{pin}\"",
-    "encryptionHint": "LocalSend dùng chứng chỉ tự tạo. Bạn cần chấp thuận trong trình duyệt.",
+    "encryptionHint": "YiDrop dùng chứng chỉ tự tạo. Bạn cần chấp thuận trong trình duyệt.",
     "pendingRequests": "Yêu cầu chờ: {n}"
   },
   "aboutPage": {
-    "title": "Thông tin về LocalSend",
+    "title": "Thông tin về YiDrop",
     "description": [
-      "LocalSend là một phần mềm miễn phí mã nguồn mở, giúp bạn chia sẻ tập tin cũng như tin nhắn đến các thiết bị phụ cận một cách bảo mật thông qua mạng nội bộ mà không cần kết nối mạng đến bên ngoài.",
+      "YiDrop là một phần mềm miễn phí mã nguồn mở, giúp bạn chia sẻ tập tin cũng như tin nhắn đến các thiết bị phụ cận một cách bảo mật thông qua mạng nội bộ mà không cần kết nối mạng đến bên ngoài.",
       "Ứng dụng có trên Android, iOS, macOS, Windows và Linux. Bạn có thể tìm thấy các tuỳ chọn tải ở trang chủ."
     ],
     "author": "Tác giả",
@@ -260,7 +260,7 @@
   },
   "donationPage": {
     "title": "Ủng hộ",
-    "info": "LocalSend là ứng dụng miễn phí, mã nguồn mở, không chứa quảng cáo. Nếu bạn yêu thích ứng dụng này, bạn có thể hỗ trợ việc phát triển bằng việc ủng hộ.",
+    "info": "YiDrop là ứng dụng miễn phí, mã nguồn mở, không chứa quảng cáo. Nếu bạn yêu thích ứng dụng này, bạn có thể hỗ trợ việc phát triển bằng việc ủng hộ.",
     "donate": "Ủng hộ {amount}",
     "thanks": "Xin chân thành cảm ơn!",
     "restore": "Khôi phục lịch sử ủng hộ"
@@ -336,7 +336,7 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend không thể tìm kiếm thiết bị khác khi không được phép quét mạng nội bộ. Vui lòng trao quyền cho ứng dụng trong cài đặt.",
+      "description": "YiDrop không thể tìm kiếm thiết bị khác khi không được phép quét mạng nội bộ. Vui lòng trao quyền cho ứng dụng trong cài đặt.",
       "gotoSettings": "Cài đặt"
     },
     "messageInput": {
@@ -385,7 +385,7 @@
       "title": "Chế độ gửi",
       "single": "Gửi tập tin tới một người nhận. Lựa chọn sẽ được xoá sau khi quá trình gửi hoàn thành.",
       "multiple": "Gửi tập tin tới nhiều người nhận. Lựa chọn sẽ không bị xoá.",
-      "link": "Người nhận chưa cài đặt LocalSend có thể nhận tập tin bằng cách mở liên kết trong trình duyệt."
+      "link": "Người nhận chưa cài đặt YiDrop có thể nhận tập tin bằng cách mở liên kết trong trình duyệt."
     },
     "zoom": {
       "title": "Đường dẫn"
@@ -398,7 +398,7 @@
   "tray": {
     "@info": "Apple Guidelines are very strict about the 'close' wording.",
     "open": "@:general.open",
-    "close": "Đóng LocalSend",
+    "close": "Đóng YiDrop",
     "closeWindows": "Thoát"
   },
   "web": {

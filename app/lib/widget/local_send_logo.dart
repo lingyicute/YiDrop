@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:localsend_app/gen/assets.gen.dart';
+import 'package:yidrop_app/gen/assets.gen.dart';
 
-class LocalSendLogo extends StatelessWidget {
+class YiDropLogo extends StatelessWidget {
   final bool withText;
 
-  const LocalSendLogo({required this.withText});
+  const YiDropLogo({required this.withText});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class LocalSendLogo extends StatelessWidget {
         children: [
           logo,
           const Text(
-            'LocalSend',
+            'YiDrop',
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),

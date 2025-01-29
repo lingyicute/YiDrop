@@ -1,19 +1,19 @@
 import 'package:common/isolate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:localsend_app/config/init.dart';
-import 'package:localsend_app/config/init_error.dart';
-import 'package:localsend_app/config/theme.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/model/persistence/color_mode.dart';
-import 'package:localsend_app/pages/home_page.dart';
-import 'package:localsend_app/provider/local_ip_provider.dart';
-import 'package:localsend_app/provider/settings_provider.dart';
-import 'package:localsend_app/util/ui/dynamic_colors.dart';
-import 'package:localsend_app/widget/watcher/life_cycle_watcher.dart';
-import 'package:localsend_app/widget/watcher/shortcut_watcher.dart';
-import 'package:localsend_app/widget/watcher/tray_watcher.dart';
-import 'package:localsend_app/widget/watcher/window_watcher.dart';
+import 'package:yidrop_app/config/init.dart';
+import 'package:yidrop_app/config/init_error.dart';
+import 'package:yidrop_app/config/theme.dart';
+import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/model/persistence/color_mode.dart';
+import 'package:yidrop_app/pages/home_page.dart';
+import 'package:yidrop_app/provider/local_ip_provider.dart';
+import 'package:yidrop_app/provider/settings_provider.dart';
+import 'package:yidrop_app/util/ui/dynamic_colors.dart';
+import 'package:yidrop_app/widget/watcher/life_cycle_watcher.dart';
+import 'package:yidrop_app/widget/watcher/shortcut_watcher.dart';
+import 'package:yidrop_app/widget/watcher/tray_watcher.dart';
+import 'package:yidrop_app/widget/watcher/window_watcher.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 
@@ -32,13 +32,13 @@ Future<void> main(List<String> args) async {
   runApp(RefenaScope.withContainer(
     container: container,
     child: TranslationProvider(
-      child: const LocalSendApp(),
+      child: const YiDropApp(),
     ),
   ));
 }
 
-class LocalSendApp extends StatelessWidget {
-  const LocalSendApp();
+class YiDropApp extends StatelessWidget {
+  const YiDropApp();
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class LocalSendApp extends StatelessWidget {
                 break;
               case AppLifecycleState.detached:
                 // The main isolate is only exited when all child isolates are exited.
-                // https://github.com/localsend/localsend/issues/1568
+                // https://github.com/lingyicute/yidrop/issues/1568
                 ref.redux(parentIsolateProvider).dispatch(IsolateDisposeAction());
                 break;
               default:

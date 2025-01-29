@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/pages/home_page.dart';
-import 'package:localsend_app/pages/home_page_controller.dart';
-import 'package:localsend_app/pages/receive_history_page.dart';
-import 'package:localsend_app/pages/tabs/receive_tab_vm.dart';
-import 'package:localsend_app/provider/animation_provider.dart';
-import 'package:localsend_app/util/ip_helper.dart';
-import 'package:localsend_app/widget/animations/initial_fade_transition.dart';
-import 'package:localsend_app/widget/column_list_view.dart';
-import 'package:localsend_app/widget/custom_icon_button.dart';
-import 'package:localsend_app/widget/local_send_logo.dart';
-import 'package:localsend_app/widget/responsive_list_view.dart';
-import 'package:localsend_app/widget/rotating_widget.dart';
+import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/pages/home_page.dart';
+import 'package:yidrop_app/pages/home_page_controller.dart';
+import 'package:yidrop_app/pages/receive_history_page.dart';
+import 'package:yidrop_app/pages/tabs/receive_tab_vm.dart';
+import 'package:yidrop_app/provider/animation_provider.dart';
+import 'package:yidrop_app/util/ip_helper.dart';
+import 'package:yidrop_app/widget/animations/initial_fade_transition.dart';
+import 'package:yidrop_app/widget/column_list_view.dart';
+import 'package:yidrop_app/widget/custom_icon_button.dart';
+import 'package:yidrop_app/widget/local_send_logo.dart';
+import 'package:yidrop_app/widget/responsive_list_view.dart';
+import 'package:yidrop_app/widget/rotating_widget.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 
@@ -51,7 +51,7 @@ class ReceiveTab extends StatelessWidget {
                             return RotatingWidget(
                               duration: const Duration(seconds: 15),
                               spinning: vm.serverState != null && animations && activeTab == HomeTab.receive,
-                              child: const LocalSendLogo(withText: false),
+                              child: const YiDropLogo(withText: false),
                             );
                           }),
                         ),

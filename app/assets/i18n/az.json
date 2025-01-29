@@ -1,6 +1,6 @@
 {
   "locale": "Azərbaycanca",
-  "appName": "LocalSend",
+  "appName": "YiDrop",
   "general": {
     "accept": "Qəbul et",
     "accepted": "Qəbul edildi",
@@ -108,7 +108,7 @@
       "minimizeToTray": "Bağlayanda Sistem Sahəsi/Menyu Cizgisinə kiçilt",
       "launchAtStartup": "Girişdən sonra birbaşa başlat",
       "launchMinimized": "Birbaşa başlat: Gizli başlat",
-      "showInContextMenu": "Məzmun menyusunda LocalSend-i göstər",
+      "showInContextMenu": "Məzmun menyusunda YiDrop-i göstər",
       "animations": "Animasiyalar"
     },
     "receive": {

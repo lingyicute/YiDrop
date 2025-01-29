@@ -101,7 +101,7 @@ class MulticastService {
     _cancelCompleter.complete();
   }
 
-  /// Sends an announcement which triggers a response on every LocalSend member of the network.
+  /// Sends an announcement which triggers a response on every YiDrop member of the network.
   Future<void> sendAnnouncement() async {
     final syncState = _ref.read(syncProvider);
     final sockets = await _getSockets(
