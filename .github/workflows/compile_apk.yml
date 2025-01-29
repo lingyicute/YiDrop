@@ -56,6 +56,9 @@ jobs:
         working-directory: ${{ env.APK_BUILD_DIR }}/app
         run: |
             rustup install 1.83.0
+            dart pub outdated
+            rustup target add armv7-linux-androideabi
+            flutter pub get
             flutter build apk --split-per-abi
 
       - name: Upload APK
