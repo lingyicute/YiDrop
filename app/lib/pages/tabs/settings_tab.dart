@@ -545,7 +545,7 @@ class SettingsTab extends StatelessWidget {
                   orElse: () => Container(),
                 ),
             Text(
-              '© ${DateTime.now().year} Tien Do Nam',
+              'Copyright ${DateTime.now().year} lingyicute',
               textAlign: TextAlign.center,
             ),
             Center(
@@ -726,7 +726,7 @@ extension on ColorMode {
       ColorMode.system => t.settingsTab.general.colorOptions.system,
       ColorMode.localsend => t.appName,
       ColorMode.oled => t.settingsTab.general.colorOptions.oled,
-      ColorMode.yaru => 'Yaru',
+      ColorMode.yaru => 'Ubuntu',
     };
   }
 }
