@@ -97,7 +97,7 @@ dependency_overrides:
     # Remove windows support as it causes trouble with Windows 7
     # https://github.com/Baseflow/flutter-permission-handler/issues/1034
     git:
-      url: https://github.com/yidrop/permission_handler_windows_noop.git
+      url: https://github.com/localsend/permission_handler_windows_noop.git
       ref: 2dadd8afbf81e0e3e4791d7144e689555e58f649
 
 flutter:
