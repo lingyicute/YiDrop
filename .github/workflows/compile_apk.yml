@@ -54,7 +54,9 @@ jobs:
 
       - name: Build APK
         working-directory: ${{ env.APK_BUILD_DIR }}/app
-        run: flutter build apk --split-per-abi
+        run: |
+            rustup install 1.83.0
+            flutter build apk --split-per-abi
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
