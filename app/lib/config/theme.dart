@@ -34,14 +34,14 @@ ThemeData getTheme(ColorMode colorMode, Brightness brightness, DynamicColors? dy
   final String? fontFamily;
   if (checkPlatform([TargetPlatform.windows])) {
     fontFamily = switch (LocaleSettings.currentLocale) {
-      AppLocale.ja => 'Yu Gothic UI',
-      AppLocale.ko => 'Malgun Gothic',
-      AppLocale.zhCn => 'Microsoft YaHei UI',
-      AppLocale.zhHk || AppLocale.zhTw => 'Microsoft JhengHei UI',
-      _ => 'Segoe UI Variable Display',
+      AppLocale.ja => 'Starrina',
+      AppLocale.ko => 'Starrina',
+      AppLocale.zhCn => 'Starrina',
+      AppLocale.zhHk || AppLocale.zhTw => 'Starrina',
+      _ => 'Starrina',
     };
   } else {
-    fontFamily = null;
+    fontFamily = 'Starrina';
   }
 
   return ThemeData(
