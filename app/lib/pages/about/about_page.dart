@@ -39,9 +39,9 @@ class AboutPage extends StatelessWidget {
           Center(
             child: TextButton(
               onPressed: () async {
-                await launchUrl(Uri.parse('https://yidrop.org'));
+                await launchUrl(Uri.parse('https://drop.92li.us.kg'));
               },
-              child: const Text('yidrop.org'),
+              child: const Text('drop.92li.us.kg'),
             ),
           ),
           const SizedBox(height: 10),
@@ -132,7 +132,7 @@ class AboutPage extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () async {
-                  await launchUrl(Uri.parse('https://yidrop.org'));
+                  await launchUrl(Uri.parse('https://drop.92li.us.kg'));
                 },
                 child: const Text('Homepage'),
               ),
