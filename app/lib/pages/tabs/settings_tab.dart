@@ -493,22 +493,11 @@ class SettingsTab extends StatelessWidget {
                   buttonLabel: t.general.open,
                   onTap: () async {
                     await launchUrl(
-                      Uri.parse('https://yidrop.org/privacy'),
+                      Uri.parse('https://92li.us.kg'),
                       mode: LaunchMode.externalApplication,
                     );
                   },
                 ),
-                if (checkPlatform([TargetPlatform.iOS, TargetPlatform.macOS]))
-                  _ButtonEntry(
-                    label: t.settingsTab.other.termsOfUse,
-                    buttonLabel: t.general.open,
-                    onTap: () async {
-                      await launchUrl(
-                        Uri.parse('https://www.apple.com/legal/internet-services/itunes/dev/stdeula/'),
-                        mode: LaunchMode.externalApplication,
-                      );
-                    },
-                  ),
               ],
             ),
             Row(
