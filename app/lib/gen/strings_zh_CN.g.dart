@@ -1007,7 +1007,7 @@ class _TranslationsSettingsTabOtherZhCn extends TranslationsSettingsTabOtherEn {
   @override
   String get donate => '捐赠';
   @override
-  String get privacyPolicy => '隐私政策';
+  String get privacyPolicy => '梨の主页';
   @override
   String get termsOfUse => '使用条款';
 }
@@ -1453,9 +1453,9 @@ class _TranslationsDialogsQuickSaveFromFavoritesNoticeZhCn extends TranslationsD
   String get title => _root.general.quickSaveFromFavorites;
   @override
   List<String> get content => [
-        '当前会自动接受收藏夹中设备的文件请求。',
-        '警告：这目前并非绝对安全，知道您收藏夹列表中的设备指纹被黑客窃取，其仍可以向您发送文件。',
-        '但是，此选项比“允许任何设备”更安全。',
+        '现在 YiDrop 会自动接受收藏夹中设备的文件请求。',
+        '警告：这并非绝对安全。如果某个被你列为收藏的设备存在系统层面的安全漏洞，攻击者将可以窃取它的指纹，从而向您发送文件。',
+        '不过，它至少比“允许任何设备”更安全。',
       ];
 }
 
