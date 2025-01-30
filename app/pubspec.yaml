@@ -108,5 +108,10 @@ flutter:
     - assets/web/
     - assets/CHANGELOG.md
 
+  fonts:
+    - family: Starrina
+      fonts:
+        - asset: assets/fonts/Starrina-Regular.ttf
+
 flutter_gen:
   line_length: 150
