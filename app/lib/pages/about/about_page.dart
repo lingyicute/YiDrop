@@ -134,37 +134,25 @@ class AboutPage extends StatelessWidget {
                 onPressed: () async {
                   await launchUrl(Uri.parse('https://drop.92li.us.kg'));
                 },
-                child: const Text('Homepage'),
+                child: const Text('YiDrop 网站'),
               ),
               TextButton(
                 onPressed: () async {
                   await launchUrl(Uri.parse('https://github.com/lingyicute/yidrop'), mode: LaunchMode.externalApplication);
                 },
-                child: const Text('Source Code (Github)'),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await launchUrl(Uri.parse('https://codeberg.org/lingyicute/yidrop'), mode: LaunchMode.externalApplication);
-                },
-                child: const Text('Source Code (Codeberg)'),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await launchUrl(Uri.parse('https://www.apache.org/licenses/LICENSE-2.0'));
-                },
-                child: const Text('Apache License 2.0'),
+                child: const Text('YiDrop 源代码'),
               ),
               TextButton(
                 onPressed: () async {
                   await context.push(() => const LicensePage());
                 },
-                child: const Text('License Notices'),
+                child: const Text('鸣谢'),
               ),
               TextButton(
                 onPressed: () async {
                   await context.push(() => const DebugPage());
                 },
-                child: const Text('Debugging'),
+                child: const Text('调试选项'),
               ),
             ],
           ),
