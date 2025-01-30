@@ -460,17 +460,13 @@ class _TranslationsAboutPageZhCn extends TranslationsAboutPageEn {
   String get title => '关于 YiDrop';
   @override
   List<String> get description => [
-        'YiDrop 是一款免费的开源应用程序，可让您通过本地网络与附近的设备安全地分享文件和信息，而无需互联网连接。',
-        '本程序可在 Android、iOS、macOS、Windows 和 Linux 上使用。您可以在官方主页找到所有下载选项。',
+        'YiDrop 是一款免费的开源应用程序，可通过本地网络与附近的设备便捷地分享文件和信息，无需广域网连接，安全又可靠。',
+        '它带着跨平台的使命出发，支持 Android、Windows 和 Linux 全平台。你可以在 GitHub 找到所有安装包哦。',
       ];
   @override
   String get author => '作者';
   @override
-  String get contributors => '贡献者';
-  @override
-  String get packagers => '打包者';
-  @override
-  String get translators => '翻译者';
+  String get contributors => '鸣谢：LocalSend 项目的贡献者';
 }
 
 // Path: donationPage

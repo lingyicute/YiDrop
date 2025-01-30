@@ -148,28 +148,6 @@ class SettingsTab extends StatelessWidget {
               title: t.settingsTab.receive.title,
               children: [
                 _BooleanEntry(
-                  label: t.settingsTab.receive.quickSave,
-                  value: vm.settings.quickSave,
-                  onChanged: (b) async {
-                    final old = vm.settings.quickSave;
-                    await ref.notifier(settingsProvider).setQuickSave(b);
-                    if (!old && b && context.mounted) {
-                      await QuickSaveNotice.open(context);
-                    }
-                  },
-                ),
-                _BooleanEntry(
-                  label: t.settingsTab.receive.quickSaveFromFavorites,
-                  value: vm.settings.quickSaveFromFavorites,
-                  onChanged: (b) async {
-                    final old = vm.settings.quickSaveFromFavorites;
-                    await ref.notifier(settingsProvider).setQuickSaveFromFavorites(b);
-                    if (!old && b && context.mounted) {
-                      await QuickSaveFromFavoritesNotice.open(context);
-                    }
-                  },
-                ),
-                _BooleanEntry(
                   label: t.settingsTab.receive.requirePin,
                   value: vm.settings.receivePin != null,
                   onChanged: (b) async {
