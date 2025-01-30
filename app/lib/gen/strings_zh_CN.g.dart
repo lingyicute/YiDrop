@@ -1529,7 +1529,7 @@ class _TranslationsSettingsTabGeneralColorOptionsZhCn extends TranslationsSettin
   @override
   String get system => '跟随系统';
   @override
-  String get oled => 'OLED';
+  String get oled => '深邃黑';
 }
 
 // Path: settingsTab.general.languageOptions

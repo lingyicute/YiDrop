@@ -682,8 +682,8 @@ extension on ThemeMode {
 extension on ColorMode {
   String get humanName {
     return switch (this) {
-      ColorMode.system => t.settingsTab.general.colorOptions.system,
-      ColorMode.yidrop => t.appName,
+      ColorMode.system => 'Material',
+      ColorMode.yidrop => '星愿蓝',
       ColorMode.oled => t.settingsTab.general.colorOptions.oled,
       ColorMode.yaru => 'Ubuntu',
     };
