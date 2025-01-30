@@ -6,7 +6,7 @@
 #define MyAppName "YiDrop"
 #define MyAppVersion "1.16.2"
 #define MyAppPublisher "Tien Do Nam"
-#define MyAppURL "https://yidrop.org"
+#define MyAppURL "https://drop.92li.us.kg"
 #define MyAppExeName "yidrop_app.exe"
 
 [Setup]
