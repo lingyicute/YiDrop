@@ -91,7 +91,7 @@ In most cases, LocalSend should work out of the box. However, if you are having 
 
 | Traffic Type | Protocol | Port  | Action |
 |--------------|----------|-------|--------|
-| Incoming     | TCP, UDP | 53317 | Allow  |
+| Incoming     | TCP, UDP | 59420 | Allow  |
 | Outgoing     | TCP, UDP | Any   | Allow  |
 
 Also make sure to disable AP isolation on your router. It should be usually disabled by default but some routers may have it enabled (especially guest networks).
