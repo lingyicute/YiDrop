@@ -435,7 +435,7 @@
     },
     "quickSaveNotice": {
       "title": "@:general.quickSave",
-      "content": "自动接受所有文件传输请求。请注意，这会让此网络中的所有人都可以向你发送文件。"
+      "content": "自动接受所有文件传输请求。请注意，和你处在同一网络中的任何人都将可以向你发送文件。"
     },
     "quickSaveFromFavoritesNotice": {
       "title": "@:general.quickSaveFromFavorites",
