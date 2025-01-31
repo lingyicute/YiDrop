@@ -159,7 +159,7 @@ class _ApkPickerPageState extends State<ApkPickerPage> with Refena {
                   const Spacer(),
                   Row(
                     children: [
-                      const Text('Select Multiple Apps'),
+                      const Text('多选'),
                       const SizedBox(width: 5),
                       Switch(
                         value: apkParams.selectMultipleApps,
