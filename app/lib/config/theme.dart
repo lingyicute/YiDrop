@@ -30,14 +30,10 @@ ThemeData getTheme(ColorMode colorMode, Brightness brightness, DynamicColors? dy
     borderRadius: _borderRadius,
   );
 
-  // https://github.com/lingyicute/yidrop/issues/52
   final String? fontFamily;
   if (checkPlatform([TargetPlatform.windows])) {
     fontFamily = switch (LocaleSettings.currentLocale) {
-      AppLocale.ja => 'Starrina',
-      AppLocale.ko => 'Starrina',
       AppLocale.zhCn => 'Starrina',
-      AppLocale.zhHk || AppLocale.zhTw => 'Starrina',
       _ => 'Starrina',
     };
   } else {

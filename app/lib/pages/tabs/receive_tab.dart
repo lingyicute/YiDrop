@@ -29,118 +29,122 @@ class ReceiveTab extends StatelessWidget {
     final vm = context.watch(receiveTabVmProvider);
 
     return Stack(
-      children: [
-        Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: ResponsiveListView.defaultMaxWidth),
-            child: Padding(
-              padding: const EdgeInsets.all(30),
-              child: ColumnListView(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+children: [
+  Center(
+    child: ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: ResponsiveListView.defaultMaxWidth),
+      child: Padding(
+        padding: const EdgeInsets.all(30),
+        child: ColumnListView(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InitialFadeTransition(
-                          duration: const Duration(milliseconds: 300),
-                          delay: const Duration(milliseconds: 200),
-                          child: Consumer(builder: (context, ref) {
-                            final animations = ref.watch(animationProvider);
-                            final activeTab = ref.watch(homePageControllerProvider.select((state) => state.currentTab));
-                            return RotatingWidget(
-                              duration: const Duration(seconds: 15),
-                              spinning: vm.serverState != null && animations && activeTab == HomeTab.receive,
-                              child: const YiDropLogo(withText: false),
-                            );
-                          }),
-                        ),
-                        InitialFadeTransition(
-                          duration: const Duration(milliseconds: 300),
-                          delay: const Duration(milliseconds: 350),
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(vm.serverState?.alias ?? vm.aliasSettings, style: const TextStyle(fontSize: 48)),
-                          ),
-                        ),
-                        InitialFadeTransition(
-                          duration: const Duration(milliseconds: 300),
-                          delay: const Duration(milliseconds: 500),
-                          child: Text(
-                            vm.serverState == null ? t.general.offline : vm.localIps.map((ip) => '#${ip.visualId}').toSet().join(' '),
-                            style: const TextStyle(fontSize: 24),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
+                  InitialFadeTransition(
+                    duration: const Duration(milliseconds: 300),
+                    delay: const Duration(milliseconds: 200),
+                    child: Consumer(builder: (context, ref) {
+                      final animations = ref.watch(animationProvider);
+                      final activeTab = ref.watch(homePageControllerProvider.select((state) => state.currentTab));
+                      return RotatingWidget(
+                        duration: const Duration(seconds: 15),
+                        spinning: vm.serverState != null && animations && activeTab == HomeTab.receive,
+                        child: const YiDropLogo(withText: false),
+                      );
+                    }),
+                  ),
+                  InitialFadeTransition(
+                    duration: const Duration(milliseconds: 300),
+                    delay: const Duration(milliseconds: 350),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(vm.serverState?.alias ?? vm.aliasSettings, style: const TextStyle(fontSize: 48)),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Center(
-                      child: Column(
-                        children: [
-                          Text(t.general.quickSave),
-                          const SizedBox(height: 10),
-                          SegmentedButton<_QuickSaveMode>(
-                            multiSelectionEnabled: false,
-                            emptySelectionAllowed: false,
-                            showSelectedIcon: false,
-                            onSelectionChanged: (selection) async {
-                              if (selection.contains(_QuickSaveMode.off)) {
-                                await vm.onSetQuickSave(context, false);
-                                if (context.mounted) {
-                                  await vm.onSetQuickSaveFromFavorites(context, false);
-                                }
-                              } else if (selection.contains(_QuickSaveMode.favorites)) {
-                                await vm.onSetQuickSave(context, false);
-                                if (context.mounted) {
-                                  await vm.onSetQuickSaveFromFavorites(context, true);
-                                }
-                              } else if (selection.contains(_QuickSaveMode.on)) {
-                                await vm.onSetQuickSaveFromFavorites(context, false);
-                                if (context.mounted) {
-                                  await vm.onSetQuickSave(context, true);
-                                }
-                              }
-                            },
-                            selected: {
-                              if (!vm.quickSaveSettings && !vm.quickSaveFromFavoritesSettings) _QuickSaveMode.off,
-                              if (vm.quickSaveFromFavoritesSettings) _QuickSaveMode.favorites,
-                              if (vm.quickSaveSettings) _QuickSaveMode.on,
-                            },
-                            segments: [
-                              ButtonSegment(
-                                value: _QuickSaveMode.off,
-                                label: Text(t.receiveTab.quickSave.off),
-                              ),
-                              ButtonSegment(
-                                value: _QuickSaveMode.favorites,
-                                label: Text(t.receiveTab.quickSave.favorites),
-                              ),
-                              ButtonSegment(
-                                value: _QuickSaveMode.on,
-                                label: Text(t.receiveTab.quickSave.on),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                  InitialFadeTransition(
+                    duration: const Duration(milliseconds: 300),
+                    delay: const Duration(milliseconds: 500),
+                    child: Text(
+                      vm.serverState == null ? t.general.offline : vm.localIps.map((ip) => '#${ip.visualId}').toSet().join(' '),
+                      style: const TextStyle(fontSize: 24),
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  const SizedBox(height: 15),
                 ],
               ),
             ),
-          ),
+            InitialFadeTransition(
+              duration: const Duration(milliseconds: 300),
+              delay: const Duration(milliseconds: 650),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Center(
+                  child: Column(
+                    children: [
+                      Text(t.general.quickSave),
+                      const SizedBox(height: 10),
+                      SegmentedButton<_QuickSaveMode>(
+                        multiSelectionEnabled: false,
+                        emptySelectionAllowed: false,
+                        showSelectedIcon: false,
+                        onSelectionChanged: (selection) async {
+                          if (selection.contains(_QuickSaveMode.off)) {
+                            await vm.onSetQuickSave(context, false);
+                            if (context.mounted) {
+                              await vm.onSetQuickSaveFromFavorites(context, false);
+                            }
+                          } else if (selection.contains(_QuickSaveMode.favorites)) {
+                            await vm.onSetQuickSave(context, false);
+                            if (context.mounted) {
+                              await vm.onSetQuickSaveFromFavorites(context, true);
+                            }
+                          } else if (selection.contains(_QuickSaveMode.on)) {
+                            await vm.onSetQuickSaveFromFavorites(context, false);
+                            if (context.mounted) {
+                              await vm.onSetQuickSave(context, true);
+                            }
+                          }
+                        },
+                        selected: {
+                          if (!vm.quickSaveSettings && !vm.quickSaveFromFavoritesSettings) _QuickSaveMode.off,
+                          if (vm.quickSaveFromFavoritesSettings) _QuickSaveMode.favorites,
+                          if (vm.quickSaveSettings) _QuickSaveMode.on,
+                        },
+                        segments: [
+                          ButtonSegment(
+                            value: _QuickSaveMode.off,
+                            label: Text(t.receiveTab.quickSave.off),
+                          ),
+                          ButtonSegment(
+                            value: _QuickSaveMode.favorites,
+                            label: Text(t.receiveTab.quickSave.favorites),
+                          ),
+                          ButtonSegment(
+                            value: _QuickSaveMode.on,
+                            label: Text(t.receiveTab.quickSave.on),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+          ],
         ),
-        _InfoBox(vm),
-        _CornerButtons(
-          showAdvanced: vm.showAdvanced,
-          showHistoryButton: vm.showHistoryButton,
-          toggleAdvanced: vm.toggleAdvanced,
-        ),
-      ],
+      ),
+    ),
+  ),
+  _InfoBox(vm),
+  _CornerButtons(
+    showAdvanced: vm.showAdvanced,
+    showHistoryButton: vm.showHistoryButton,
+    toggleAdvanced: vm.toggleAdvanced,
+  ),
+],
     );
   }
 }
