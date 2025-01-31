@@ -3,8 +3,8 @@
 /// Source: assets/i18n
 /// To regenerate, run: `dart run slang`
 ///
-/// Locales: 52
-/// Strings: 16382 (315 per locale)
+/// Locales: 2
+/// Strings: 736 (368 per locale)
 
 // coverage:ignore-file
 // ignore_for_file: type=lint, unused_import
@@ -14,6 +14,7 @@ import 'package:intl/intl.dart';
 import 'package:slang/generated.dart';
 import 'package:slang_flutter/slang_flutter.dart';
 export 'package:slang_flutter/slang_flutter.dart';
+
 import 'strings_zh_CN.g.dart' deferred as l_zh_CN;
 part 'strings_en.g.dart';
 
@@ -25,7 +26,8 @@ part 'strings_en.g.dart';
 /// - if (LocaleSettings.currentLocale == AppLocale.en) // locale check
 enum AppLocale with BaseAppLocale<AppLocale, Translations> {
   en(languageCode: 'en'),
-  zhCn(languageCode: 'zh', countryCode: 'CN'),
+  zhCn(languageCode: 'zh', countryCode: 'CN');
+
   const AppLocale({
     required this.languageCode,
     this.scriptCode, // ignore: unused_element
