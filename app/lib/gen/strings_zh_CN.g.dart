@@ -516,7 +516,7 @@ class _TranslationsAliasGeneratorZhCn extends TranslationsAliasGeneratorEn {
   List<String> get adjectives => [
         '玲珑剔透',
         '甜美',
-        '丝滑',
+        '晶莹',
         '晶莹',
         '不染凡尘',
         '聪明',
@@ -532,22 +532,22 @@ class _TranslationsAliasGeneratorZhCn extends TranslationsAliasGeneratorEn {
         '新鲜',
         '闪亮',
         '玲珑剔透',
-        '甜美',
-        '丝滑',
+        '幸运',
+        '可爱',
         '晶莹',
         '不染凡尘',
-        '善良',
+        '幸运',
+        '可爱',
         '软糯',
         '可爱',
         '开心',
         '酥脆',
-        '漂亮',
-        '可口',
         '香脆',
+        '闪亮',
         '幸运',
         '聪明',
         '可爱',
-        '香甜',
+        '清甜',
         '脆嫩',
         '酸涩',
         '饱满',
@@ -560,8 +560,8 @@ class _TranslationsAliasGeneratorZhCn extends TranslationsAliasGeneratorEn {
         '香蕉',
         '黑莓',
         '蓝莓',
-        '西兰花',
-        '胡萝卜',
+        '桃子',
+        '桃子',
         '樱桃',
         '椰子',
         '葡萄',
@@ -570,15 +570,15 @@ class _TranslationsAliasGeneratorZhCn extends TranslationsAliasGeneratorEn {
         '芒果',
         '甜瓜',
         '蘑菇',
-        '洋葱',
+        '梨',
         '橙子',
         '木瓜',
         '桃子',
         '梨',
         '菠萝',
         '小土豆',
-        '南瓜',
-        '覆盆子',
+        '柠檬',
+        '柠檬',
         '草莓',
         '番茄',
       ];
@@ -862,7 +862,7 @@ class _TranslationsSendTabSendModesZhCn extends TranslationsSendTabSendModesEn {
   @override
   String get multiple => '多个接收者';
   @override
-  String get link => '通过链接分享';
+  String get link => '应急模式';
 }
 
 // Path: settingsTab.general
@@ -1433,7 +1433,7 @@ class _TranslationsDialogsQuickSaveNoticeZhCn extends TranslationsDialogsQuickSa
   @override
   String get title => _root.general.quickSave;
   @override
-  String get content => '自动接受所有文件传输请求。请注意，这会让此网络中的所有人都可以向你发送文件。';
+  String get content => '自动接受所有文件传输请求。请注意，和你处在同一网络中的任何人都将可以向你发送文件。';
 }
 
 // Path: dialogs.quickSaveFromFavoritesNotice
@@ -1484,7 +1484,7 @@ class _TranslationsDialogsSendModeHelpZhCn extends TranslationsDialogsSendModeHe
   @override
   String get multiple => '发送文件给多个接收者。已选择的文件在发送后不会取消选择。';
   @override
-  String get link => '未安装 YiDrop 的接收者可以在浏览器中打开链接以下载选中的文件。';
+  String get link => '通过此模式，YiDrop 可以创建一个临时服务器，这样未安装 YiDrop 的设备就可以通过浏览器下载你分享的文件。';
 }
 
 // Path: dialogs.zoom
