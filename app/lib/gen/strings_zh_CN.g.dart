@@ -945,7 +945,7 @@ class _TranslationsSettingsTabSendZhCn extends TranslationsSettingsTabSendEn {
   @override
   String get title => '发送';
   @override
-  String get shareViaLinkAutoAccept => '通过链接分享：自动接受';
+  String get shareViaLinkAutoAccept => '应急模式：自动接受请求';
 }
 
 // Path: settingsTab.network
