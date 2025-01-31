@@ -283,11 +283,11 @@ class _TranslationsReceiveHistoryPageZhCn extends TranslationsReceiveHistoryPage
   @override
   String get title => '历史';
   @override
-  String get openFolder => '打开目录';
+  String get openFolder => '打开文件保存目录';
   @override
   String get deleteHistory => '删除历史';
   @override
-  String get empty => '无历史记录。';
+  String get empty => '还没有历史记录哦';
   @override
   late final _TranslationsReceiveHistoryPageEntryActionsZhCn entryActions = _TranslationsReceiveHistoryPageEntryActionsZhCn._(_root);
 }
@@ -974,7 +974,7 @@ class _TranslationsSettingsTabNetworkZhCn extends TranslationsSettingsTabNetwork
   @override
   String get discoveryTimeout => '搜索设备超时';
   @override
-  String get useSystemName => '使用系统名称';
+  String get useSystemName => '使用设备名称';
   @override
   String get generateRandomAlias => '生成随机昵称';
   @override
@@ -1052,7 +1052,7 @@ class _TranslationsTroubleshootPageNoConnectionZhCn extends TranslationsTroubles
   @override
   String get symptom => '双方设备均无法发现对方或者分享文件。';
   @override
-  String get solution => '当问题发生在双方设备上时，请先确认双方设备处于同一个 Wi‑Fi 网络上，且共享相同的网络配置（端口、多线程广播地址、加密选项）。若因 Wi‑Fi 不允许参与者间通信，那么请在路由器中关闭“接入点 (AP) 隔离”选项。';
+  String get solution => '当问题发生在双方设备上时，请先确认双方设备处于同一个 Wi‑Fi 或有线网络上，且被配置为相同的工作状态（端口、多线程广播地址、加密选项）。若 Wi‑Fi 不允许参与者间通信，那么请在路由器中关闭“接入点 (AP) 隔离”选项。';
 }
 
 // Path: receiveHistoryPage.entryActions
