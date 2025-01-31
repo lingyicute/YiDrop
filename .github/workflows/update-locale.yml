@@ -2,6 +2,7 @@ name: Update Localization
 
 on:
   workflow_dispatch:
+  push:
 
 env:
   FLUTTER_VERSION: "3.24.5"
@@ -24,13 +25,18 @@ jobs:
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
 
+      - name: Install dependencies
+        working-directory: app
+        run: flutter pub get
+
       - name: Run slang localization
+        working-directory: app
         run: dart run slang
 
       - name: Commit localization changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add .
+          git add 。
           git commit -m "chore: Update localization files [skip ci]" || echo "No changes to commit"
           git push
