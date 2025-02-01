@@ -818,7 +818,7 @@ class _TranslationsSendTabSelectionZhCn extends TranslationsSendTabSelectionEn {
 
   // Translations
   @override
-  String get title => '选择';
+  String get title => '已选项目';
   @override
   String files({required Object files}) => '文件：${files}';
   @override
