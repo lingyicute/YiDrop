@@ -416,7 +416,7 @@ class _TranslationsWebSharePageZhCn extends TranslationsWebSharePageEn {
 
   // Translations
   @override
-  String get title => '分享为链接';
+  String get title => '应急模式';
   @override
   String get loading => '正在启动服务器……';
   @override

@@ -230,7 +230,7 @@
     }
   },
   "webSharePage": {
-    "title": "分享为链接",
+    "title": "应急模式",
     "loading": "正在启动服务器……",
     "stopping": "正在停止服务器……",
     "error": "在启动服务器过程中发生了错误",
