@@ -3,7 +3,7 @@ description: An open source cross-platform alternative to AirDrop
 homepage: https://drop.92li.us.kg/
 publish_to: "none"
 
-version: 1.17.3+73
+version: 1.17.4+74
 
 environment:
   flutter: ">=3.24.0"
