@@ -258,7 +258,7 @@ class _TranslationsTroubleshootPageZhCn extends TranslationsTroubleshootPageEn {
   @override
   String get title => '故障排除';
   @override
-  String get subTitle => '应用没有按预期工作？您可以在这里找到常用解决方案。';
+  String get subTitle => '应用没有按预期工作？你可以在这里找到常用解决方案。';
   @override
   String get solution => '解决方案：';
   @override
@@ -442,7 +442,7 @@ class _TranslationsWebSharePageZhCn extends TranslationsWebSharePageEn {
   @override
   String pinHint({required Object pin}) => 'PIN 为 “${pin}”';
   @override
-  String get encryptionHint => 'YiDrop 使用自签名证书。您需要在浏览器中允许它。';
+  String get encryptionHint => 'YiDrop 使用自签名证书。你需要在浏览器中允许它。';
   @override
   String pendingRequests({required Object n}) => '待处理请求：${n}';
 }
@@ -481,11 +481,11 @@ class _TranslationsDonationPageZhCn extends TranslationsDonationPageEn {
   @override
   String get title => '捐赠';
   @override
-  String get info => 'YiDrop 免费、开源、无广告。如果您喜欢这款应用程序，可以捐款支持开发。';
+  String get info => 'YiDrop 免费、开源、无广告。如果你喜欢这款应用程序，可以捐款支持开发。';
   @override
   String donate({required Object amount}) => '捐款 ${amount}';
   @override
-  String get thanks => '非常感谢您的支持！';
+  String get thanks => '非常感谢你的支持！';
   @override
   String get restore => '恢复购买';
 }
@@ -1037,7 +1037,7 @@ class _TranslationsTroubleshootPageNoDiscoveryZhCn extends TranslationsTroublesh
   @override
   String get symptom => '此设备未能发现其他设备。';
   @override
-  String get solution => '确保所有设备都处于同一个 Wi‑Fi 网络上，且共享相同的网络配置（端口、多线程广播地址、加密选项）。您可以尝试手动输入目标设备的 IP 地址。如果起到了效果，请考虑将此设备添加到收藏夹中，以便将来可以自动发现。';
+  String get solution => '确保所有设备都处于同一个 Wi‑Fi 网络上，且共享相同的网络配置（端口、多线程广播地址、加密选项）。你可以尝试手动输入目标设备的 IP 地址。如果起到了效果，请考虑将此设备添加到收藏夹中，以便将来可以自动发现。';
 }
 
 // Path: troubleshootPage.noConnection
@@ -1120,7 +1120,7 @@ class _TranslationsDialogsOpenFileZhCn extends TranslationsDialogsOpenFileEn {
   @override
   String get title => '打开文件';
   @override
-  String get content => '您是否要打开接收的文件？';
+  String get content => '你是否要打开接收的文件？';
 }
 
 // Path: dialogs.addressInput
@@ -1367,7 +1367,7 @@ class _TranslationsDialogsNoPermissionZhCn extends TranslationsDialogsNoPermissi
   @override
   String get title => '没有权限';
   @override
-  String get content => '您尚未授予必要的权限。请在设置中授予权限。';
+  String get content => '你尚未授予必要的权限。请在设置中授予权限。';
 }
 
 // Path: dialogs.notAvailableOnPlatform
@@ -1450,7 +1450,7 @@ class _TranslationsDialogsQuickSaveFromFavoritesNoticeZhCn extends TranslationsD
   @override
   List<String> get content => [
         '现在 YiDrop 会自动接受收藏夹中设备的文件请求。',
-        '警告：这并非绝对安全。如果某个被你列为收藏的设备存在系统层面的安全漏洞，攻击者将可以窃取它的指纹，从而向您发送文件。',
+        '警告：这并非绝对安全。如果某个被你列为收藏的设备存在系统层面的安全漏洞，攻击者将可以窃取它的指纹，从而向你发送文件。',
         '不过，它至少比“允许任何设备”更安全。',
       ];
 }
