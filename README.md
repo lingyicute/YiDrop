@@ -5,60 +5,61 @@
 ![GitHub Created At](https://img.shields.io/github/created-at/lingyicute/YiDrop)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/lingyicute/YiDrop)
 
-**English** • [中文](README_ZH.md)
+**中文** • [English](README_EN.md)
 
-YiDrop is a free, open-source app that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.
+YiDrop 是一个好玩的应用程序，帮助你快速且安全地分享文件。它开源、免费、跨平台。
 
-## Screenshots
+## 截图
 
 <img src="https://drop.92li.us.kg/img/yidrop.webp" alt="Screenshot" height="300"/> <img src="https://drop.92li.us.kg/img/screenshot-pc.webp" alt="PC screenshot" height="300"/>
 
-## Download
+## 下载
 
 [<img src="https://github.com/lingyicute/YiLink-Next/blob/next/images/get-it-on-github.png?raw=true" alt="Get it on GitHub" height="80">](https://github.com/lingyicute/YiDrop/releases)
 
-**Compatibility**
+**兼容性**
 
 | Platform | Minimum Version |
 |----------|-----------------|
 | Android  | 5.0             |
 | Windows  | 10              |
 
-## Setup
+## 设置
 
-In most cases, YiDrop should work out of the box. However, if you are having trouble sending or receiving files, you may need to configure your firewall to allow YiDrop to communicate over your local network.
+在大多数情况下，YiDrop 应该可以直接使用。但是，如果你在发送或接收文件时遇到问题，可能需要配置防火墙以允许 YiDrop 在你的本地网络上通信。
 
-| Traffic Type | Protocol | Port  | Action |
-|--------------|----------|-------|--------|
-| Incoming     | TCP, UDP | 59420 | Allow  |
-| Outgoing     | TCP, UDP | Any   | Allow  |
+| 流量类型 | 协议 | 端口  | 操作 |
+|---------|------|------|------|
+| 传入     | TCP, UDP | 59420 | 允许  |
+| 传出     | TCP, UDP | 任意   | 允许  |
 
-Also make sure to disable AP isolation on your router. It should be usually disabled by default but some routers may have it enabled (especially guest networks).
+另外，请确保禁用路由器上的 AP 隔离。通常默认情况下应禁用它，但某些路由器可能会启用它（比如访客网络）。
 
-**Portable Mode**
+**便携模式**
 
-Create a file named `settings.json` located in the same directory as the executable.
-This file can be empty.
-The app will use this file to store settings instead of the default location.
+创建一个名为 `settings.json` 的文件，放置在与可执行文件相同的目录中。
+此文件可以为空。
+YiDrop 将使用此文件来存储设置，而不是默认位置。
 
-**Start hidden**
+**分离启动**
 
-To start the app hidden (only in tray), use the `--hidden` flag.
+如果想让 YiDrop 在托盘里启动，使用 `--hidden` 标志。
 
-## How It Works
+## 工作原理
 
-YiDrop uses a secure communication protocol that allows devices to communicate with each other using a REST API. All data is sent securely over HTTPS, and the TLS/SSL certificate is generated on the fly on each device, ensuring maximum security.
+YiDrop 使用安全通信协议，允许设备通过 REST API 进行通信。所有数据都通过 HTTPS 安全地发送，并且 TLS/SSL 证书会在每台设备上动态生成，确保最大的安全性。
 
-## Troubleshooting
+## 问题排查
 
-| Issue              | Platform (Sending) | Platform (Receiving) | Solution                                                                                                                                |
+| 问题                | 发送平台          | 接收平台          | 解决方案                                                                                                                                |
 |--------------------|--------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Device not visible | Any                | Any                  | Make sure to disable AP-Isolation on your router. If it is enabled, connections between devices are forbidden.                          |
-| Device not visible | Any                | Windows              | Make sure to configure your network as a "private" network. Windows might be more restrictive when the network is configured as public. |
-| Speed too slow     | Any                | Any                  | Use 5 Ghz; Disable encryption on both devices                                                                                           |
-| Speed too slow     | Any                | Android              | Known issue. https://github.com/flutter-cavalry/saf_stream/issues/4                                                                     |
+| 设备不可见          | 任意              | 任意                | 确保在路由器上禁用AP隔离。如果启用了，设备之间的连接将被禁止。                          |
+| 设备不可见          | 任意              | Windows            | 确保将网络配置为“私有”网络。Windows可能会在网络配置为公共网络时施加限制。          |
+| 速度太慢           | 任意              | 任意                | 使用5Ghz，并在在两台设备上禁用加密。                                                                                           |
+| 速度太慢           | 任意              | Android            | 已知问题。https://github.com/flutter-cavalry/saf_stream/issues/4                                                                     |
 
-## 🗂️ License
+
+## 🗂️ 许可证
 
 YiDrop Next is released under the GNU General Public License v3.0 (GPLv3).
 
@@ -76,3 +77,4 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see https://www.gnu.org/licenses.
+
