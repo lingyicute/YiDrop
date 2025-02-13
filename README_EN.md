@@ -60,7 +60,7 @@ YiDrop uses a secure communication protocol that allows devices to communicate w
 
 ## 🗂️ License
 
-YiDrop Next is released under the GNU General Public License v3.0 (GPLv3).
+YiDrop is released under the GNU General Public License v3.0 (GPLv3).
 
 Copyright (C) 2025 lingyicute.
 
