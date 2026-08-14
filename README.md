@@ -11,7 +11,7 @@ YiDrop 是一个好玩的应用程序，帮助你快速且安全地分享文件�
 
 ## 截图
 
-<img src="https://drop.92li.us.kg/img/yidrop.webp" alt="Screenshot" height="300"/> <img src="https://drop.92li.us.kg/img/screenshot-pc.webp" alt="PC screenshot" height="300"/>
+<img src="https://drop.92li.uk/img/yidrop.webp" alt="Screenshot" height="300"/> <img src="https://drop.92li.uk/img/screenshot-pc.webp" alt="PC screenshot" height="300"/>
 
 ## 下载
 
