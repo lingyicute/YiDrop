@@ -11,7 +11,7 @@ YiDrop is a free, open-source app that allows you to securely share files and me
 
 ## Screenshots
 
-<img src="https://drop.92li.us.kg/img/yidrop.webp" alt="Screenshot" height="300"/> <img src="https://drop.92li.us.kg/img/screenshot-pc.webp" alt="PC screenshot" height="300"/>
+<img src="https://drop.92li.uk/img/yidrop.webp" alt="Screenshot" height="300"/> <img src="https://drop.92li.uk/img/screenshot-pc.webp" alt="PC screenshot" height="300"/>
 
 ## Download
 
