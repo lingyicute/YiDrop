@@ -4,10 +4,10 @@ part of 'about_page.dart';
 /// who is maintainer of one of the distribution channels.
 /// Translators should not be listed here.
 const _contributors = <String>[
-  'Tien Do Nam',
+  'Tien Do Nam (@Tienisto)',
+  'Gabriel Lima (@TheGB0077)',
   '@Caesarovich',
   '@gitstart',
-  'Gabriel Lima',
   ..._packageMaintainers,
 ];
 

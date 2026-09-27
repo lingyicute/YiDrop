@@ -2,8 +2,9 @@ targets:
   $default:
     builders:
       slang_build_runner:
+        enabled: false
         options:
-          base_locale: en
+          base_locale: zh-CN
           fallback_strategy: base_locale
           input_directory: assets/i18n
           input_file_pattern: .json

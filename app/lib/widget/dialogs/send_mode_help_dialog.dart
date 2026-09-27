@@ -27,13 +27,18 @@ class SendModeHelpDialog extends StatelessWidget {
             mode: t.sendTab.sendModes.link,
             explanation: t.dialogs.sendModeHelp.link,
           ),
+          const SizedBox(height: 10),
+          _SendModeItem(
+            mode: t.webReceivePage.title,
+            explanation: t.dialogs.sendModeHelp.receive,
+          ),
         ],
       ),
       actions: [
         TextButton(
           onPressed: () => context.pop(),
           child: Text(t.general.close),
-        )
+        ),
       ],
     );
   }

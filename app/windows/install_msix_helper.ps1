@@ -1,0 +1,1 @@
+Add-AppxPackage .\yidrop_msix_helper.msix -ExternalLocation $(Get-Location)

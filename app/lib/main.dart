@@ -1,4 +1,3 @@
-import 'package:common/isolate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:yidrop_app/config/init.dart';
@@ -8,12 +7,16 @@ import 'package:yidrop_app/gen/strings.g.dart';
 import 'package:yidrop_app/model/persistence/color_mode.dart';
 import 'package:yidrop_app/pages/home_page.dart';
 import 'package:yidrop_app/provider/local_ip_provider.dart';
+import 'package:yidrop_app/provider/network/server/server_provider.dart';
 import 'package:yidrop_app/provider/settings_provider.dart';
+import 'package:yidrop_app/util/native/platform_check.dart';
 import 'package:yidrop_app/util/ui/dynamic_colors.dart';
 import 'package:yidrop_app/widget/watcher/life_cycle_watcher.dart';
 import 'package:yidrop_app/widget/watcher/shortcut_watcher.dart';
 import 'package:yidrop_app/widget/watcher/tray_watcher.dart';
 import 'package:yidrop_app/widget/watcher/window_watcher.dart';
+import 'package:yidrop_isolates/isolate.dart';
+import 'package:refena_flutter/addons.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 
@@ -29,12 +32,14 @@ Future<void> main(List<String> args) async {
     return;
   }
 
-  runApp(RefenaScope.withContainer(
-    container: container,
-    child: TranslationProvider(
-      child: const YiDropApp(),
+  runApp(
+    RefenaScope.withContainer(
+      container: container,
+      child: TranslationProvider(
+        child: const YiDropApp(),
+      ),
     ),
-  ));
+  );
 }
 
 class YiDropApp extends StatelessWidget {
@@ -43,7 +48,9 @@ class YiDropApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ref = context.ref;
-    final (themeMode, colorMode) = ref.watch(settingsProvider.select((settings) => (settings.theme, settings.colorMode)));
+    final (themeMode, colorMode, customColor) = ref.watch(
+      settingsProvider.select((settings) => (settings.theme, settings.colorMode, settings.customColor)),
+    );
     final dynamicColors = ref.watch(dynamicColorsProvider);
     return TrayWatcher(
       child: WindowWatcher(
@@ -52,10 +59,19 @@ class YiDropApp extends StatelessWidget {
             switch (state) {
               case AppLifecycleState.resumed:
                 ref.redux(localIpProvider).dispatch(InitLocalIpAction());
+                if (checkPlatform([TargetPlatform.iOS, TargetPlatform.android])) {
+                  // The OS may have invalidated the sockets of the suspended app without any error ever reaching the accept loop.
+                  // ignore: discarded_futures
+                  ref.notifier(serverProvider).ensureRunning();
+                }
+                if (checkPlatform([TargetPlatform.iOS])) {
+                  // The multicast sockets die the same silent way but cannot be probed, so always rebind them.
+                  ref.redux(parentIsolateProvider).dispatch(IsolateDiscoveryRestartAction());
+                }
                 break;
               case AppLifecycleState.detached:
                 // The main isolate is only exited when all child isolates are exited.
-                // https://github.com/lingyicute/yidrop/issues/1568
+                // https://github.com/localsend/localsend/issues/1568
                 ref.redux(parentIsolateProvider).dispatch(IsolateDisposeAction());
                 break;
               default:
@@ -69,10 +85,10 @@ class YiDropApp extends StatelessWidget {
               supportedLocales: AppLocaleUtils.supportedLocales,
               localizationsDelegates: GlobalMaterialLocalizations.delegates,
               debugShowCheckedModeBanner: false,
-              theme: getTheme(colorMode, Brightness.light, dynamicColors),
-              darkTheme: getTheme(colorMode, Brightness.dark, dynamicColors),
+              theme: getTheme(colorMode, customColor, Brightness.light, dynamicColors),
+              darkTheme: getTheme(colorMode, customColor, Brightness.dark, dynamicColors),
               themeMode: colorMode == ColorMode.oled ? ThemeMode.dark : themeMode,
-              navigatorKey: Routerino.navigatorKey,
+              navigatorKey: context.read(navigationProvider).key,
               home: RouterinoHome(
                 builder: () => const HomePage(
                   initialTab: HomeTab.receive,

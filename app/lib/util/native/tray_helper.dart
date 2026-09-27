@@ -66,12 +66,16 @@ Future<void> hideToTray() async {
   await windowManager.hide();
   if (checkPlatform([TargetPlatform.macOS])) {
     // This will crash on Windows
-    // https://github.com/lingyicute/yidrop/issues/32
+    // https://github.com/localsend/localsend/issues/32
     await windowManager.setSkipTaskbar(true);
   }
 
   // Disable animations
-  RefenaScope.defaultRef.notifier(sleepProvider).setState((_) => true);
+  try {
+    RefenaScope.defaultRef.notifier(sleepProvider).setState((_) => true);
+  } catch (e) {
+    _logger.warning('Failed to update sleep state (Refena not yet initialized)', e);
+  }
 }
 
 Future<void> showFromTray() async {
@@ -79,12 +83,16 @@ Future<void> showFromTray() async {
   await windowManager.focus();
   if (checkPlatform([TargetPlatform.macOS])) {
     // This will crash on Windows
-    // https://github.com/lingyicute/yidrop/issues/32
+    // https://github.com/localsend/localsend/issues/32
     await windowManager.setSkipTaskbar(false);
   }
 
   // Enable animations
-  RefenaScope.defaultRef.notifier(sleepProvider).setState((_) => false);
+  try {
+    RefenaScope.defaultRef.notifier(sleepProvider).setState((_) => false);
+  } catch (e) {
+    _logger.warning('Failed to update sleep state (Refena not yet initialized)', e);
+  }
 }
 
 Future<void> destroyTray() async {

@@ -1,0 +1,12 @@
+template: |
+  ### Summary
+  
+  - insert summary here
+  
+  ### Contributions
+  
+  $CHANGES
+
+  [Full Changelog](https://github.com/lingyicute/yidrop/blob/main/app/assets/CHANGELOG.md)
+
+  Windows binaries are signed according to the [Code signing policy](https://github.com/lingyicute/yidrop/blob/main/CODE_SIGNING.md).

@@ -3,8 +3,8 @@
 /// Source: assets/i18n
 /// To regenerate, run: `dart run slang`
 ///
-/// Locales: 2
-/// Strings: 736 (368 per locale)
+/// Locales: 1
+/// Strings: 333 (SDK-free cache migration)
 
 // coverage:ignore-file
 // ignore_for_file: type=lint, unused_import
@@ -15,23 +15,21 @@ import 'package:slang/generated.dart';
 import 'package:slang_flutter/slang_flutter.dart';
 export 'package:slang_flutter/slang_flutter.dart';
 
-import 'strings_zh_CN.g.dart' deferred as l_zh_CN;
-part 'strings_en.g.dart';
+part 'strings_zh_CN.g.dart';
 
 /// Supported locales.
 ///
 /// Usage:
-/// - LocaleSettings.setLocale(AppLocale.en) // set locale
-/// - Locale locale = AppLocale.en.flutterLocale // get flutter locale from enum
-/// - if (LocaleSettings.currentLocale == AppLocale.en) // locale check
+/// - LocaleSettings.setLocale(AppLocale.zhCn) // set locale
+/// - Locale locale = AppLocale.zhCn.flutterLocale // get flutter locale from enum
+/// - if (LocaleSettings.currentLocale == AppLocale.zhCn) // locale check
 enum AppLocale with BaseAppLocale<AppLocale, Translations> {
-  en(languageCode: 'en'),
   zhCn(languageCode: 'zh', countryCode: 'CN');
 
   const AppLocale({
     required this.languageCode,
-    this.scriptCode, // ignore: unused_element
-    this.countryCode, // ignore: unused_element
+    this.scriptCode, // ignore: unused_element, unused_element_parameter
+    this.countryCode, // ignore: unused_element, unused_element_parameter
   });
 
   @override
@@ -48,15 +46,8 @@ enum AppLocale with BaseAppLocale<AppLocale, Translations> {
     PluralResolver? ordinalResolver,
   }) async {
     switch (this) {
-      case AppLocale.en:
-        return TranslationsEn(
-          overrides: overrides,
-          cardinalResolver: cardinalResolver,
-          ordinalResolver: ordinalResolver,
-        );
       case AppLocale.zhCn:
-        await l_zh_CN.loadLibrary();
-        return l_zh_CN.TranslationsZhCn(
+        return TranslationsZhCn(
           overrides: overrides,
           cardinalResolver: cardinalResolver,
           ordinalResolver: ordinalResolver,
@@ -71,14 +62,8 @@ enum AppLocale with BaseAppLocale<AppLocale, Translations> {
     PluralResolver? ordinalResolver,
   }) {
     switch (this) {
-      case AppLocale.en:
-        return TranslationsEn(
-          overrides: overrides,
-          cardinalResolver: cardinalResolver,
-          ordinalResolver: ordinalResolver,
-        );
       case AppLocale.zhCn:
-        return l_zh_CN.TranslationsZhCn(
+        return TranslationsZhCn(
           overrides: overrides,
           cardinalResolver: cardinalResolver,
           ordinalResolver: ordinalResolver,
@@ -132,10 +117,10 @@ extension BuildContextTranslationsExtension on BuildContext {
 /// Manages all translation instances and the current locale
 class LocaleSettings extends BaseFlutterLocaleSettings<AppLocale, Translations> {
   LocaleSettings._()
-      : super(
-          utils: AppLocaleUtils.instance,
-          lazy: true,
-        );
+    : super(
+        utils: AppLocaleUtils.instance,
+        lazy: true,
+      );
 
   static final instance = LocaleSettings._();
 
@@ -173,10 +158,10 @@ class LocaleSettings extends BaseFlutterLocaleSettings<AppLocale, Translations> 
 /// Provides utility functions without any side effects.
 class AppLocaleUtils extends BaseAppLocaleUtils<AppLocale, Translations> {
   AppLocaleUtils._()
-      : super(
-          baseLocale: AppLocale.en,
-          locales: AppLocale.values,
-        );
+    : super(
+        baseLocale: AppLocale.zhCn,
+        locales: AppLocale.values,
+      );
 
   static final instance = AppLocaleUtils._();
 
@@ -187,4 +172,39 @@ class AppLocaleUtils extends BaseAppLocaleUtils<AppLocale, Translations> {
   static AppLocale findDeviceLocale() => instance.findDeviceLocale();
   static List<Locale> get supportedLocales => instance.supportedLocales;
   static List<String> get supportedLocalesRaw => instance.supportedLocalesRaw;
+}
+
+// interfaces generated as mixins
+
+mixin WhatsNewStrings {
+  List<String> get changes;
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! WhatsNewStrings) return false;
+
+    final fields = $fields;
+    final otherFields = other.$fields;
+    for (int i = 0; i < fields.length; i++) {
+      if (fields[i] != otherFields[i]) return false;
+    }
+
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final fields = $fields;
+    int result = fields.first.hashCode;
+    for (final element in fields.skip(1)) {
+      result *= element.hashCode;
+    }
+
+    return result;
+  }
+
+  List<Object?> get $fields => [
+    changes,
+  ];
 }

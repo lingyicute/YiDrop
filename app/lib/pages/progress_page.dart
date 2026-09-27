@@ -1,32 +1,39 @@
 import 'dart:async';
 import 'dart:typed_data';
 
-import 'package:common/model/dto/file_dto.dart';
-import 'package:common/model/file_status.dart';
-import 'package:common/model/session_status.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:yidrop_app/config/theme.dart';
 import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/model/state/server/receive_session_state.dart';
+import 'package:yidrop_app/pages/web_share_page.dart';
+import 'package:yidrop_app/provider/file_transfer_provider.dart';
 import 'package:yidrop_app/provider/network/send_provider.dart';
 import 'package:yidrop_app/provider/network/server/server_provider.dart';
-import 'package:yidrop_app/provider/progress_provider.dart';
 import 'package:yidrop_app/provider/settings_provider.dart';
-import 'package:yidrop_app/util/file_size_helper.dart';
-import 'package:yidrop_app/util/file_speed_helper.dart';
 import 'package:yidrop_app/util/native/open_file.dart';
 import 'package:yidrop_app/util/native/open_folder.dart';
 import 'package:yidrop_app/util/native/platform_check.dart';
 import 'package:yidrop_app/util/native/taskbar_helper.dart';
+import 'package:yidrop_app/util/notification_strings.dart';
 import 'package:yidrop_app/util/ui/nav_bar_padding.dart';
 import 'package:yidrop_app/widget/custom_progress_bar.dart';
 import 'package:yidrop_app/widget/dialogs/cancel_session_dialog.dart';
 import 'package:yidrop_app/widget/dialogs/error_dialog.dart';
 import 'package:yidrop_app/widget/file_thumbnail.dart';
+import 'package:yidrop_isolates/model/dto/file_dto.dart';
+import 'package:yidrop_isolates/model/file_status.dart';
+import 'package:yidrop_isolates/model/session_status.dart';
+import 'package:yidrop_isolates/util/file_size_helper.dart';
+import 'package:yidrop_isolates/util/file_speed_helper.dart';
+import 'package:refena_flutter/addons.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
+
+/// Extra space needed below the file list while the progress details are expanded.
+const _advancedProgressPanelExtraPadding = 100.0;
 
 class ProgressPage extends StatefulWidget {
   final bool showAppBar;
@@ -58,28 +65,41 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
 
   bool _advanced = false;
 
+  /// On Android the foreground service keeps the process and the connection alive,
+  /// so there is no reason to also keep the screen on.
+  bool get _useWakelock => checkPlatformIsNot([TargetPlatform.android]);
+
   @override
   void initState() {
     super.initState();
 
     // init
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      try {
-        unawaited(WakelockPlus.enable());
-      } catch (_) {}
-
-      // Periodically call WakelockPlus.enable() to keep the screen awake
-      _wakelockPlusTimer = Timer.periodic(const Duration(seconds: 30), (timer) {
+      if (_useWakelock) {
         try {
           unawaited(WakelockPlus.enable());
         } catch (_) {}
-      });
+
+        // Poll for completion and disable the wakelock once.
+        // We must NOT call WakelockPlus.enable() repeatedly here: on Linux (FreeDesktop D-Bus ScreenSaver)
+        // each enable() acquires a new inhibit cookie while disable() only releases one, so re-calling
+        // enable() every 30s leaks inhibit locks that keep the screen awake indefinitely (issue #3209).
+        _wakelockPlusTimer = Timer.periodic(const Duration(seconds: 30), (timer) {
+          // an empty iterable (session already removed) also counts as finished
+          final finished = ref.read(fileTransferProvider).getStatuses(widget.sessionId).isFinishedOrSkipped;
+          if (finished) {
+            timer.cancel();
+            try {
+              unawaited(WakelockPlus.disable());
+            } catch (_) {}
+          }
+        });
+      }
 
       if (ref.read(settingsProvider).autoFinish) {
         _finishTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
-          final finished = ref.read(serverProvider)?.session?.files.values.map((e) => e.status).isFinishedOrSkipped ??
-              ref.read(sendProvider)[widget.sessionId]?.files.values.map((e) => e.status).isFinishedOrSkipped ??
-              true;
+          // an empty iterable (session already removed) also counts as finished
+          final finished = ref.read(fileTransferProvider).getStatuses(widget.sessionId).isFinishedOrSkipped;
           if (finished) {
             if (_finishCounter == 1) {
               timer.cancel();
@@ -97,16 +117,19 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
         final receiveSession = ref.read(serverProvider)?.session;
         if (receiveSession != null) {
           _files = receiveSession.files.values.map((f) => f.file).toList();
-
-          // We previously used f.token != null here, but this may not work on very fast networks.
-          _selectedFiles = receiveSession.files.values.where((f) => f.status != FileStatus.skipped).map((f) => f.file.id).toSet();
         } else {
           final sendSession = ref.read(sendProvider)[widget.sessionId];
           if (sendSession != null) {
             _files = sendSession.files.values.map((f) => f.file).toList();
-            _selectedFiles = sendSession.files.values.where((f) => f.status != FileStatus.skipped).map((f) => f.file.id).toSet();
           }
         }
+
+        // We previously used f.token != null here, but this may not work on very fast networks.
+        final transferNotifier = ref.read(fileTransferProvider);
+        _selectedFiles = _files
+            .where((f) => transferNotifier.getStatus(sessionId: widget.sessionId, fileId: f.id) != FileStatus.skipped)
+            .map((f) => f.id)
+            .toSet();
 
         _totalBytes = _files.where((f) => _selectedFiles.contains(f.id)).fold(0, (prev, curr) => prev + curr.size);
       });
@@ -121,8 +144,11 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
     final result = status == null || keepSession || await _askCancelConfirmation(status);
 
     if (result && mounted) {
-      // ignore: unawaited_futures
-      context.popUntilRoot();
+      if (ref.read(serverProvider)?.webUpload == true) {
+        context.global.dispatch(NavigateAction.popUntil<WebSharePage>());
+      } else {
+        context.global.dispatch(NavigateAction.popUntilRoot());
+      }
     }
   }
 
@@ -158,21 +184,47 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
     _finishTimer?.cancel();
     _wakelockPlusTimer?.cancel();
     TaskbarHelper.clearProgressBar(); // ignore: discarded_futures
-    try {
-      WakelockPlus.disable(); // ignore: discarded_futures
-    } catch (_) {}
+    if (_useWakelock) {
+      try {
+        WakelockPlus.disable(); // ignore: discarded_futures
+      } catch (_) {}
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final progressNotifier = ref.watch(progressProvider);
+    final transferNotifier = ref.watch(fileTransferProvider);
     final currBytes = _files.fold<int>(
-        0, (prev, curr) => prev + ((progressNotifier.getProgress(sessionId: widget.sessionId, fileId: curr.id) * curr.size).round()));
+      0,
+      (prev, curr) => prev + ((transferNotifier.getProgress(sessionId: widget.sessionId, fileId: curr.id) * curr.size).round()),
+    );
 
-    final receiveSession = ref.watch(serverProvider.select((s) => s?.session));
+    // No select: comparing the selected session runs the dart_mappable deep equality
+    // over the whole files map on every state change.
+    final receiveSession = ref.watch(serverProvider)?.session;
     final sendSession = ref.watch(sendProvider)[widget.sessionId];
 
-    final SessionStatus? status = receiveSession?.status ?? sendSession?.status;
+    final SessionState? commonSessionState = receiveSession ?? sendSession;
+
+    if (commonSessionState == null) {
+      // The session no longer exists, e.g. a multi-send session that finished successfully
+      // in background gets removed while this page is still open.
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) {
+          return;
+        }
+        if (ref.read(serverProvider)?.webUpload == true) {
+          context.global.dispatch(NavigateAction.popUntil<WebSharePage>());
+        } else {
+          context.global.dispatch(NavigateAction.popUntilRoot());
+        }
+      });
+      return Scaffold(
+        body: Container(),
+      );
+    }
+
+    final status = commonSessionState.status;
 
     if (status == SessionStatus.sending) {
       // ignore: discarded_futures
@@ -183,30 +235,23 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
       TaskbarHelper.visualizeStatus(status);
     }
 
-    if (status == null) {
-      return Scaffold(
-        body: Container(),
-      );
-    }
-
     final title = receiveSession != null ? t.progressPage.titleReceiving : t.progressPage.titleSending;
-    final startTime = receiveSession?.startTime ?? sendSession?.startTime;
-    final endTime = receiveSession?.endTime ?? sendSession?.endTime;
+    final startTime = commonSessionState.startTime;
+    final endTime = commonSessionState.endTime;
     final int? speedInBytes;
     if (startTime != null && currBytes >= 500 * 1024) {
       speedInBytes = getFileSpeed(start: startTime, end: endTime ?? DateTime.now().millisecondsSinceEpoch, bytes: currBytes);
 
       final now = DateTime.now().millisecondsSinceEpoch;
       if (now - _lastRemainingTimeUpdate >= 1000) {
-        _remainingTime = getRemainingTime(bytesPerSeconds: speedInBytes, remainingBytes: _totalBytes - currBytes);
+        _remainingTime = getRemainingTime(bytesPerSeconds: speedInBytes, remainingBytes: _totalBytes - currBytes, strings: notificationStrings);
         _lastRemainingTimeUpdate = now;
       }
     } else {
       speedInBytes = null;
     }
 
-    final fileStatusMap = receiveSession?.files.map((k, f) => MapEntry(k, f.status)) ?? sendSession!.files.map((k, f) => MapEntry(k, f.status));
-    final finishedCount = fileStatusMap.values.where((s) => s == FileStatus.finished).length;
+    final finishedCount = transferNotifier.getStatuses(widget.sessionId).where((s) => s == FileStatus.finished).length;
 
     return PopScope(
       onPopInvokedWithResult: (didPop, result) {
@@ -229,7 +274,7 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
             ListView.builder(
               padding: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top + 20,
-                bottom: 150 + getNavBarPadding(context),
+                bottom: 150 + (_advanced ? _advancedProgressPanelExtraPadding : 0) + getNavBarPadding(context),
                 left: 15,
                 right: 30,
               ),
@@ -265,9 +310,9 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
                                     recognizer: checkPlatform([TargetPlatform.iOS])
                                         ? null
                                         : (TapGestureRecognizer()
-                                          ..onTap = () async {
-                                            await openFolder(folderPath: receiveSession.destinationDirectory);
-                                          }),
+                                            ..onTap = () async {
+                                              await openFolder(folderPath: receiveSession.destinationDirectory);
+                                            }),
                                   ),
                                 ],
                               ),
@@ -291,7 +336,7 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
                 final file = _files[index - 2];
                 final String fileName = receiveSession?.files[file.id]?.desiredName ?? file.fileName;
 
-                final fileStatus = fileStatusMap[file.id]!;
+                final fileStatus = transferNotifier.getStatus(sessionId: widget.sessionId, fileId: file.id);
                 final savedToGallery = receiveSession?.files[file.id]?.savedToGallery ?? false;
 
                 final String? filePath;
@@ -363,7 +408,7 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
                                 Padding(
                                   padding: const EdgeInsets.only(top: 5),
                                   child: CustomProgressBar(
-                                    progress: progressNotifier.getProgress(sessionId: widget.sessionId, fileId: file.id),
+                                    progress: transferNotifier.getProgress(sessionId: widget.sessionId, fileId: file.id),
                                   ),
                                 )
                               else
@@ -399,9 +444,10 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
                           IconButton(
                             icon: const Icon(Icons.refresh),
                             onPressed: () async {
-                              await ref.notifier(sendProvider).sendFile(
+                              await ref
+                                  .notifier(sendProvider)
+                                  .sendFile(
                                     sessionId: widget.sessionId,
-                                    isolateIndex: 0,
                                     file: sendSession.files[file.id]!,
                                     isRetry: true,
                                   );
@@ -453,18 +499,24 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(t.progressPage.total.count(
-                                    curr: finishedCount,
-                                    n: _selectedFiles.length,
-                                  )),
-                                  Text(t.progressPage.total.size(
-                                    curr: currBytes.asReadableFileSize,
-                                    n: _totalBytes == double.maxFinite.toInt() ? '-' : _totalBytes.asReadableFileSize,
-                                  )),
+                                  Text(
+                                    t.progressPage.total.count(
+                                      curr: finishedCount,
+                                      n: _selectedFiles.length,
+                                    ),
+                                  ),
+                                  Text(
+                                    t.progressPage.total.size(
+                                      curr: currBytes.asReadableFileSize,
+                                      n: _totalBytes == double.maxFinite.toInt() ? '-' : _totalBytes.asReadableFileSize,
+                                    ),
+                                  ),
                                   if (speedInBytes != null)
-                                    Text(t.progressPage.total.speed(
-                                      speed: speedInBytes.asReadableFileSize,
-                                    )),
+                                    Text(
+                                      t.progressPage.total.speed(
+                                        speed: speedInBytes.asReadableFileSize,
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
@@ -485,14 +537,16 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
                                 style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.onSurface),
                                 onPressed: () => _exit(closeSession: true),
                                 icon: Icon(status == SessionStatus.sending ? Icons.close : Icons.check_circle),
-                                label: Text(status == SessionStatus.sending
-                                    ? t.general.cancel
-                                    : _finishTimer != null
-                                        ? '${t.general.done} ($_finishCounter)'
-                                        : t.general.done),
+                                label: Text(
+                                  status == SessionStatus.sending
+                                      ? t.general.cancel
+                                      : _finishTimer != null
+                                      ? '${t.general.done} ($_finishCounter)'
+                                      : t.general.done,
+                                ),
                               ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                     ),

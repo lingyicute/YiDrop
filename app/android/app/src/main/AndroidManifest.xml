@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.yidrop.yidrop_app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="org.yidrop.yidrop_app">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -13,6 +12,15 @@
 
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <uses-permission android:name="android.permission.BIND_QUICK_SETTINGS_TILE" tools:targetApi="24" />
+
+    <!-- Android 17+ blocks local network traffic without this runtime permission. -->
+    <uses-permission android:name="android.permission.ACCESS_LOCAL_NETWORK" />
+
+    <!-- yidrop: keep the app process alive while files are being received.
+         FOREGROUND_SERVICE and POST_NOTIFICATIONS come from the flutter_foreground_task manifest. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
     <!-- Android TV -->
     <uses-feature android:name="android.software.leanback" android:required="false" />
@@ -64,6 +72,28 @@
             </intent-filter>
 
         </activity>
+
+        <!-- Quick tile to launch the app -->
+        <service
+            android:name=".QuickTileService"
+            android:icon="@mipmap/ic_launcher_quicktile_foreground"
+            android:label="YiDrop"
+            android:process=":quick_tile_service"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true"
+            tools:targetApi="24">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <!-- Foreground service showing the receive progress.
+             Warning: the name is defined by flutter_foreground_task and must not be changed. -->
+        <service
+            android:name="com.pravera.flutter_foreground_task.service.ForegroundService"
+            android:foregroundServiceType="dataSync"
+            android:exported="false" />
+
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data
