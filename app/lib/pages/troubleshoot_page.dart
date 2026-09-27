@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:yidrop_app/gen/strings.g.dart';
 import 'package:yidrop_app/provider/settings_provider.dart';
 import 'package:yidrop_app/util/native/cmd_helper.dart';
+import 'package:yidrop_app/util/native/macos_channel.dart' as macos_channel;
 import 'package:yidrop_app/util/native/platform_check.dart';
 import 'package:yidrop_app/widget/custom_icon_button.dart';
 import 'package:yidrop_app/widget/dialogs/not_available_on_platform_dialog.dart';
@@ -48,6 +49,7 @@ class TroubleshootPage extends StatelessWidget {
                   adminPrivileges: false,
                   commands: ['wf'],
                 ),
+                TargetPlatform.macOS: _NativeFixAction(() => macos_channel.openFirewallSettings()),
               },
             ),
           ),
@@ -208,5 +210,19 @@ class _CommandFixAction extends _FixAction {
         await Process.run(c, [], runInShell: true);
       }
     }
+  }
+}
+
+class _NativeFixAction extends _FixAction {
+  final Future<void> Function() action;
+
+  _NativeFixAction(this.action);
+
+  @override
+  List<String>? get commands => null;
+
+  @override
+  void runFix() async {
+    await action();
   }
 }

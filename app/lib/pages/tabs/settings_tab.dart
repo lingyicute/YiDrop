@@ -1,6 +1,5 @@
 import 'dart:io';
-import 'package:common/constants.dart';
-import 'package:common/model/device.dart';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:yidrop_app/config/theme.dart';
@@ -8,26 +7,27 @@ import 'package:yidrop_app/gen/strings.g.dart';
 import 'package:yidrop_app/model/persistence/color_mode.dart';
 import 'package:yidrop_app/pages/about/about_page.dart';
 import 'package:yidrop_app/pages/changelog_page.dart';
-import 'package:yidrop_app/pages/language_page.dart';
 import 'package:yidrop_app/pages/settings/network_interfaces_page.dart';
 import 'package:yidrop_app/pages/tabs/settings_tab_controller.dart';
+import 'package:yidrop_app/provider/network/server/server_provider.dart';
 import 'package:yidrop_app/provider/settings_provider.dart';
 import 'package:yidrop_app/provider/version_provider.dart';
 import 'package:yidrop_app/util/alias_generator.dart';
 import 'package:yidrop_app/util/device_type_ext.dart';
+import 'package:yidrop_app/util/i18n.dart';
 import 'package:yidrop_app/util/native/macos_channel.dart';
 import 'package:yidrop_app/util/native/pick_directory_path.dart';
 import 'package:yidrop_app/util/native/platform_check.dart';
 import 'package:yidrop_app/widget/custom_dropdown_button.dart';
 import 'package:yidrop_app/widget/dialogs/encryption_disabled_notice.dart';
 import 'package:yidrop_app/widget/dialogs/pin_dialog.dart';
-import 'package:yidrop_app/widget/dialogs/quick_save_from_favorites_notice.dart';
-import 'package:yidrop_app/widget/dialogs/quick_save_notice.dart';
 import 'package:yidrop_app/widget/dialogs/text_field_tv.dart';
 import 'package:yidrop_app/widget/dialogs/text_field_with_actions.dart';
 import 'package:yidrop_app/widget/labeled_checkbox.dart';
 import 'package:yidrop_app/widget/local_send_logo.dart';
 import 'package:yidrop_app/widget/responsive_list_view.dart';
+import 'package:yidrop_isolates/constants.dart';
+import 'package:yidrop_isolates/model/device.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -38,7 +38,7 @@ class SettingsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder(
-      provider: settingsTabControllerProvider,
+      provider: (ref) => settingsTabControllerProvider,
       builder: (context, vm) {
         final ref = context.ref;
         return ResponsiveListView(
@@ -74,19 +74,19 @@ class SettingsTab extends StatelessWidget {
                       return DropdownMenuItem(
                         value: colorMode,
                         alignment: Alignment.center,
-                        child: Text(colorMode.humanName),
+                        child: Text(colorMode.humanName, overflow: TextOverflow.ellipsis),
                       );
                     }).toList(),
-                    onChanged: vm.onChangeColorMode,
+                    onChanged: (colorMode) => vm.onChangeColorMode(context, colorMode),
                   ),
                 ),
                 _ButtonEntry(
                   label: t.settingsTab.general.language,
-                  buttonLabel: vm.settings.locale?.humanName ?? t.settingsTab.general.languageOptions.system,
+                  buttonLabel: vm.settings.locale?.getLocaleName() ?? t.settingsTab.general.languageOptions.system,
                   onTap: () => vm.onTapLanguage(context),
                 ),
                 if (checkPlatformIsDesktop()) ...[
-                  /// Wayland does window position handling, so there's no need for it. See [https://github.com/lingyicute/yidrop/issues/544]
+                  /// Wayland does window position handling, so there's no need for it. See [https://github.com/localsend/localsend/issues/544]
                   if (vm.advanced && checkPlatformIsNotWaylandDesktop())
                     _BooleanEntry(
                       label: defaultTargetPlatform == TargetPlatform.windows
@@ -167,6 +167,11 @@ class SettingsTab extends StatelessWidget {
                         await ref.notifier(settingsProvider).setReceivePin(newPin);
                       }
                     }
+
+                    // The pin is enforced by the Rust server, so it needs a restart.
+                    if (ref.read(serverProvider) != null) {
+                      await ref.notifier(serverProvider).restartServerFromSettings();
+                    }
                   },
                 ),
                 if (checkPlatformWithFileSystem())
@@ -223,6 +228,19 @@ class SettingsTab extends StatelessWidget {
                     await ref.notifier(settingsProvider).setSaveToHistory(b);
                   },
                 ),
+                if (vm.advanced)
+                  _BooleanEntry(
+                    label: t.settingsTab.receive.verifyChecksums,
+                    value: vm.settings.verifyChecksums,
+                    onChanged: (b) async {
+                      await ref.notifier(settingsProvider).setVerifyChecksums(b);
+
+                      // The checksums are verified by the Rust server, so it needs a restart.
+                      if (ref.read(serverProvider) != null) {
+                        await ref.notifier(serverProvider).restartServerFromSettings();
+                      }
+                    },
+                  ),
               ],
             ),
             if (vm.advanced)
@@ -236,13 +254,21 @@ class SettingsTab extends StatelessWidget {
                       await ref.notifier(settingsProvider).setShareViaLinkAutoAccept(b);
                     },
                   ),
+                  _BooleanEntry(
+                    label: t.settingsTab.send.createChecksums,
+                    value: vm.settings.createChecksums,
+                    onChanged: (b) async {
+                      await ref.notifier(settingsProvider).setCreateChecksums(b);
+                    },
+                  ),
                 ],
               ),
             _SettingsSection(
               title: t.settingsTab.network.title,
               children: [
                 AnimatedCrossFade(
-                  crossFadeState: vm.serverState != null &&
+                  crossFadeState:
+                      vm.serverState != null &&
                           (vm.serverState!.alias != vm.settings.alias ||
                               vm.serverState!.port != vm.settings.port ||
                               vm.serverState!.https != vm.settings.https)
@@ -270,7 +296,7 @@ class SettingsTab extends StatelessWidget {
                           Tooltip(
                             message: t.general.start,
                             child: TextButton(
-                              style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.onSurface),
+                              style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.onSurface, iconSize: 24),
                               onPressed: () => vm.onTapStartServer(context),
                               child: const Icon(Icons.play_arrow),
                             ),
@@ -279,7 +305,7 @@ class SettingsTab extends StatelessWidget {
                           Tooltip(
                             message: t.general.restart,
                             child: TextButton(
-                              style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.onSurface),
+                              style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.onSurface, iconSize: 24),
                               onPressed: () => vm.onTapRestartServer(context),
                               child: const Icon(Icons.refresh),
                             ),
@@ -287,7 +313,7 @@ class SettingsTab extends StatelessWidget {
                         Tooltip(
                           message: t.general.stop,
                           child: TextButton(
-                            style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.onSurface),
+                            style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.onSurface, iconSize: 24),
                             onPressed: vm.serverState == null ? null : vm.onTapStopServer,
                             child: const Icon(Icons.stop),
                           ),
@@ -325,8 +351,13 @@ class SettingsTab extends StatelessWidget {
                         message: t.settingsTab.network.useSystemName,
                         child: IconButton(
                           onPressed: () async {
-                            // Uses dart.io to find the systems hostname
-                            final newAlias = Platform.localHostname;
+                            final String newAlias;
+                            if (Platform.isMacOS) {
+                              final result = await Process.run('scutil', ['--get', 'ComputerName']);
+                              newAlias = result.stdout.toString().trim();
+                            } else {
+                              newAlias = Platform.localHostname;
+                            }
 
                             vm.aliasController.text = newAlias;
                             await ref.notifier(settingsProvider).setAlias(newAlias);
@@ -471,11 +502,22 @@ class SettingsTab extends StatelessWidget {
                   buttonLabel: t.general.open,
                   onTap: () async {
                     await launchUrl(
-                      Uri.parse('https://92li.us.kg'),
+                      Uri.parse('https://drop.92li.uk'),
                       mode: LaunchMode.externalApplication,
                     );
                   },
                 ),
+                if (checkPlatform([TargetPlatform.iOS, TargetPlatform.macOS]))
+                  _ButtonEntry(
+                    label: t.settingsTab.other.termsOfUse,
+                    buttonLabel: t.general.open,
+                    onTap: () async {
+                      await launchUrl(
+                        Uri.parse('https://www.apple.com/legal/internet-services/itunes/dev/stdeula/'),
+                        mode: LaunchMode.externalApplication,
+                      );
+                    },
+                  ),
               ],
             ),
             Row(
@@ -496,15 +538,17 @@ class SettingsTab extends StatelessWidget {
             const SizedBox(height: 20),
             const YiDropLogo(withText: true),
             const SizedBox(height: 5),
-            ref.watch(versionProvider).maybeWhen(
+            ref
+                .watch(versionProvider)
+                .maybeWhen(
                   data: (version) => Text(
-                    'Version: $version',
+                    'Version: ${version.combinedString}',
                     textAlign: TextAlign.center,
                   ),
                   orElse: () => Container(),
                 ),
             Text(
-              'Copyright ${DateTime.now().year} lingyicute',
+              'YiDrop © ${DateTime.now().year} lingyicute\n基于 LocalSend · Tien Do Nam 与贡献者',
               textAlign: TextAlign.center,
             ),
             Center(
@@ -586,7 +630,7 @@ class _BooleanEntry extends StatelessWidget {
                 value: value,
                 onChanged: onChanged,
                 activeTrackColor: theme.colorScheme.primary,
-                activeColor: theme.colorScheme.onPrimary,
+                activeThumbColor: theme.colorScheme.onPrimary,
                 inactiveThumbColor: theme.colorScheme.outline,
                 inactiveTrackColor: theme.colorScheme.surface,
               ),
@@ -686,6 +730,7 @@ extension on ColorMode {
       ColorMode.yidrop => '星愿蓝',
       ColorMode.oled => t.settingsTab.general.colorOptions.oled,
       ColorMode.yaru => 'Ubuntu',
+      ColorMode.custom => t.settingsTab.general.colorOptions.custom,
     };
   }
 }

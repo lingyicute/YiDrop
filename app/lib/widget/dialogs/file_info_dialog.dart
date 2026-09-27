@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yidrop_app/gen/strings.g.dart';
 import 'package:yidrop_app/model/persistence/receive_history_entry.dart';
-import 'package:yidrop_app/util/file_size_helper.dart';
+import 'package:yidrop_isolates/util/file_size_helper.dart';
 import 'package:routerino/routerino.dart';
 
 class FileInfoDialog extends StatelessWidget {
@@ -70,7 +70,7 @@ class FileInfoDialog extends StatelessWidget {
               if (entry.isMessage)
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
-                  child: SelectableText(entry.fileName + entry.fileName + entry.fileName),
+                  child: SelectableText(entry.fileName),
                 ),
             ],
           ),

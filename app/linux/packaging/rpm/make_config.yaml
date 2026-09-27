@@ -1,9 +1,9 @@
 display_name: YiDrop
-packager: Tienisto
-packagerEmail: dev.tien.donam@gmail.com
-url: https://drop.92li.us.kg
+packager: lingyicute
+packagerEmail: lingyicute@users.noreply.github.com
+url: https://drop.92li.uk
 buildArch: x86_64
-license: MIT
+license: Apache-2.0
 
 icon: assets/img/logo-512.png
 

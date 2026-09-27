@@ -1,20 +1,34 @@
-import 'package:common/model/device.dart';
-import 'package:common/model/session_status.dart';
 import 'package:dart_mappable/dart_mappable.dart';
 import 'package:yidrop_app/model/state/send/sending_file.dart';
+import 'package:yidrop_app/model/state/server/receive_session_state.dart';
+import 'package:yidrop_isolates/model/device.dart';
+import 'package:yidrop_isolates/model/session_status.dart';
 
 part 'send_session_state.mapper.dart';
 
 @MappableClass()
-class SendSessionState with SendSessionStateMappable {
+class SendSessionState with SendSessionStateMappable implements SessionState {
   final String sessionId;
   final String? remoteSessionId; // v2
   final bool background;
+
+  @override
   final SessionStatus status;
+
   final Device target;
   final Map<String, SendingFile> files; // file id as key
+
+  /// Amount of files whose checksum has been calculated.
+  /// The checksums are calculated before the request is sent to the receiver,
+  /// so this is less than the file count while the session is being prepared.
+  final int hashedFileCount;
+
+  @override
   final int? startTime;
+
+  @override
   final int? endTime;
+
   final List<SendingTask>? sendingTasks; // used to cancel tasks
   final String? errorMessage;
 
@@ -25,6 +39,7 @@ class SendSessionState with SendSessionStateMappable {
     required this.status,
     required this.target,
     required this.files,
+    required this.hashedFileCount,
     required this.startTime,
     required this.endTime,
     required this.sendingTasks,
@@ -36,16 +51,14 @@ class SendSessionState with SendSessionStateMappable {
   /// SendingFile.
   @override
   String toString() {
-    return 'SendSessionState(sessionId: $sessionId, remoteSessionId: $remoteSessionId, background: $background, status: $status, target: $target, files: $files, startTime: $startTime, endTime: $endTime, sendingTasks: $sendingTasks, errorMessage: $errorMessage)';
+    return 'SendSessionState(sessionId: $sessionId, remoteSessionId: $remoteSessionId, background: $background, status: $status, target: $target, files: $files, hashedFileCount: $hashedFileCount, startTime: $startTime, endTime: $endTime, sendingTasks: $sendingTasks, errorMessage: $errorMessage)';
   }
 }
 
 class SendingTask {
-  final int isolateIndex;
   final int taskId;
 
   SendingTask({
-    required this.isolateIndex,
     required this.taskId,
   });
 }

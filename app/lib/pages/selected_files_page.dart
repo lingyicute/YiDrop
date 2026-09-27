@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-import 'package:common/model/file_type.dart';
 import 'package:flutter/material.dart';
 import 'package:yidrop_app/gen/strings.g.dart';
 import 'package:yidrop_app/provider/selection/selected_sending_files_provider.dart';
-import 'package:yidrop_app/util/file_size_helper.dart';
 import 'package:yidrop_app/util/native/open_file.dart';
 import 'package:yidrop_app/util/ui/nav_bar_padding.dart';
 import 'package:yidrop_app/widget/dialogs/message_input_dialog.dart';
 import 'package:yidrop_app/widget/file_thumbnail.dart';
 import 'package:yidrop_app/widget/responsive_list_view.dart';
+import 'package:yidrop_isolates/model/file_type.dart';
+import 'package:yidrop_isolates/util/file_size_helper.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 
@@ -105,10 +105,13 @@ class SelectedFilesPage extends StatelessWidget {
                                 TextButton(
                                   style: TextButton.styleFrom(
                                     foregroundColor: Theme.of(context).colorScheme.onSurface,
+                                    iconSize: 24,
                                   ),
                                   onPressed: () async {
-                                    final result =
-                                        await showDialog<String>(context: context, builder: (_) => MessageInputDialog(initialText: message));
+                                    final result = await showDialog<String>(
+                                      context: context,
+                                      builder: (_) => MessageInputDialog(initialText: message),
+                                    );
                                     if (result != null) {
                                       ref.redux(selectedSendingFilesProvider).dispatch(UpdateMessageAction(message: result, index: index));
                                     }
@@ -118,6 +121,7 @@ class SelectedFilesPage extends StatelessWidget {
                               TextButton(
                                 style: TextButton.styleFrom(
                                   foregroundColor: Theme.of(context).colorScheme.onSurface,
+                                  iconSize: 24,
                                 ),
                                 onPressed: () {
                                   final currCount = ref.read(selectedSendingFilesProvider).length;

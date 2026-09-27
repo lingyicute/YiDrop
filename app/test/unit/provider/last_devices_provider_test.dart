@@ -1,5 +1,5 @@
-import 'package:common/model/device.dart';
 import 'package:yidrop_app/provider/last_devices.provider.dart';
+import 'package:yidrop_isolates/model/device.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:test/test.dart';
 
@@ -52,6 +52,7 @@ void main() {
 
 Device _createDevice(String ip) {
   return Device(
+    signalingId: null,
     ip: ip,
     version: '1',
     port: 123,
@@ -61,5 +62,6 @@ Device _createDevice(String ip) {
     deviceModel: 'A',
     deviceType: DeviceType.mobile,
     download: false,
+    channels: [],
   );
 }

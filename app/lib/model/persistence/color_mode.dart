@@ -3,4 +3,5 @@ enum ColorMode {
   yidrop,
   oled,
   yaru,
+  custom, // user-defined seed color
 }

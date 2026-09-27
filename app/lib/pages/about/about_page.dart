@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:yidrop_app/gen/strings.g.dart';
@@ -9,6 +8,7 @@ import 'package:routerino/routerino.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'contributors.dart';
+
 final _translatorWithGithubRegex = RegExp(r'(.+) \(@([\w\-_]+)\)');
 
 class AboutPage extends StatelessWidget {
@@ -27,38 +27,48 @@ class AboutPage extends StatelessWidget {
           const SizedBox(height: 20),
           const YiDropLogo(withText: true),
           Text(
-            'Copyright ${DateTime.now().year} lingyicute',
+            'YiDrop © ${DateTime.now().year} lingyicute\n基于 LocalSend · Tien Do Nam 与贡献者',
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           Center(
             child: TextButton(
               onPressed: () async {
-                await launchUrl(Uri.parse('https://drop.92li.us.kg'));
+                await launchUrl(Uri.parse('https://drop.92li.uk'));
               },
-              child: const Text('drop.92li.us.kg'),
+              child: const Text('drop.92li.uk'),
             ),
           ),
           const SizedBox(height: 10),
           Text(t.aboutPage.description.join('\n\n')),
           const SizedBox(height: 20),
           Text(t.aboutPage.author, style: const TextStyle(fontWeight: FontWeight.bold)),
-          Text.rich(_buildContributor(
-            label: 'lingyicute',
-            primaryColor: primaryColor,
-          )),
+          Text.rich(
+            _buildContributor(
+              label: 'lingyicute (@lingyicute)',
+              primaryColor: primaryColor,
+            ),
+          ),
           const SizedBox(height: 20),
           Text(t.aboutPage.contributors, style: const TextStyle(fontWeight: FontWeight.bold)),
           ..._contributors.map((contributor) {
-            return Text.rich(_buildContributor(
-              label: contributor,
-              primaryColor: primaryColor,
-            ));
+            return Text.rich(
+              _buildContributor(
+                label: contributor,
+                primaryColor: primaryColor,
+              ),
+            );
           }),
           const SizedBox(height: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              TextButton(
+                onPressed: () async {
+                  await launchUrl(Uri.parse('https://drop.92li.uk'));
+                },
+                child: const Text('YiDrop 主页'),
+              ),
               TextButton(
                 onPressed: () async {
                   await launchUrl(Uri.parse('https://github.com/lingyicute/yidrop'), mode: LaunchMode.externalApplication);
@@ -67,9 +77,15 @@ class AboutPage extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () async {
+                  await launchUrl(Uri.parse('https://www.apache.org/licenses/LICENSE-2.0'));
+                },
+                child: const Text('Apache License 2.0'),
+              ),
+              TextButton(
+                onPressed: () async {
                   await context.push(() => const LicensePage());
                 },
-                child: const Text('鸣谢'),
+                child: const Text('鸣谢与许可证'),
               ),
               TextButton(
                 onPressed: () async {

@@ -1,22 +1,26 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart';
-import 'package:common/isolate.dart';
-import 'package:common/model/device.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:yidrop_app/config/theme.dart';
 import 'package:yidrop_app/gen/strings.g.dart';
+import 'package:yidrop_app/provider/device_info_provider.dart';
+import 'package:yidrop_app/provider/http_provider.dart';
 import 'package:yidrop_app/provider/last_devices.provider.dart';
 import 'package:yidrop_app/provider/local_ip_provider.dart';
 import 'package:yidrop_app/provider/settings_provider.dart';
 import 'package:yidrop_app/widget/dialogs/error_dialog.dart';
+import 'package:yidrop_isolates/model/device.dart';
+import 'package:yidrop_isolates/rust/api/model.dart';
+import 'package:yidrop_isolates/util/rust.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 
 enum _InputMode {
   hashtag,
-  ip;
+  ip
+  ;
 
   String get label {
     return switch (this) {
@@ -63,18 +67,24 @@ class _AddressInputDialogState extends State<AddressInputDialog> with Refena {
     Device? foundDevice;
     String? error;
 
-    final List<Future<Device>> futures = [
+    final payload = ref.read(deviceFullInfoProvider).toRegisterDto();
+
+    final List<Future<void>> futures = [
       for (final ip in candidates)
         () async {
           try {
-            final device = await ref.redux(parentIsolateProvider).dispatchAsyncTakeResult(IsolateTargetHttpDiscoveryAction(
+            final response = await ref
+                .read(httpProvider)
+                .discovery
+                .register(
+                  protocol: https ? ProtocolType.https : ProtocolType.http,
                   ip: ip,
                   port: port,
-                  https: https,
-                ));
-            foundDevice = device;
+                  payload: payload,
+                );
+
+            foundDevice = response.body.toDevice(ip, port, https);
             deviceCompleter.complete();
-            return device;
           } catch (e) {
             error = e.toString();
             rethrow;
@@ -186,16 +196,18 @@ class _AddressInputDialogState extends State<AddressInputDialog> with Refena {
                 TextSpan(
                   children: [
                     TextSpan(text: t.dialogs.addressInput.recentlyUsed),
-                    ...lastDevices.mapIndexed((index, device) {
-                      return [
-                        if (index != 0) const TextSpan(text: ', '),
-                        TextSpan(
-                          text: device.ip,
-                          style: TextStyle(color: Theme.of(context).colorScheme.primary),
-                          recognizer: TapGestureRecognizer()..onTap = () async => _submit(localIps, settings.port, device.ip),
-                        )
-                      ];
-                    }).expand((e) => e),
+                    ...lastDevices
+                        .mapIndexed((index, device) {
+                          return [
+                            if (index != 0) const TextSpan(text: ', '),
+                            TextSpan(
+                              text: device.ip,
+                              style: TextStyle(color: Theme.of(context).colorScheme.primary),
+                              recognizer: TapGestureRecognizer()..onTap = () async => _submit(localIps, settings.port, device.ip),
+                            ),
+                          ];
+                        })
+                        .expand((e) => e),
                   ],
                 ),
               ),

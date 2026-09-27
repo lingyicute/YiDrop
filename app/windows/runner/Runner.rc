@@ -93,7 +93,7 @@ BEGIN
             VALUE "FileDescription", "YiDrop" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "yidrop_app" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022-2024 lingyicute. All rights reserved." "\0"
+            VALUE "LegalCopyright", "YiDrop modifications (C) 2025-2026 lingyicute; LocalSend (C) Tien Do Nam and contributors." "\0"
             VALUE "OriginalFilename", "yidrop_app.exe" "\0"
             VALUE "ProductName", "YiDrop" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

@@ -1,22 +1,23 @@
 import 'package:collection/collection.dart';
-import 'package:common/model/device.dart';
-import 'package:common/model/session_status.dart';
 import 'package:flutter/material.dart';
+import 'package:refena_flutter/refena_flutter.dart';
+import 'package:routerino/routerino.dart';
 import 'package:yidrop_app/config/theme.dart';
 import 'package:yidrop_app/gen/strings.g.dart';
 import 'package:yidrop_app/model/send_mode.dart';
+import 'package:yidrop_app/pages/device_details_page.dart';
 import 'package:yidrop_app/pages/selected_files_page.dart';
 import 'package:yidrop_app/pages/tabs/send_tab_vm.dart';
 import 'package:yidrop_app/pages/troubleshoot_page.dart';
+import 'package:yidrop_app/pages/web_share_page.dart';
 import 'package:yidrop_app/provider/animation_provider.dart';
+import 'package:yidrop_app/provider/file_transfer_provider.dart';
 import 'package:yidrop_app/provider/network/nearby_devices_provider.dart';
 import 'package:yidrop_app/provider/network/scan_facade.dart';
 import 'package:yidrop_app/provider/network/send_provider.dart';
-import 'package:yidrop_app/provider/progress_provider.dart';
 import 'package:yidrop_app/provider/selection/selected_sending_files_provider.dart';
 import 'package:yidrop_app/provider/settings_provider.dart';
 import 'package:yidrop_app/util/favorites.dart';
-import 'package:yidrop_app/util/file_size_helper.dart';
 import 'package:yidrop_app/util/native/file_picker.dart';
 import 'package:yidrop_app/util/native/platform_check.dart';
 import 'package:yidrop_app/widget/big_button.dart';
@@ -24,18 +25,19 @@ import 'package:yidrop_app/widget/custom_icon_button.dart';
 import 'package:yidrop_app/widget/dialogs/add_file_dialog.dart';
 import 'package:yidrop_app/widget/dialogs/send_mode_help_dialog.dart';
 import 'package:yidrop_app/widget/file_thumbnail.dart';
-import 'package:yidrop_app/widget/horizontal_clip_list_view.dart';
 import 'package:yidrop_app/widget/list_tile/device_list_tile.dart';
 import 'package:yidrop_app/widget/list_tile/device_placeholder_list_tile.dart';
 import 'package:yidrop_app/widget/opacity_slideshow.dart';
 import 'package:yidrop_app/widget/responsive_builder.dart';
 import 'package:yidrop_app/widget/responsive_list_view.dart';
+import 'package:yidrop_app/widget/responsive_wrap_view.dart';
 import 'package:yidrop_app/widget/rotating_widget.dart';
-import 'package:refena_flutter/refena_flutter.dart';
-import 'package:routerino/routerino.dart';
+import 'package:yidrop_isolates/model/device.dart';
+import 'package:yidrop_isolates/model/session_status.dart';
+import 'package:yidrop_isolates/util/file_size_helper.dart';
 
 const _horizontalPadding = 15.0;
-final _options = FilePickerOption.getOptionsForPlatform();
+final pickerOptions = FilePickerOption.getOptionsForPlatform();
 
 class SendTab extends StatelessWidget {
   const SendTab();
@@ -43,7 +45,7 @@ class SendTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder(
-      provider: sendTabVmProvider,
+      provider: (ref) => sendTabVmProvider,
       init: (context) async => context.global.dispatchAsync(SendTabInitAction(context)), // ignore: discarded_futures
       builder: (context, vm) {
         final sizingInformation = SizingInformation(MediaQuery.sizeOf(context).width);
@@ -61,20 +63,22 @@ class SendTab extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
-              HorizontalClipListView(
+              ResponsiveWrapView(
                 outerHorizontalPadding: 15,
                 outerVerticalPadding: 10,
                 childPadding: 10,
                 minChildWidth: buttonWidth,
-                children: _options.map((option) {
+                children: pickerOptions.map((option) {
                   return BigButton(
                     icon: option.icon,
                     label: option.label,
                     filled: false,
-                    onTap: () async => ref.global.dispatchAsync(PickFileAction(
-                      option: option,
-                      context: context,
-                    )),
+                    onTap: () async => ref.global.dispatchAsync(
+                      PickFileAction(
+                        option: option,
+                        context: context,
+                      ),
+                    ),
                   );
                 }).toList(),
               ),
@@ -138,17 +142,19 @@ class SendTab extends StatelessWidget {
                               foregroundColor: Theme.of(context).colorScheme.onPrimary,
                             ),
                             onPressed: () async {
-                              if (_options.length == 1) {
+                              if (pickerOptions.length == 1) {
                                 // open directly
-                                await ref.global.dispatchAsync(PickFileAction(
-                                  option: _options.first,
-                                  context: context,
-                                ));
+                                await ref.global.dispatchAsync(
+                                  PickFileAction(
+                                    option: pickerOptions.first,
+                                    context: context,
+                                  ),
+                                );
                                 return;
                               }
                               await AddFileDialog.open(
                                 context: context,
-                                options: _options,
+                                options: pickerOptions,
                               );
                             },
                             icon: const Icon(Icons.add),
@@ -219,7 +225,7 @@ class SendTab extends StatelessWidget {
                           device: device,
                           isFavorite: favoriteEntry != null,
                           nameOverride: favoriteEntry?.alias,
-                          onFavoriteTap: () async => await vm.onToggleFavorite(context, device),
+                          onDetailsTap: () async => await context.push(() => DeviceDetailsPage(device: device)),
                           onTap: () async => await vm.onTapDevice(context, device),
                         ),
                 ),
@@ -244,9 +250,17 @@ class SendTab extends StatelessWidget {
                     durationMillis: 6000,
                     running: animations,
                     children: [
-                      Text(t.sendTab.help, style: const TextStyle(color: Colors.grey), textAlign: TextAlign.center),
+                      Text(
+                        t.sendTab.help,
+                        style: const TextStyle(color: Colors.grey),
+                        textAlign: TextAlign.center,
+                      ),
                       if (checkPlatformCanReceiveShareIntent())
-                        Text(t.sendTab.shareIntentInfo, style: const TextStyle(color: Colors.grey), textAlign: TextAlign.center),
+                        Text(
+                          t.sendTab.shareIntentInfo,
+                          style: const TextStyle(color: Colors.grey),
+                          textAlign: TextAlign.center,
+                        ),
                     ],
                   );
                 },
@@ -325,7 +339,7 @@ class _ScanButton extends StatelessWidget {
           child: CustomIconButton(
             onPressed: () async {
               context.redux(nearbyDevicesProvider).dispatch(ClearFoundDevicesAction());
-              await context.global.dispatchAsync(StartSmartScan(forceLegacy: true));
+              await context.global.dispatchAsync(StartSmartScan());
             },
             child: Icon(Icons.sync, color: iconColor),
           ),
@@ -408,6 +422,11 @@ class _SendModeButton extends StatelessWidget {
           case 2:
             onSelect(SendMode.link);
             break;
+          case 3:
+            // Receiving is an action, not a persistent SendMode. It must work
+            // without selecting files and must not clear the send selection.
+            await context.push(() => const WebSharePage());
+            break;
           case -1:
             await showDialog(context: context, builder: (_) => const SendModeHelpDialog());
             break;
@@ -475,6 +494,17 @@ class _SendModeButton extends StatelessWidget {
             ],
           ),
         ),
+        PopupMenuItem(
+          value: 3,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.download),
+              const SizedBox(width: 10),
+              Text(t.webReceivePage.title),
+            ],
+          ),
+        ),
         const PopupMenuDivider(),
         PopupMenuItem(
           value: -1,
@@ -517,24 +547,31 @@ class _MultiSendDeviceListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final ref = context.ref;
     final session = ref.watch(sendProvider).values.firstWhereOrNull((s) => s.target.ip == device.ip);
+    final String? info;
     final double? progress;
     if (session != null) {
       final files = session.files.values.where((f) => f.token != null);
-      final progressNotifier = ref.watch(progressProvider);
+      final transferNotifier = ref.watch(fileTransferProvider);
       final currBytes = files.fold<int>(
-          0, (prev, curr) => prev + ((progressNotifier.getProgress(sessionId: session.sessionId, fileId: curr.file.id) * curr.file.size).round()));
+        0,
+        (prev, curr) => prev + ((transferNotifier.getProgress(sessionId: session.sessionId, fileId: curr.file.id) * curr.file.size).round()),
+      );
       final totalBytes = files.fold<int>(0, (prev, curr) => prev + curr.file.size);
       progress = totalBytes == 0 ? 0 : currBytes / totalBytes;
+      info = session.hashedFileCount < session.files.length
+          ? t.sendPage.calculatingChecksum(curr: session.hashedFileCount, n: session.files.length)
+          : session.status.humanString;
     } else {
       progress = null;
+      info = null;
     }
     return DeviceListTile(
       device: device,
-      info: session?.status.humanString,
+      info: info,
       progress: progress,
       isFavorite: isFavorite,
       nameOverride: nameOverride,
-      onFavoriteTap: () async => await vm.onToggleFavorite(context, device),
+      onDetailsTap: () async => await context.push(() => DeviceDetailsPage(device: device)),
       onTap: () async => await vm.onTapDeviceMultiSend(context, device),
     );
   }

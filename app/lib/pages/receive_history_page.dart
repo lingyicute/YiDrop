@@ -5,10 +5,8 @@ import 'package:yidrop_app/config/theme.dart';
 import 'package:yidrop_app/gen/strings.g.dart';
 import 'package:yidrop_app/model/persistence/receive_history_entry.dart';
 import 'package:yidrop_app/pages/receive_page.dart';
-import 'package:yidrop_app/pages/receive_page_controller.dart';
 import 'package:yidrop_app/provider/receive_history_provider.dart';
 import 'package:yidrop_app/provider/settings_provider.dart';
-import 'package:yidrop_app/util/file_size_helper.dart';
 import 'package:yidrop_app/util/native/directories.dart';
 import 'package:yidrop_app/util/native/open_file.dart';
 import 'package:yidrop_app/util/native/open_folder.dart';
@@ -17,6 +15,9 @@ import 'package:yidrop_app/widget/dialogs/file_info_dialog.dart';
 import 'package:yidrop_app/widget/dialogs/history_clear_dialog.dart';
 import 'package:yidrop_app/widget/file_thumbnail.dart';
 import 'package:yidrop_app/widget/responsive_list_view.dart';
+import 'package:yidrop_isolates/model/device.dart';
+import 'package:yidrop_isolates/model/session_status.dart';
+import 'package:yidrop_isolates/util/file_size_helper.dart';
 import 'package:path/path.dart' as path;
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
@@ -25,7 +26,8 @@ enum _EntryOption {
   open,
   showInFolder,
   info,
-  delete;
+  delete
+  ;
 
   String get label {
     return switch (this) {
@@ -131,9 +133,33 @@ class ReceiveHistoryPage extends StatelessWidget {
                   onTap: entry.path != null || entry.isMessage
                       ? () async {
                           if (entry.isMessage) {
-                            context.redux(receivePageControllerProvider).dispatch(InitReceivePageFromHistoryMessageAction(entry: entry));
+                            final vm = ViewProvider((ref) {
+                              return ReceivePageVm(
+                                status: SessionStatus.waiting,
+                                sender: Device(
+                                  signalingId: null,
+                                  ip: '0.0.0.0',
+                                  version: '1.0.0',
+                                  port: 8080,
+                                  https: false,
+                                  fingerprint: 'fingerprint',
+                                  alias: entry.senderAlias,
+                                  deviceModel: 'deviceModel',
+                                  deviceType: DeviceType.web,
+                                  download: true,
+                                  channels: const [],
+                                ),
+                                showSenderInfo: false,
+                                files: [],
+                                message: entry.fileName,
+                                onAccept: () {},
+                                onDecline: () {},
+                                onClose: () {},
+                              );
+                            });
+
                             // ignore: unawaited_futures
-                            context.push(() => const ReceivePage());
+                            context.push(() => ReceivePage(vm));
                             return;
                           }
 

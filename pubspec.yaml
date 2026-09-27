@@ -1,0 +1,10 @@
+name: _yidrop_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.11.0
+
+workspace:
+  - app
+  - packages/yidrop_isolates
+  - packages/typed_isolates

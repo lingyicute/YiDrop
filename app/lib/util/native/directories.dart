@@ -1,15 +1,13 @@
-import 'dart:io' show Directory, Platform;
+import 'dart:io' show Directory, FileSystemException, Platform;
 
 import 'package:flutter/foundation.dart';
+import 'package:yidrop_app/util/native/channel/android_channel.dart';
 import 'package:path_provider/path_provider.dart' as path;
-import 'package:shared_storage/shared_storage.dart' as shared_storage;
 
 Future<String> getDefaultDestinationDirectory() async {
   switch (defaultTargetPlatform) {
     case TargetPlatform.android:
-      // ignore: deprecated_member_use
-      final dir = await shared_storage.getExternalStoragePublicDirectory(shared_storage.EnvironmentDirectory.downloads);
-      return dir?.path ?? '/storage/emulated/0/Download';
+      return await getDownloadsDirectoryAndroid() ?? '/storage/emulated/0/Download';
     case TargetPlatform.iOS:
       return (await path.getApplicationDocumentsDirectory()).path;
     case TargetPlatform.linux:
@@ -30,10 +28,18 @@ Future<String> getDefaultDestinationDirectory() async {
           }
         }
       }
+      try {
+        // Downloads may be a link, including the macOS sandbox Downloads folder.
+        return (await downloadDir.resolveSymbolicLinks()).replaceAll('\\', '/');
+      } on FileSystemException {
+        // Keep the path from the platform provider if it cannot be resolved.
+      }
       return downloadDir.path.replaceAll('\\', '/');
   }
 }
 
 Future<String> getCacheDirectory() async {
-  return (await path.getTemporaryDirectory()).path;
+  final dir = await path.getTemporaryDirectory();
+  await dir.create(recursive: true);
+  return dir.path;
 }

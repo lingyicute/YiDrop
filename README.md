@@ -1,13 +1,19 @@
 # YiDrop
 
 [![API](https://img.shields.io/badge/API-21%2B-yellow.svg?style=flat)](https://developer.android.com/about/versions/lollipop)
-[![Github License](https://img.shields.io/github/license/lingyicute/YiDrop?color=%2364f573&style=flat)](https://github.com/lingyicute/YiDrop/blob/master/COPYING)
+[![Github License](https://img.shields.io/github/license/lingyicute/YiDrop?color=%2364f573&style=flat)](https://github.com/lingyicute/YiDrop/blob/main/LICENSE)
 ![GitHub Created At](https://img.shields.io/github/created-at/lingyicute/YiDrop)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/lingyicute/YiDrop)
 
 **中文** • [English](README_EN.md)
 
 YiDrop 是一个好玩的应用程序，帮助你快速且安全地分享文件。它开源、免费、跨平台。
+
+你可以把它认为是一个可爱化的 LocalSend —— 梨按照自己的喜好做了一些调整。希望你喜欢它！
+
+- 主页：<https://drop.92li.uk>
+- 主仓库：<https://github.com/lingyicute/YiDrop>
+- 发布页：<https://github.com/lingyicute/YiDrop/releases>
 
 ## 截图
 
@@ -59,22 +65,8 @@ YiDrop 使用安全通信协议，允许设备通过 REST API 进行通信。所
 | 速度太慢           | 任意              | Android            | 已知问题。https://github.com/flutter-cavalry/saf_stream/issues/4                                                                     |
 
 
-## 🗂️ 许可证
+## 🗂️ 致谢与许可
 
-YiDrop is released under the GNU General Public License v3.0 (GPLv3).
+YiDrop 是 LocalSend 的下游定制版本，由 lingyicute 维护。感谢 LocalSend 原作者 Tien Do Nam 和所有上游贡献者。
 
-Copyright (C) 2025 lingyicute.
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see https://www.gnu.org/licenses.
-
+上游代码和下游修改均按照 [Apache-2.0](LICENSE) 授权。
