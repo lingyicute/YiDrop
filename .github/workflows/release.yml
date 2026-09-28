@@ -92,7 +92,7 @@ jobs:
 
       # APK
       - name: Download apk file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: apk-result
           path: apk-result
@@ -132,7 +132,7 @@ jobs:
 
       # TAR.GZ (x86_64)
       - name: Download tar.gz file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: tar-gz-x86-64-result
           path: tar-gz-x86-64-result
@@ -155,7 +155,7 @@ jobs:
 
       # TAR.GZ (arm_64)
       - name: Download tar.gz file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: tar-gz-arm-64-result
           path: tar-gz-arm-64-result
@@ -178,7 +178,7 @@ jobs:
 
       # DEB (x86_64)
       - name: Download deb file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: deb-x86-64-result
           path: deb-x86-64-result
@@ -198,7 +198,7 @@ jobs:
 
       # DEB (arm_64)
       - name: Download deb file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: deb-arm-64-result
           path: deb-arm-64-result
@@ -218,7 +218,7 @@ jobs:
 
       # APPIMAGE (x86_64)
       - name: Download AppImage file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: appimage-x86-64-result
           path: appimage-x86-64-result
@@ -246,7 +246,7 @@ jobs:
 
       # WINDOWS ZIP (x86_64)
       - name: Download windows zip file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: windows-zip-x86-64-result
           path: windows-zip-x86-64-result
@@ -266,7 +266,7 @@ jobs:
 
       # WINDOWS ZIP (arm_64)
       - name: Download windows zip file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: windows-zip-arm-64-result
           path: windows-zip-arm-64-result
@@ -286,7 +286,7 @@ jobs:
 
       # WINDOWS EXE (x86_64)
       - name: Download windows exe file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: windows-exe-x86-64-result
           path: windows-exe-x86-64-result
@@ -306,7 +306,7 @@ jobs:
 
       # LINUX CLI (x86_64)
       - name: Download linux CLI file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: cli-linux-x86-64-result
           path: cli-linux-x86-64-result
@@ -323,7 +323,7 @@ jobs:
 
       # LINUX CLI (arm_64)
       - name: Download linux CLI file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: cli-linux-arm-64-result
           path: cli-linux-arm-64-result
@@ -340,7 +340,7 @@ jobs:
 
       # WINDOWS CLI EXE (x86_64)
       - name: Download windows CLI exe file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: windows-cli-exe-x86-64-result
           path: windows-cli-exe-x86-64-result
@@ -360,7 +360,7 @@ jobs:
 
       # WINDOWS CLI EXE (arm_64)
       - name: Download windows CLI exe file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: windows-cli-exe-arm-64-result
           path: windows-cli-exe-arm-64-result
