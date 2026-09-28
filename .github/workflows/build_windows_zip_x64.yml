@@ -107,7 +107,7 @@ jobs:
         run: Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath "YiDrop-${{ needs.build.outputs.version }}-windows-x86-64.zip"
 
       - name: Upload signed zip
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: windows-zip-x86-64-result
           path: app/YiDrop-${{ needs.build.outputs.version }}-windows-x86-64.zip
