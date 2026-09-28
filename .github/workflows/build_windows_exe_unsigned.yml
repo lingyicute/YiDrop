@@ -68,7 +68,7 @@ jobs:
         run: Rename-Item -Path "${{ runner.temp }}\inno-result\yidrop.exe" -NewName "YiDrop-${{ needs.build.outputs.version }}-windows-x86-64.exe"
 
       - name: Upload installer
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: windows-exe-x86-64-unsigned
           path: ${{ runner.temp }}\inno-result\YiDrop-${{ needs.build.outputs.version }}-windows-x86-64.exe

@@ -139,7 +139,7 @@ jobs:
           & $signtool.FullName verify /pa /v "${{ runner.temp }}\inno-result\YiDrop-${{ needs.build.outputs.version }}-windows-x86-64.exe"
 
       - name: Upload signed installer
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: windows-exe-x86-64-result
           path: ${{ runner.temp }}\inno-result\YiDrop-${{ needs.build.outputs.version }}-windows-x86-64.exe

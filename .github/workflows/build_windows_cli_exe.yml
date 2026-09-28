@@ -76,7 +76,7 @@ jobs:
           & $signtool.FullName verify /pa /v "target\release\YiDrop-CLI-${{ needs.build.outputs.version }}-windows-${{ matrix.suffix }}.exe"
 
       - name: Upload signed CLI
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: windows-cli-exe-${{ matrix.suffix }}-result
           path: target\release\YiDrop-CLI-${{ needs.build.outputs.version }}-windows-${{ matrix.suffix }}.exe
