@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       debug_signing:
-        description: '仅测试：使用 debug 签名（不可作为正式更新发布）'
+        description: '使用 debug 签名'
         type: boolean
         default: false
   workflow_call:
@@ -114,8 +114,9 @@ jobs:
             ${{ env.APK_BUILD_DIR }}/app/build/app/outputs/flutter-apk/app-x86_64-release.apk
 
   publish_nightly:
-    # Reusable formal release builds must not mutate nightly tags.
-    if: ${{ github.event_name == 'push' }}
+    # Nightly releases are published from the default branch only. Reusable
+    # formal release builds must not mutate nightly tags either.
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     needs: build_apk
     runs-on: ubuntu-latest
     permissions:
@@ -135,8 +136,10 @@ jobs:
         with:
           name: apk-result
           path: nightly-artifacts
-      - name: Publish branch nightly
+      - name: Publish nightly
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           YIDROP_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          # Second gate: let the script refuses to publish from any other branch
+          YIDROP_NIGHTLY_BRANCH: main
         run: python3 support/scripts/publish_nightly.py nightly-artifacts
