@@ -68,6 +68,12 @@ def publish(source, env):
     branch = env['GITHUB_REF_NAME']
     if env.get('GITHUB_EVENT_NAME') != 'push' or env.get('GITHUB_REF_TYPE') != 'branch':
         raise RuntimeError('Nightly publishing is only allowed for branch pushes')
+    # Nightly only from main branch
+    allowed = env.get('YIDROP_NIGHTLY_BRANCH', 'main')
+    if branch != allowed:
+        raise RuntimeError(
+            f'Nightly publishing is only allowed from "{allowed}", got "{branch}"'
+        )
     if not re.fullmatch(r'[0-9a-f]{40}', sha):
         raise RuntimeError('Invalid source commit SHA')
     tag = nightly_tag(branch, env['YIDROP_DEFAULT_BRANCH'])
